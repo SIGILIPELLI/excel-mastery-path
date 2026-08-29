@@ -1,0 +1,100 @@
+site_name: Excel Mastery Path
+site_description: A structured, module-wise Microsoft Excel training program from entry level to master level, covering formulas, PivotTables, Power Query, VBA, and financial modeling.
+site_url: https://sigilipelli.github.io/excel-mastery-path/
+repo_url: https://github.com/SIGILIPELLI/excel-mastery-path
+repo_name: excel-mastery-path
+
+theme:
+  name: material
+  custom_dir: docs/overrides
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.indexes
+    - content.code.copy
+    - content.code.annotate
+    - search.suggest
+    - search.highlight
+
+markdown_extensions:
+  - admonition
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.superfences
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  - toc:
+      permalink: true
+
+extra_css:
+  - stylesheets/extra.css
+
+nav:
+  - Home: index.md
+  - Privacy Policy: privacy.md
+  - "Level 1 · Entry":
+      - Overview: level-1/index.md
+      - "01 · Excel Fundamentals": level-1/01-excel-fundamentals.md
+      - "02 · Formulas & Functions Basics": level-1/02-formulas-functions-basics.md
+      - "03 · Formatting & Conditional Formatting": level-1/03-formatting-conditional-formatting.md
+      - "04 · Working with Tables": level-1/04-working-with-tables.md
+      - "05 · Charts & Basic Visualization": level-1/05-charts-basic-visualization.md
+      - "06 · Lookup Functions": level-1/06-lookup-functions.md
+      - "07 · Logical Functions": level-1/07-logical-functions.md
+      - "08 · PivotTables Basics": level-1/08-pivottables-basics.md
+      - "09 · Data Validation & Cleaning": level-1/09-data-validation-cleaning.md
+      - "10 · Project — Personal Budget Tracker": level-1/10-project-personal-budget-tracker.md
+  - "Level 2 · Intermediate":
+      - Overview: level-2/index.md
+      - "01 · Advanced Formulas (SUMIFS/COUNTIFS/AVERAGEIFS)": level-2/01-advanced-formulas.md
+      - "02 · PivotTables Deep Dive": level-2/02-pivottables-deep-dive.md
+      - "03 · Advanced Charting & Dashboards": level-2/03-advanced-charting-dashboards.md
+      - "04 · Data Validation Advanced & Form Controls": level-2/04-data-validation-advanced-form-controls.md
+      - "05 · Power Query Basics": level-2/05-power-query-basics.md
+      - "06 · Array Formulas & Dynamic Arrays": level-2/06-array-formulas-dynamic-arrays.md
+      - "07 · What-If Analysis": level-2/07-what-if-analysis.md
+      - "08 · Working with Multiple Sheets & Workbooks": level-2/08-multiple-sheets-workbooks.md
+      - "09 · Intro to Recording Macros": level-2/09-intro-recording-macros.md
+      - "10 · Project — Interactive Sales Dashboard": level-2/10-project-interactive-sales-dashboard.md
+  - "Level 3 · Advanced":
+      - Overview: level-3/index.md
+      - "01 · VBA Basics for Automation": level-3/01-vba-basics-automation.md
+      - "02 · Advanced Power Query (M Language Basics)": level-3/02-advanced-power-query-m-language.md
+      - "03 · Power Pivot & the Data Model": level-3/03-power-pivot-data-model.md
+      - "04 · DAX Basics for Power Pivot": level-3/04-dax-basics-power-pivot.md
+      - "05 · Advanced VBA (UserForms, Error Handling)": level-3/05-advanced-vba-userforms-error-handling.md
+      - "06 · Building Custom Functions with LAMBDA": level-3/06-custom-functions-lambda.md
+      - "07 · Financial Modeling Techniques": level-3/07-financial-modeling-techniques.md
+      - "08 · Advanced Dashboard Design Principles": level-3/08-advanced-dashboard-design-principles.md
+      - "09 · Auditing & Error-Checking Large Workbooks": level-3/09-auditing-error-checking-workbooks.md
+      - "10 · Project — Financial Model with Scenario Analysis": level-3/10-project-financial-model-scenario-analysis.md
+  - "Level 4 · Master":
+      - Overview: level-4/index.md
+      - "01 · Enterprise Excel Architecture": level-4/01-enterprise-excel-architecture.md
+      - "02 · Advanced DAX & Power Pivot Modeling": level-4/02-advanced-dax-power-pivot-modeling.md
+      - "03 · Integrating Excel with Power BI": level-4/03-integrating-excel-power-bi.md
+      - "04 · Advanced VBA Application Development": level-4/04-advanced-vba-application-development.md
+      - "05 · Performance Optimization for Large Workbooks": level-4/05-performance-optimization-large-workbooks.md
+      - "06 · Excel + Python Integration (Overview)": level-4/06-excel-python-integration.md
+      - "07 · Building Excel-Based Tools for Teams": level-4/07-excel-based-tools-for-teams.md
+      - "08 · Data Governance in Spreadsheet-Heavy Organizations": level-4/08-data-governance-spreadsheet-organizations.md
+      - "09 · Career Growth: Excel Power User to Analytics Lead": level-4/09-career-growth-analytics-lead.md
+      - "10 · Capstone — Full Business Reporting System": level-4/10-capstone-business-reporting-system.md
