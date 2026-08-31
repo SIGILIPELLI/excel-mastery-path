@@ -1110,6 +1110,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07 · What-If Analysis
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1126,6 +1144,91 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-worked-dataset-a-simple-loan-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Worked dataset — a simple loan model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-goal-seek" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Goal Seek
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-data-table-one-variable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Data Table (one-variable)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-scenario-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Scenario Manager
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cheat sheet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1991,6 +2094,80 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-worked-dataset-a-simple-loan-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Worked dataset — a simple loan model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-goal-seek" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Goal Seek
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-data-table-one-variable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Data Table (one-variable)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-scenario-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Scenario Manager
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cheat sheet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2010,8 +2187,131 @@
 
 
 <h1 id="07-what-if-analysis">07 · What-If Analysis<a class="headerlink" href="#07-what-if-analysis" title="Permanent link">&para;</a></h1>
-<p>This module is part of Level 2 · Intermediate.</p>
-<p>More lessons are on the way — check back soon.</p>
+<p>What-If Analysis tools (Goal Seek, Data Tables, Scenario Manager) let
+you ask "what input produces this output?" or "how does the result
+change across a range of inputs?" without manually re-typing numbers
+over and over.</p>
+<h2 id="1-worked-dataset-a-simple-loan-model">1. Worked dataset — a simple loan model<a class="headerlink" href="#1-worked-dataset-a-simple-loan-model" title="Permanent link">&para;</a></h2>
+<p>Build this on a sheet named <code>Loan</code>, <code>A1:B5</code>:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>A</th>
+<th>B</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1</strong></td>
+<td>Principal</td>
+<td>20000</td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td>Annual Rate</td>
+<td>0.06</td>
+</tr>
+<tr>
+<td><strong>3</strong></td>
+<td>Years</td>
+<td>5</td>
+</tr>
+<tr>
+<td><strong>4</strong></td>
+<td>Monthly Payment</td>
+<td><code>=-PMT(B2/12,B3*12,B1)</code></td>
+</tr>
+<tr>
+<td><strong>5</strong></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><code>PMT(rate,nper,pv)</code> returns a negative number (cash outflow), so the
+formula negates it. Manual check: <code>B2/12 = 0.005</code>, <code>B3*12 = 60</code>
+periods, <code>PV = 20000</code>. Excel's <code>PMT</code> computes this via the standard
+annuity formula; trust the built-in result here (~<code>386.66</code>) since it
+matches the closed-form annuity payment formula
+<code>P = Pv·r / (1-(1+r)^-n)</code> = <code>20000×0.005 / (1-1.005^-60)</code> ≈ <code>386.66</code>.</p>
+<h2 id="2-goal-seek">2. Goal Seek<a class="headerlink" href="#2-goal-seek" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Suppose the target monthly payment must be exactly <code>350</code>. Data →
+   What-If Analysis → <strong>Goal Seek</strong>. Set cell <code>B4</code>, To value <code>-350</code>
+   (remember <code>B4</code> is already negated to positive via the formula, so
+   if <code>B4</code> shows a positive <code>386.66</code>, target <code>350</code> directly), By
+   changing cell <code>B1</code> (solve for the Principal that gives a 350
+   payment).</li>
+<li>Goal Seek iterates numerically until <code>B4</code> ≈ <code>350</code>; the resulting
+   <code>B1</code> will be roughly <code>18122</code> (a smaller loan produces a smaller
+   payment at the same rate/term). Verify by re-plugging: with
+   <code>B1=18122</code>, <code>PMT(0.005,60,18122)</code> ≈ <code>350.0</code>, confirming Goal Seek's
+   answer.</li>
+<li>Undo (Ctrl+Z) to restore <code>B1</code> to <code>20000</code> after testing.</li>
+</ol>
+<h2 id="3-data-table-one-variable">3. Data Table (one-variable)<a class="headerlink" href="#3-data-table-one-variable" title="Permanent link">&para;</a></h2>
+<ol>
+<li>In <code>D1:D6</code>, list candidate annual rates: <code>0.04, 0.05, 0.06, 0.07,
+   0.08</code>. In <code>E1</code>, reference the payment formula: <code>=B4</code>.</li>
+<li>Select <code>D1:E6</code>, Data → What-If Analysis → <strong>Data Table</strong>, Column
+   input cell <code>B2</code> (since rates vary down a column). Excel recomputes
+   <code>B4</code> for each rate and fills <code>E2:E6</code>.</li>
+<li>Manual spot check at rate <code>0.08</code>: <code>PMT(0.08/12,60,20000)</code> — a higher
+   rate must produce a higher payment than the baseline <code>386.66</code> at
+   <code>0.06</code>; expect roughly <code>405.53</code>. Confirm the Data Table's value at
+   that row is higher than the <code>0.06</code> row's <code>386.66</code>, and that payment
+   increases monotonically as rate increases from <code>0.04</code> to <code>0.08</code> —
+   this monotonic direction is the sanity check, even without
+   recomputing every value by hand.</li>
+</ol>
+<h2 id="4-scenario-manager">4. Scenario Manager<a class="headerlink" href="#4-scenario-manager" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Data → What-If Analysis → <strong>Scenario Manager</strong> → Add.</li>
+<li>Scenario name <code>Best Case</code>: changing cells <code>B2,B3</code> → values <code>0.04,
+   3</code>. Add another, <code>Worst Case</code>: <code>B2,B3</code> → <code>0.08, 7</code>.</li>
+<li>Click <strong>Summary</strong> to generate a Scenario Summary report — a new
+   sheet listing <code>B4</code> (Monthly Payment) under each scenario side by
+   side. Best Case (lower rate, shorter term) should show the highest
+   monthly payment (paying off faster costs more per month even at a
+   lower rate) — verify this direction makes sense: <code>Years=3</code> means
+   <code>nper=36</code>, a much shorter payoff window that raises the payment
+   despite the lower <code>0.04</code> rate, versus <code>Years=7</code> (<code>nper=84</code>) in
+   Worst Case which spreads payments thinner despite the higher rate.</li>
+<li>Switch back to the base scenario (or re-enter <code>0.06</code> and <code>5</code>
+   manually) before moving on.</li>
+</ol>
+<h2 id="cheat-sheet">Cheat sheet<a class="headerlink" href="#cheat-sheet" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Use when</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Goal Seek</td>
+<td>You know the desired output, need to find the input</td>
+</tr>
+<tr>
+<td>Data Table (1 or 2 variable)</td>
+<td>You want the output across a range of one or two inputs</td>
+</tr>
+<tr>
+<td>Scenario Manager</td>
+<td>You want to save and compare a handful of named input sets</td>
+</tr>
+</tbody>
+</table>
+<h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
+<p>Using the <code>Loan</code> model, build a two-variable Data Table with Rate
+(<code>0.04</code>–<code>0.08</code> down rows) and Years (<code>3,5,7</code> across columns) both
+driving <code>B4</code>, using Column input cell <code>B2</code> and Row input cell <code>B3</code>.
+Confirm the corner combining the lowest rate (<code>0.04</code>) and longest term
+(<code>7</code> years) gives the lowest payment in the whole table — a lower rate
+and longer payoff period should both individually reduce the monthly
+payment, so their combination is the table's minimum.</p>
 
 
 

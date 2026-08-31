@@ -1082,6 +1082,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06 · Array Formulas & Dynamic Arrays
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1098,6 +1116,102 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-worked-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Worked dataset
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-filter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. FILTER
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-unique-and-sort" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. UNIQUE and SORT
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-sequence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. SEQUENCE
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-legacy-cse-array-formula-for-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Legacy CSE array formula (for comparison)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cheat sheet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1991,6 +2105,91 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-worked-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Worked dataset
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-filter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. FILTER
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-unique-and-sort" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. UNIQUE and SORT
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-sequence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. SEQUENCE
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-legacy-cse-array-formula-for-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Legacy CSE array formula (for comparison)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cheat sheet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2010,8 +2209,156 @@
 
 
 <h1 id="06-array-formulas-dynamic-arrays">06 · Array Formulas &amp; Dynamic Arrays<a class="headerlink" href="#06-array-formulas-dynamic-arrays" title="Permanent link">&para;</a></h1>
-<p>This module is part of Level 2 · Intermediate.</p>
-<p>More lessons are on the way — check back soon.</p>
+<p>Modern Excel (365 / 2021+) treats arrays as first-class values.
+Functions like <code>FILTER</code>, <code>SORT</code>, <code>UNIQUE</code>, and <code>SEQUENCE</code> return
+multiple results that "spill" into neighboring cells automatically —
+no <code>Ctrl+Shift+Enter</code> required, unlike legacy array formulas.</p>
+<h2 id="1-worked-dataset">1. Worked dataset<a class="headerlink" href="#1-worked-dataset" title="Permanent link">&para;</a></h2>
+<p>Build this table on a sheet named <code>Team</code>, <code>A1:C9</code>:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1</strong></td>
+<td>Name</td>
+<td>Dept</td>
+<td>Score</td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td>Alan</td>
+<td>Sales</td>
+<td>82</td>
+</tr>
+<tr>
+<td><strong>3</strong></td>
+<td>Priya</td>
+<td>IT</td>
+<td>91</td>
+</tr>
+<tr>
+<td><strong>4</strong></td>
+<td>Sam</td>
+<td>Sales</td>
+<td>76</td>
+</tr>
+<tr>
+<td><strong>5</strong></td>
+<td>Nina</td>
+<td>IT</td>
+<td>88</td>
+</tr>
+<tr>
+<td><strong>6</strong></td>
+<td>Alan</td>
+<td>Sales</td>
+<td>82</td>
+</tr>
+<tr>
+<td><strong>7</strong></td>
+<td>Priya</td>
+<td>HR</td>
+<td>91</td>
+</tr>
+<tr>
+<td><strong>8</strong></td>
+<td>Omar</td>
+<td>HR</td>
+<td>69</td>
+</tr>
+<tr>
+<td><strong>9</strong></td>
+<td>Sam</td>
+<td>Sales</td>
+<td>95</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2-filter">2. FILTER<a class="headerlink" href="#2-filter" title="Permanent link">&para;</a></h2>
+<ol>
+<li>In <code>E1</code>, type <code>=FILTER(A2:C9,B2:B9="Sales")</code>. This spills 4 rows —
+   every row where Dept is Sales: Alan/82, Sam/76, Alan/82, Sam/95.</li>
+<li>Manual check: scanning column B for "Sales" hits rows 2, 4, 6, 9 —
+   exactly 4 rows, matching the spill.</li>
+<li>Combine conditions: <code>=FILTER(A2:C9,(B2:B9="Sales")*(C2:C9&gt;80))</code>
+   Multiplying two boolean arrays acts as AND. Matches: row 2
+   (Sales,82&gt;80 ✓), row 4 (Sales,76&gt;80 ✗), row 6 (Sales,82 ✓), row 9
+   (Sales,95 ✓) → 3 rows spill: Alan/82, Alan/82, Sam/95.</li>
+</ol>
+<h2 id="3-unique-and-sort">3. UNIQUE and SORT<a class="headerlink" href="#3-unique-and-sort" title="Permanent link">&para;</a></h2>
+<ol>
+<li>In <code>H1</code>, type <code>=UNIQUE(B2:B9)</code>. Spills the distinct departments in
+   first-seen order: <code>Sales, IT, HR</code> (Sales first at row 2, IT first
+   at row 3, HR first at row 7).</li>
+<li>In <code>I1</code>, type <code>=SORT(UNIQUE(B2:B9))</code>. Sorts that list
+   alphabetically: <code>HR, IT, Sales</code>.</li>
+<li>Nest with FILTER to count each department:
+   <code>=COUNTIF(B2:B9,I1#)</code> — the <code>#</code> (spill range operator) refers to
+   the entire spilled <code>SORT(UNIQUE(...))</code> array, so this one formula
+   spills three counts aligned to <code>HR/IT/Sales</code>: HR appears in rows
+   7,8 → <code>2</code>; IT in rows 3,5 → <code>2</code>; Sales in rows 2,4,6,9 → <code>4</code>.</li>
+</ol>
+<h2 id="4-sequence">4. SEQUENCE<a class="headerlink" href="#4-sequence" title="Permanent link">&para;</a></h2>
+<ol>
+<li>In <code>K1</code>, type <code>=SEQUENCE(5,1,1,1)</code>. Spills <code>1,2,3,4,5</code> down 5 rows —
+   <code>SEQUENCE(rows,[columns],[start],[step])</code>.</li>
+<li>Use it to build a quick index: <code>=SEQUENCE(3,3,1,1)</code> spills a 3×3
+   grid <code>1,2,3 / 4,5,6 / 7,8,9</code> reading left-to-right, top-to-bottom.</li>
+</ol>
+<h2 id="5-legacy-cse-array-formula-for-comparison">5. Legacy CSE array formula (for comparison)<a class="headerlink" href="#5-legacy-cse-array-formula-for-comparison" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Older workbooks use array formulas entered with <strong>Ctrl+Shift+Enter</strong>
+   (shown wrapped in <code>{}</code> by Excel, not typed manually). Example, to
+   sum Score only for Sales without a helper column:
+   <code>{=SUM(IF(B2:B9="Sales",C2:C9))}</code></li>
+<li>Manual check: Sales rows 82, 76, 82, 95 → sum <code>335</code>. The modern
+   equivalent needs no CSE: <code>=SUM(FILTER(C2:C9,B2:B9="Sales"))</code>,
+   confirming the same <code>335</code>.</li>
+</ol>
+<h2 id="cheat-sheet">Cheat sheet<a class="headerlink" href="#cheat-sheet" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>FILTER(array,include,[if_empty])</code></td>
+<td>Rows matching a boolean condition</td>
+</tr>
+<tr>
+<td><code>UNIQUE(array)</code></td>
+<td>Distinct values, first-seen order</td>
+</tr>
+<tr>
+<td><code>SORT(array,[col],[order])</code></td>
+<td>Sort a range or spilled array</td>
+</tr>
+<tr>
+<td><code>SEQUENCE(rows,[cols],[start],[step])</code></td>
+<td>Generate a number sequence</td>
+</tr>
+<tr>
+<td><code>range#</code></td>
+<td>Spill range operator — refers to a dynamic array's full output</td>
+</tr>
+</tbody>
+</table>
+<h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
+<p>Using the <code>Team</code> table, write one formula that lists unique names
+sorted alphabetically (<code>=SORT(UNIQUE(A2:A9))</code> — expect Alan, Nina,
+Omar, Priya, Sam), then write <code>=SUMPRODUCT((B2:B9=I1#)*C2:C9)</code> next to
+the department SORT/UNIQUE spill from Section 3 to total Score per
+department, and manually confirm Sales sums to <code>82+76+82+95=335</code>.</p>
 
 
 

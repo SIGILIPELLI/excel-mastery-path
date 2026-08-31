@@ -1428,6 +1428,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05 · Advanced VBA (UserForms, Error Handling)
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1444,6 +1462,91 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-worked-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Worked dataset
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-building-a-userform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Building a UserForm
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-structured-error-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Structured error handling
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-cleaning-up-with-on-error-goto-0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Cleaning up with On Error GoTo 0
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cheat sheet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1991,6 +2094,80 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-worked-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Worked dataset
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-building-a-userform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Building a UserForm
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-structured-error-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Structured error handling
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-cleaning-up-with-on-error-goto-0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Cleaning up with On Error GoTo 0
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cheat sheet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2010,8 +2187,160 @@
 
 
 <h1 id="05-advanced-vba-userforms-error-handling">05 · Advanced VBA (UserForms, Error Handling)<a class="headerlink" href="#05-advanced-vba-userforms-error-handling" title="Permanent link">&para;</a></h1>
-<p>This module is part of Level 3 · Advanced.</p>
-<p>More lessons are on the way — check back soon.</p>
+<p>This module builds a UserForm — a custom dialog box with labeled input
+fields and buttons — and adds structured error handling so a macro
+fails gracefully instead of crashing with a raw VBA error.</p>
+<h2 id="1-worked-dataset">1. Worked dataset<a class="headerlink" href="#1-worked-dataset" title="Permanent link">&para;</a></h2>
+<p>Build this on <code>Sheet1</code>, <code>A1:B4</code>:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>A</th>
+<th>B</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1</strong></td>
+<td>Item</td>
+<td>Qty</td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td>Pen</td>
+<td>12</td>
+</tr>
+<tr>
+<td><strong>3</strong></td>
+<td>Book</td>
+<td>3</td>
+</tr>
+<tr>
+<td><strong>4</strong></td>
+<td>Bag</td>
+<td>25</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2-building-a-userform">2. Building a UserForm<a class="headerlink" href="#2-building-a-userform" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Alt+F11 → Insert → <strong>UserForm</strong>. From the Toolbox, add two Labels
+   ("Item:", "Qty:"), two TextBoxes (<code>txtItem</code>, <code>txtQty</code> — rename via
+   the Properties window's <code>(Name)</code> field), and a CommandButton
+   (<code>cmdAdd</code>, Caption "Add").</li>
+<li>Double-click <code>cmdAdd</code> to open its <code>Click</code> event and type:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Private Sub cmdAdd_Click()
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    Dim nextRow As Long
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    If txtItem.Value = "" Or txtQty.Value = "" Then
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        MsgBox "Both fields are required."
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        Exit Sub
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    End If
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    nextRow = Sheet1.Cells(Sheet1.Rows.Count, 1).End(xlUp).Row + 1
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    Sheet1.Cells(nextRow, 1).Value = txtItem.Value
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    Sheet1.Cells(nextRow, 2).Value = txtQty.Value
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    txtItem.Value = ""
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    txtQty.Value = ""
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>End Sub
+</code></pre></div></li>
+<li>Add a Sub elsewhere in a regular Module to launch the form:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Sub ShowAddItemForm()
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    UserForm1.Show
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>End Sub
+</code></pre></div></li>
+<li>Run <code>ShowAddItemForm</code>, enter <code>Stapler</code> / <code>15</code>, click Add. Row 5
+   should now read <code>Stapler, 15</code>. Leave both fields blank and click
+   Add again — the validation message must appear and no row should
+   be written.</li>
+</ol>
+<h2 id="3-structured-error-handling">3. Structured error handling<a class="headerlink" href="#3-structured-error-handling" title="Permanent link">&para;</a></h2>
+<ol>
+<li>A macro that divides by a user-entered quantity can crash on zero
+   or non-numeric input. Add error handling:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Sub SafeDivide()
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    Dim result As Double
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    On Error GoTo ErrHandler
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    result = 100 / Range("B2").Value
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    MsgBox "Result: " &amp; result
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    Exit Sub
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>ErrHandler:
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    MsgBox "Error " &amp; Err.Number &amp; ": " &amp; Err.Description
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>End Sub
+</code></pre></div></li>
+<li>With <code>B2 = 12</code>: <code>100/12 = 8.3333...</code>, message shows <code>Result:
+   8.33333333333333</code>. Manually change <code>B2</code> to <code>0</code> and re-run: <code>100/0</code>
+   raises runtime error 11 ("Division by zero"), and <code>On Error GoTo
+   ErrHandler</code> routes execution to the handler instead of crashing —
+   the message box should read <code>Error 11: Division by zero</code>.</li>
+<li><code>On Error Resume Next</code> is a looser alternative that skips the
+   failing line and continues — useful only when a failure on one line
+   is genuinely safe to ignore; <code>On Error GoTo Label</code> is preferred
+   whenever the error should be reported, not silently swallowed.</li>
+</ol>
+<h2 id="4-cleaning-up-with-on-error-goto-0">4. Cleaning up with <code>On Error GoTo 0</code><a class="headerlink" href="#4-cleaning-up-with-on-error-goto-0" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Reset error handling after a risky block so later errors in the
+   same Sub aren't silently caught by a handler meant for one specific
+   line:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Sub PartialProtection()
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    On Error GoTo ErrHandler
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    Dim x As Double
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    x = 100 / Range("B2").Value
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    On Error GoTo 0   ' error handling off from here on
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    Dim y As Double
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    y = 50 / Range("B3").Value   ' if this errors, it's unhandled
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>    MsgBox x &amp; " / " &amp; y
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>    Exit Sub
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>ErrHandler:
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>    MsgBox "Error in first calculation: " &amp; Err.Description
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>    Resume Next
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>End Sub
+</code></pre></div></li>
+<li>With <code>B2=12</code> (from Section 3) and <code>B3=3</code>: <code>x=8.3333</code>, <code>y=50/3=
+   16.6667</code>. Manual check confirms both values before trusting the
+   macro's message box.</li>
+</ol>
+<h2 id="cheat-sheet">Cheat sheet<a class="headerlink" href="#cheat-sheet" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Construct</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>UserForm1.Show</code></td>
+<td>Display a custom dialog</td>
+</tr>
+<tr>
+<td><code>TextBox.Value</code></td>
+<td>Read/write a form field</td>
+</tr>
+<tr>
+<td><code>On Error GoTo Label</code></td>
+<td>Route runtime errors to a handler</td>
+</tr>
+<tr>
+<td><code>Err.Number</code> / <code>Err.Description</code></td>
+<td>Inspect the error that was caught</td>
+</tr>
+<tr>
+<td><code>On Error Resume Next</code></td>
+<td>Skip the failing line (use sparingly)</td>
+</tr>
+<tr>
+<td><code>On Error GoTo 0</code></td>
+<td>Disable the active error handler from this point on</td>
+</tr>
+</tbody>
+</table>
+<h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
+<p>Add a <code>Cancel</code> CommandButton to the UserForm from Section 2 whose
+<code>Click</code> event runs <code>Unload Me</code>. Manually confirm: opening the form,
+typing text, then clicking Cancel closes the form without writing
+anything to <code>Sheet1</code> — the row count in column A should be unchanged
+from before the form was opened.</p>
 
 
 

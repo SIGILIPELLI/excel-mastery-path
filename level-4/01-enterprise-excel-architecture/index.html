@@ -1690,6 +1690,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 · Enterprise Excel Architecture
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1706,6 +1724,102 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-worked-dataset-a-linked-two-workbook-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Worked dataset — a linked two-workbook system
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-why-linked-workbooks-are-fragile-at-scale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Why linked workbooks are fragile at scale
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-a-single-data-model-instead-of-scattered-vlookups" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. A single Data Model instead of scattered VLOOKUPs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-naming-and-versioning-conventions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Naming and versioning conventions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-where-excels-architecture-hits-a-ceiling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Where Excel's architecture hits a ceiling
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cheat sheet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1991,6 +2105,91 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-worked-dataset-a-linked-two-workbook-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Worked dataset — a linked two-workbook system
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-why-linked-workbooks-are-fragile-at-scale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Why linked workbooks are fragile at scale
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-a-single-data-model-instead-of-scattered-vlookups" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. A single Data Model instead of scattered VLOOKUPs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-naming-and-versioning-conventions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Naming and versioning conventions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-where-excels-architecture-hits-a-ceiling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Where Excel's architecture hits a ceiling
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cheat sheet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2010,8 +2209,144 @@
 
 
 <h1 id="01-enterprise-excel-architecture">01 · Enterprise Excel Architecture<a class="headerlink" href="#01-enterprise-excel-architecture" title="Permanent link">&para;</a></h1>
-<p>This module is part of Level 4 · Master.</p>
-<p>More lessons are on the way — check back soon.</p>
+<p>This module covers how to structure Excel work so it survives contact
+with an organization: multi-workbook systems, linked workbooks versus
+a single Data Model, naming/versioning conventions, and where Excel's
+architecture starts to need a database or Power BI instead.</p>
+<h2 id="1-worked-dataset-a-linked-two-workbook-system">1. Worked dataset — a linked two-workbook system<a class="headerlink" href="#1-worked-dataset-a-linked-two-workbook-system" title="Permanent link">&para;</a></h2>
+<p>Simulate a common enterprise pattern: a <code>Source.xlsx</code> workbook holding
+raw data, and a <code>Report.xlsx</code> workbook that consumes it via an
+external reference. On <code>Source.xlsx</code>, sheet <code>Data</code>, <code>A1:B4</code>:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>A</th>
+<th>B</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1</strong></td>
+<td>Department</td>
+<td>Headcount</td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td>Engineering</td>
+<td>42</td>
+</tr>
+<tr>
+<td><strong>3</strong></td>
+<td>Sales</td>
+<td>18</td>
+</tr>
+<tr>
+<td><strong>4</strong></td>
+<td>Support</td>
+<td>11</td>
+</tr>
+</tbody>
+</table>
+<p>In <code>Report.xlsx</code>, <code>A1</code>:
+<code>=[Source.xlsx]Data!B2</code> → returns <code>42</code> while <code>Source.xlsx</code> is open, and
+continues to work closed as long as the file path does not move
+(Excel caches the last known value and re-reads on open).
+Total headcount in <code>A2</code>:
+<code>=SUM([Source.xlsx]Data!B2:B4)</code> → <code>42+18+11=71</code>.</p>
+<h2 id="2-why-linked-workbooks-are-fragile-at-scale">2. Why linked workbooks are fragile at scale<a class="headerlink" href="#2-why-linked-workbooks-are-fragile-at-scale" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Moving or renaming <code>Source.xlsx</code> breaks every external reference in
+  every consuming workbook — there is no central registry of who
+  depends on what.</li>
+<li><strong>Edit → Links → Update Values / Change Source</strong> lets you repair a
+  broken link, but this is manual, per-workbook, per-broken-link work
+  — it does not scale past a handful of files.</li>
+<li>The enterprise-safer alternative is a single workbook with <strong>Power
+  Query connections</strong> pulling from a shared source (a folder, database,
+  or SharePoint list) rather than cell-level links between <code>.xlsx</code>
+  files — Power Query re-resolves the connection on refresh rather than
+  caching a brittle cell reference.</li>
+</ul>
+<h2 id="3-a-single-data-model-instead-of-scattered-vlookups">3. A single Data Model instead of scattered VLOOKUPs<a class="headerlink" href="#3-a-single-data-model-instead-of-scattered-vlookups" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Load both <code>Department</code> and a second table, <code>Budget</code> (<code>A1:B4</code>:
+   <code>Department/Amount</code>, <code>Engineering/500000</code>, <code>Sales/200000</code>,
+   <code>Support/90000</code>) into <strong>Power Pivot</strong> as two separate tables.</li>
+<li>Create a relationship: <code>Department[Department] →
+   Budget[Department]</code>.</li>
+<li>A DAX measure, <code>Total Budget := SUM(Budget[Amount])</code>, can now be
+   sliced by any field from <code>Department</code> because of the relationship
+   — no <code>VLOOKUP</code> or helper column needed. This is the architectural
+   shift enterprise workbooks make: relationships in a Data Model
+   instead of lookup formulas copied across every report sheet.</li>
+</ol>
+<h2 id="4-naming-and-versioning-conventions">4. Naming and versioning conventions<a class="headerlink" href="#4-naming-and-versioning-conventions" title="Permanent link">&para;</a></h2>
+<ul>
+<li>File naming: <code>ProjectName_YYYYMMDD_v#.xlsx</code> (e.g.
+  <code>HeadcountReport_20260831_v3.xlsx</code>) sorts correctly by date and makes
+  the latest version unambiguous in a shared folder.</li>
+<li>Sheet naming: prefix internal working sheets with <code>_</code> (e.g.
+  <code>_calc</code>, <code>_lookup</code>) and hide them, so only <code>Dashboard</code> and <code>Inputs</code>
+  are visible to a business user opening the file.</li>
+<li>Named ranges over hardcoded addresses: <code>=SUM(Revenue)</code> survives a
+  row insertion; <code>=SUM(C2:C50)</code> does not automatically extend.</li>
+</ul>
+<h2 id="5-where-excels-architecture-hits-a-ceiling">5. Where Excel's architecture hits a ceiling<a class="headerlink" href="#5-where-excels-architecture-hits-a-ceiling" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>Enterprise fix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Multiple people editing the same file causes overwritten changes</td>
+<td>Move to a shared Data Model source (SQL/SharePoint list) with each person's Excel just querying it</td>
+</tr>
+<tr>
+<td>A workbook exceeds ~50MB or takes seconds to recalculate</td>
+<td>Power Pivot's compressed columnar Data Model, or move the heavy table to a database and query it with Power Query</td>
+</tr>
+<tr>
+<td>The same KPI is defined slightly differently in five workbooks</td>
+<td>Centralize the definition as one DAX measure in one shared Power Pivot model, then have every report reference that model</td>
+</tr>
+</tbody>
+</table>
+<h2 id="cheat-sheet">Cheat sheet<a class="headerlink" href="#cheat-sheet" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>External reference (<code>[Book.xlsx]Sheet!Cell</code>)</td>
+<td>Pull a live value from another workbook</td>
+</tr>
+<tr>
+<td>Power Query connection</td>
+<td>Refreshable pull from a shared source, more robust than links</td>
+</tr>
+<tr>
+<td>Power Pivot relationship</td>
+<td>Replace VLOOKUP chains with a queryable Data Model</td>
+</tr>
+<tr>
+<td><code>_</code>-prefixed hidden sheets</td>
+<td>Separate internal calc sheets from the user-facing view</td>
+</tr>
+</tbody>
+</table>
+<h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
+<p>Using the <code>Department</code>/<code>Budget</code> relationship above, write a DAX measure
+<code>Budget per Head := DIVIDE([Total Budget], [Total Headcount])</code> (define
+<code>Total Headcount := SUM(Department[Headcount])</code> first) and confirm the
+overall ratio is <code>790000/71 ≈ 11126.76</code>.</p>
 
 
 

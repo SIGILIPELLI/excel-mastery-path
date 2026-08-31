@@ -970,6 +970,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 · PivotTables Deep Dive
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -986,6 +1004,113 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-worked-dataset-reused" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Worked dataset (reused)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-building-the-pivottable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Building the PivotTable
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-multiple-value-fields-different-summary-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Multiple value fields, different summary types
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-grouping-rows-month-as-a-nested-row" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Grouping rows: Month as a nested row
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-calculated-field" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Calculated field
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-slicers-for-interactive-filtering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Slicers for interactive filtering
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cheat sheet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1991,6 +2116,102 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-worked-dataset-reused" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Worked dataset (reused)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-building-the-pivottable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Building the PivotTable
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-multiple-value-fields-different-summary-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Multiple value fields, different summary types
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-grouping-rows-month-as-a-nested-row" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Grouping rows: Month as a nested row
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-calculated-field" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Calculated field
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-slicers-for-interactive-filtering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Slicers for interactive filtering
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cheat sheet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2010,8 +2231,104 @@
 
 
 <h1 id="02-pivottables-deep-dive">02 · PivotTables Deep Dive<a class="headerlink" href="#02-pivottables-deep-dive" title="Permanent link">&para;</a></h1>
-<p>This module is part of Level 2 · Intermediate.</p>
-<p>More lessons are on the way — check back soon.</p>
+<p>Level 1 built a basic PivotTable (drag a field to Rows, one to Values).
+This module goes deeper: calculated fields, grouping, multiple value
+fields with different summary types, and slicers for interactive
+filtering — using the same <code>Sales</code> dataset from Module 1.</p>
+<h2 id="1-worked-dataset-reused">1. Worked dataset (reused)<a class="headerlink" href="#1-worked-dataset-reused" title="Permanent link">&para;</a></h2>
+<p>Same table as Module 1, on sheet <code>Sales</code>, <code>A1:D11</code> (Region, Month, Rep,
+Amount). Manual totals, verified by hand-adding the rows, for reference
+throughout this module: East total = <code>1500+900+1500...</code> — recomputed
+precisely below per pivot.</p>
+<p>Full data:
+East/Jan/Alan/1200, East/Feb/Alan/900, East/Mar/Priya/1500,
+West/Jan/Priya/800, West/Feb/Sam/1100, West/Mar/Sam/1300,
+East/Mar/Alan/700, West/Jan/Sam/950, East/Jan/Priya/600,
+West/Mar/Priya/1000.</p>
+<p>Manual region totals: East = <code>1200+900+1500+700+600 = 4900</code>.
+West = <code>800+1100+1300+950+1000 = 5150</code>. Grand total = <code>10050</code>.</p>
+<h2 id="2-building-the-pivottable">2. Building the PivotTable<a class="headerlink" href="#2-building-the-pivottable" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Select <code>A1:D11</code> &gt; <strong>Insert &gt; PivotTable</strong> &gt; New Worksheet.</li>
+<li>Drag <code>Region</code> to <strong>Rows</strong>, <code>Amount</code> to <strong>Values</strong> (defaults to Sum).</li>
+<li>The PivotTable should show East <code>4900</code> and West <code>5150</code>, matching the
+   hand-calculated totals in Section 1 exactly — this cross-check is the
+   quickest way to catch a mis-selected data range.</li>
+</ol>
+<h2 id="3-multiple-value-fields-different-summary-types">3. Multiple value fields, different summary types<a class="headerlink" href="#3-multiple-value-fields-different-summary-types" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Drag <code>Amount</code> to <strong>Values</strong> a second time (now two Amount columns).</li>
+<li>Right-click the second one &gt; <strong>Value Field Settings</strong> &gt; change
+   <strong>Sum</strong> to <strong>Average</strong>. Rename it "Avg Amount" in the same dialog.</li>
+<li>For East: <code>4900 / 5 rows = 980</code>. For West: <code>5150 / 5 rows = 1030</code>.
+   Confirm the PivotTable's "Avg Amount" column shows <code>980</code> and <code>1030</code>.</li>
+<li>Add a third value field set to <strong>Count</strong> — should show <code>5</code> for both
+   regions (5 transactions each), confirming row counts by hand.</li>
+</ol>
+<h2 id="4-grouping-rows-month-as-a-nested-row">4. Grouping rows: Month as a nested row<a class="headerlink" href="#4-grouping-rows-month-as-a-nested-row" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Drag <code>Month</code> to <strong>Rows</strong>, below <code>Region</code> (Rows box now has Region then
+   Month, in that order — order matters, it controls nesting).</li>
+<li>Expand <code>East</code> — it should break into Jan (<code>1200+600=1800</code>), Feb
+   (<code>900</code>), Mar (<code>1500+700=2200</code>). Sum: <code>1800+900+2200=4900</code>, matching the
+   East grand total from Section 2.</li>
+</ol>
+<h2 id="5-calculated-field">5. Calculated field<a class="headerlink" href="#5-calculated-field" title="Permanent link">&para;</a></h2>
+<ol>
+<li>With the PivotTable selected: <strong>PivotTable Analyze &gt; Fields, Items &amp;
+   Sets &gt; Calculated Field</strong>.</li>
+<li>Name: <code>Bonus</code>, Formula: <code>=Amount*0.1</code>.</li>
+<li>Add <code>Bonus</code> to Values. For East (<code>4900</code>), Bonus should show <code>490.0</code>
+   (<code>4900 * 0.1</code>). This is computed on the pivot's aggregated Amount, not
+   per source row, so it is safest with <code>SUM</code>-based pivots like this one.</li>
+</ol>
+<h2 id="6-slicers-for-interactive-filtering">6. Slicers for interactive filtering<a class="headerlink" href="#6-slicers-for-interactive-filtering" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>PivotTable Analyze &gt; Insert Slicer</strong> &gt; check <code>Rep</code>.</li>
+<li>Click "Alan" on the slicer — the pivot filters to Alan's rows only:
+   Amount total should be <code>1200+900+700=2800</code>. Click "Priya" instead —
+   total should be <code>1500+800+600+1000=3900</code>. These two numbers plus Sam's
+   remaining <code>1100+1300+950=3350</code> should sum back to the grand total
+   <code>2800+3900+3350=10050</code>, matching Section 1 — a good sanity check that
+   the slicer isn't silently excluding rows.</li>
+</ol>
+<h2 id="cheat-sheet">Cheat sheet<a class="headerlink" href="#cheat-sheet" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Where</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Add a 2nd value field</td>
+<td>Drag field to Values again, change summary type</td>
+</tr>
+<tr>
+<td>Nest rows</td>
+<td>Drag second field below the first in Rows</td>
+</tr>
+<tr>
+<td>Custom formula per pivot</td>
+<td>PivotTable Analyze &gt; Calculated Field</td>
+</tr>
+<tr>
+<td>Interactive filter widget</td>
+<td>PivotTable Analyze &gt; Insert Slicer</td>
+</tr>
+<tr>
+<td>Change Sum→Average/Count</td>
+<td>Right-click value &gt; Value Field Settings</td>
+</tr>
+</tbody>
+</table>
+<h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
+<p>Build the PivotTable above with Region and Month nested rows, three value
+fields (Sum, Average, Count of Amount), a <code>Bonus</code> calculated field at 10%,
+and a <code>Rep</code> slicer. Click through each Rep on the slicer and confirm the
+three totals (Alan <code>2800</code>, Priya <code>3900</code>, Sam <code>3350</code>) sum to the grand
+total <code>10050</code>.</p>
 
 
 

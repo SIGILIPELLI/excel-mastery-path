@@ -1166,6 +1166,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    09 · Intro to Recording Macros
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1182,6 +1200,102 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-worked-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Worked dataset
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-recording-a-formatting-macro" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Recording a formatting macro
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-absolute-vs-relative-reference-recording" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Absolute vs. relative reference recording
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-a-calculation-macro" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. A calculation macro
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-assigning-a-macro-to-a-button" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Assigning a macro to a button
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cheat sheet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1991,6 +2105,91 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-worked-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Worked dataset
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-recording-a-formatting-macro" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Recording a formatting macro
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-absolute-vs-relative-reference-recording" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Absolute vs. relative reference recording
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-a-calculation-macro" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. A calculation macro
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-assigning-a-macro-to-a-button" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Assigning a macro to a button
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cheat sheet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2010,8 +2209,155 @@
 
 
 <h1 id="09-intro-to-recording-macros">09 · Intro to Recording Macros<a class="headerlink" href="#09-intro-to-recording-macros" title="Permanent link">&para;</a></h1>
-<p>This module is part of Level 2 · Intermediate.</p>
-<p>More lessons are on the way — check back soon.</p>
+<p>A macro is a recorded sequence of actions that Excel can replay on
+demand. The Macro Recorder writes real VBA code behind the scenes —
+this module records simple macros, inspects the generated code, and
+covers relative vs. absolute references and assigning a macro to a
+button.</p>
+<h2 id="1-worked-dataset">1. Worked dataset<a class="headerlink" href="#1-worked-dataset" title="Permanent link">&para;</a></h2>
+<p>Build this on a sheet named <code>Data</code>, <code>A1:C5</code>:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1</strong></td>
+<td>Item</td>
+<td>Qty</td>
+<td>Price</td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td>Pen</td>
+<td>10</td>
+<td>2</td>
+</tr>
+<tr>
+<td><strong>3</strong></td>
+<td>Book</td>
+<td>4</td>
+<td>15</td>
+</tr>
+<tr>
+<td><strong>4</strong></td>
+<td>Bag</td>
+<td>2</td>
+<td>25</td>
+</tr>
+<tr>
+<td><strong>5</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="2-recording-a-formatting-macro">2. Recording a formatting macro<a class="headerlink" href="#2-recording-a-formatting-macro" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Developer → <strong>Record Macro</strong>. Name it <code>HighlightHeader</code>, shortcut
+   <code>Ctrl+Shift+H</code>, store in <strong>This Workbook</strong>.</li>
+<li>While recording: select <code>A1:C1</code>, apply bold and a light-blue fill
+   (Home → Fill Color).</li>
+<li>Developer → <strong>Stop Recording</strong>.</li>
+<li>Developer → <strong>Macros</strong> → select <code>HighlightHeader</code> → <strong>Edit</strong> to
+   open the VBA editor and inspect the generated code. It will
+   resemble:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Sub HighlightHeader()
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    Range("A1:C1").Select
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    Selection.Font.Bold = True
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    With Selection.Interior
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        .Pattern = xlSolid
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        .Color = RGB(221, 235, 247)
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    End With
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>End Sub
+</code></pre></div></li>
+<li>This confirms the recorder captured exactly two user actions
+   (select range, then two format changes) as three lines of VBA.</li>
+</ol>
+<h2 id="3-absolute-vs-relative-reference-recording">3. Absolute vs. relative reference recording<a class="headerlink" href="#3-absolute-vs-relative-reference-recording" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Developer has a toggle <strong>Use Relative References</strong>. With it
+   <strong>off</strong> (default), a macro recorded starting from <code>A1</code> always
+   selects <code>A1:C1</code> again, regardless of which cell is active when the
+   macro runs.</li>
+<li>Turn <strong>Use Relative References</strong> on, then re-record: click <code>A2</code>
+   first, then select <code>A2:C2</code> and apply italic. Stop recording.</li>
+<li>Now if the active cell is <code>A3</code> and you run this macro, it applies
+   italic to <code>A3:C3</code> instead — because it was recorded relative to the
+   starting cell, not to the fixed address <code>A2</code>. This distinction
+   matters whenever a macro should act on "the row I clicked," not a
+   hardcoded row.</li>
+</ol>
+<h2 id="4-a-calculation-macro">4. A calculation macro<a class="headerlink" href="#4-a-calculation-macro" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Record a new macro <code>AddTotalColumn</code>: in <code>D1</code> type <code>Total</code>, in <code>D2</code>
+   type <code>=B2*C2</code>, fill down to <code>D4</code>, then select <code>D2:D4</code> and apply
+   currency format.</li>
+<li>Manual check on the generated formulas: <code>D2 = 10*2 = 20</code>,
+   <code>D3 = 4*15 = 60</code>, <code>D4 = 2*25 = 50</code>.</li>
+<li>Inspect the recorded VBA — the <code>.FillDown</code> and
+   <code>.NumberFormat = "$#,##0.00"</code> lines are recognizable even without
+   writing VBA by hand, which is the main value of recording: it's a
+   fast way to discover the property names and methods VBA uses for a
+   given manual action, useful groundwork before Level 3's hand-written
+   VBA.</li>
+</ol>
+<h2 id="5-assigning-a-macro-to-a-button">5. Assigning a macro to a button<a class="headerlink" href="#5-assigning-a-macro-to-a-button" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Developer → Insert → Form Controls → <strong>Button</strong>. Draw it anywhere,
+   then in the Assign Macro dialog choose <code>HighlightHeader</code>.</li>
+<li>Clicking the button now re-runs the recorded macro — this is the
+   simplest way to give a non-technical user a one-click action
+   without teaching them the Developer tab or keyboard shortcuts.</li>
+</ol>
+<h2 id="cheat-sheet">Cheat sheet<a class="headerlink" href="#cheat-sheet" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Path</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Record a macro</td>
+<td>Developer → Record Macro</td>
+</tr>
+<tr>
+<td>Stop recording</td>
+<td>Developer → Stop Recording</td>
+</tr>
+<tr>
+<td>Toggle relative recording</td>
+<td>Developer → Use Relative References</td>
+</tr>
+<tr>
+<td>View/edit recorded code</td>
+<td>Developer → Macros → Edit</td>
+</tr>
+<tr>
+<td>Run a macro</td>
+<td>Developer → Macros → Run, or assigned shortcut/button</td>
+</tr>
+<tr>
+<td>Attach to a button</td>
+<td>Insert Form Control Button → Assign Macro</td>
+</tr>
+</tbody>
+</table>
+<h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
+<p>Record a macro <code>FormatTotals</code> that selects <code>D2:D4</code> (after building the
+Total column from Section 4), applies bold, and adds a border. Run it
+via <code>Ctrl+Shift+</code> (your chosen shortcut) and confirm visually that all
+three total cells (<code>20, 60, 50</code>) are now bold with a border, then open
+the VBA editor and read the generated <code>Sub</code> line by line to identify
+which line corresponds to the border vs. the bold.</p>
 
 
 

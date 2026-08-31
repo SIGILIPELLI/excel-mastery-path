@@ -1054,6 +1054,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05 · Power Query Basics
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1070,6 +1088,102 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-worked-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Worked dataset
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-load-into-power-query" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Load into Power Query
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-cleaning-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Cleaning steps
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-grouping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Grouping
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-load-back-to-excel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Load back to Excel
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cheat sheet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1991,6 +2105,91 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-worked-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Worked dataset
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-load-into-power-query" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Load into Power Query
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-cleaning-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Cleaning steps
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-grouping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Grouping
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-load-back-to-excel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Load back to Excel
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cheat sheet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2010,8 +2209,158 @@
 
 
 <h1 id="05-power-query-basics">05 · Power Query Basics<a class="headerlink" href="#05-power-query-basics" title="Permanent link">&para;</a></h1>
-<p>This module is part of Level 2 · Intermediate.</p>
-<p>More lessons are on the way — check back soon.</p>
+<p>Power Query (Data → Get &amp; Transform) is Excel's tool for importing,
+cleaning, and reshaping data through a recorded, repeatable set of
+steps — instead of manual copy/paste cleanup you'd have to redo every
+time the source data refreshes.</p>
+<h2 id="1-worked-dataset">1. Worked dataset<a class="headerlink" href="#1-worked-dataset" title="Permanent link">&para;</a></h2>
+<p>Build this table on a sheet named <code>Raw</code>, <code>A1:C7</code>, then select it and
+<strong>Insert → Table</strong> (name it <code>RawData</code>):</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1</strong></td>
+<td>name</td>
+<td>region</td>
+<td>sales</td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td>alan</td>
+<td>east</td>
+<td>1200</td>
+</tr>
+<tr>
+<td><strong>3</strong></td>
+<td>PRIYA</td>
+<td>East</td>
+<td>900</td>
+</tr>
+<tr>
+<td><strong>4</strong></td>
+<td>sam</td>
+<td>WEST</td>
+<td>1500</td>
+</tr>
+<tr>
+<td><strong>5</strong></td>
+<td>Alan</td>
+<td>east</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>6</strong></td>
+<td>priya</td>
+<td>East</td>
+<td>800</td>
+</tr>
+<tr>
+<td><strong>7</strong></td>
+<td>Sam</td>
+<td>west</td>
+<td>1100</td>
+</tr>
+</tbody>
+</table>
+<p>Note the inconsistent capitalization and one blank sales cell — this
+is realistic messy source data.</p>
+<h2 id="2-load-into-power-query">2. Load into Power Query<a class="headerlink" href="#2-load-into-power-query" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Click any cell inside <code>RawData</code>, then Data → From Table/Range. This
+   opens the Power Query Editor with the applied step <strong>Source</strong>
+   already recorded.</li>
+<li>Every action taken from here on is recorded as a numbered step in
+   the <strong>Applied Steps</strong> pane on the right — this is what makes Power
+   Query repeatable: re-running the query on refreshed data replays
+   every step automatically.</li>
+</ol>
+<h2 id="3-cleaning-steps">3. Cleaning steps<a class="headerlink" href="#3-cleaning-steps" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Select the <code>name</code> column header → Transform → Format →
+   <strong>Capitalize Each Word</strong> (or Lowercase then Capitalize). This
+   normalizes <code>alan</code>/<code>Alan</code>/<code>PRIYA</code> inconsistencies to <code>Alan</code>, <code>Priya</code>.</li>
+<li>Select the <code>region</code> column → Transform → Format → <strong>UPPERCASE</strong>,
+   giving <code>EAST</code>/<code>WEST</code> consistently, or Lowercase for <code>east</code>/<code>west</code> —
+   pick one convention and apply it everywhere so <code>East</code> and <code>east</code>
+   are no longer treated as two different groups downstream.</li>
+<li>Select the <code>sales</code> column → right-click header → <strong>Replace
+   Values</strong>, replace blank/null with <code>0</code> (or use Transform → Fill →
+   Down if a blank should inherit the row above's value — here a
+   missing sales figure should become <code>0</code>, not inherit a neighbor's
+   value, so use Replace Values, <code>null</code> → <code>0</code>).</li>
+<li>Verify: after cleaning, row 5 (originally <code>Alan, east, &lt;blank&gt;</code>)
+   should show <code>Alan, EAST, 0</code>.</li>
+</ol>
+<h2 id="4-grouping">4. Grouping<a class="headerlink" href="#4-grouping" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Select the <code>region</code> column → Transform → <strong>Group By</strong>. Group by
+   <code>region</code>, New column name <code>TotalSales</code>, Operation <code>Sum</code>, Column
+   <code>sales</code>.</li>
+<li>Manual check: EAST rows are 1200, 900, 0, 800 → sum <code>2900</code>. WEST
+   rows are 1500, 1100 → sum <code>2600</code>. The grouped table should show two
+   rows: <code>EAST, 2900</code> and <code>WEST, 2600</code>.</li>
+</ol>
+<h2 id="5-load-back-to-excel">5. Load back to Excel<a class="headerlink" href="#5-load-back-to-excel" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Home → <strong>Close &amp; Load</strong> (or <strong>Close &amp; Load To…</strong> to choose a new
+   sheet or PivotTable). This writes the cleaned/grouped result as a
+   new table on a new sheet, linked to the query.</li>
+<li>Refresh: edit a value back in <code>RawData</code> (e.g. change Sam's West
+   sale from 1100 to 1300), then Data → <strong>Refresh All</strong>. The query
+   re-runs every recorded step automatically and the grouped WEST
+   total updates from <code>2600</code> to <code>2800</code> — this is the core value of
+   Power Query over manual cleanup: the transformation logic is saved
+   and replayed, not repeated by hand.</li>
+</ol>
+<h2 id="cheat-sheet">Cheat sheet<a class="headerlink" href="#cheat-sheet" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Ribbon path</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Load a table into Power Query</td>
+<td>Data → From Table/Range</td>
+</tr>
+<tr>
+<td>Fix text casing</td>
+<td>Transform → Format → Capitalize/UPPER/lower</td>
+</tr>
+<tr>
+<td>Replace blanks/errors</td>
+<td>Right-click column → Replace Values</td>
+</tr>
+<tr>
+<td>Aggregate by category</td>
+<td>Transform → Group By</td>
+</tr>
+<tr>
+<td>Send result back to a sheet</td>
+<td>Home → Close &amp; Load</td>
+</tr>
+<tr>
+<td>Re-run after source changes</td>
+<td>Data → Refresh All</td>
+</tr>
+</tbody>
+</table>
+<h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
+<p>Add a <code>discount</code> column to <code>RawData</code> with values <code>0.1, 0.05, 0, 0.1,
+0.05, 0</code> for rows 2–7, load it through Power Query, add a custom
+column <code>netSales = sales * (1 - discount)</code>, then Group By <code>region</code>
+summing <code>netSales</code>. Manually verify EAST: <code>1200*0.9=1080</code>,
+<code>900*0.95=855</code>, <code>0*1=0</code>, <code>800*0.95=760</code> → sum <code>2695</code>.</p>
 
 
 

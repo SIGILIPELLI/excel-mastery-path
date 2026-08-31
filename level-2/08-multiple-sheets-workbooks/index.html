@@ -1138,6 +1138,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08 · Working with Multiple Sheets & Workbooks
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1154,6 +1172,102 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-worked-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Worked dataset
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-3-d-references-sum-across-sheets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 3-D references (sum across sheets)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-cross-sheet-references-single-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Cross-sheet references (single sheet)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-cross-workbook-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Cross-workbook references
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-grouping-sheets-for-identical-edits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Grouping sheets for identical edits
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cheat sheet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1991,6 +2105,91 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-worked-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Worked dataset
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-3-d-references-sum-across-sheets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 3-D references (sum across sheets)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-cross-sheet-references-single-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Cross-sheet references (single sheet)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-cross-workbook-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Cross-workbook references
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-grouping-sheets-for-identical-edits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Grouping sheets for identical edits
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cheat sheet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2010,8 +2209,139 @@
 
 
 <h1 id="08-working-with-multiple-sheets-workbooks">08 · Working with Multiple Sheets &amp; Workbooks<a class="headerlink" href="#08-working-with-multiple-sheets-workbooks" title="Permanent link">&para;</a></h1>
-<p>This module is part of Level 2 · Intermediate.</p>
-<p>More lessons are on the way — check back soon.</p>
+<p>Real workbooks split data across sheets (one per month, region, or
+department) and sometimes across separate files entirely. This module
+covers 3-D references, cross-sheet and cross-workbook formulas,
+consolidation, and keeping links intact when files move.</p>
+<h2 id="1-worked-dataset">1. Worked dataset<a class="headerlink" href="#1-worked-dataset" title="Permanent link">&para;</a></h2>
+<p>Create three sheets named <code>Jan</code>, <code>Feb</code>, <code>Mar</code>, each with the identical
+layout <code>A1:B4</code>:</p>
+<p><code>Jan</code>:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>A</th>
+<th>B</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1</strong></td>
+<td>Product</td>
+<td>Sales</td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td>Widget</td>
+<td>500</td>
+</tr>
+<tr>
+<td><strong>3</strong></td>
+<td>Gadget</td>
+<td>300</td>
+</tr>
+<tr>
+<td><strong>4</strong></td>
+<td>Gizmo</td>
+<td>200</td>
+</tr>
+</tbody>
+</table>
+<p><code>Feb</code>: Widget <code>600</code>, Gadget <code>350</code>, Gizmo <code>150</code>.
+<code>Mar</code>: Widget <code>550</code>, Gadget <code>400</code>, Gizmo <code>250</code>.</p>
+<p>Add a fourth sheet <code>Summary</code>.</p>
+<h2 id="2-3-d-references-sum-across-sheets">2. 3-D references (sum across sheets)<a class="headerlink" href="#2-3-d-references-sum-across-sheets" title="Permanent link">&para;</a></h2>
+<ol>
+<li>In <code>Summary!B2</code> (Widget total), type:
+   <code>=SUM(Jan:Mar!B2)</code>
+   A 3-D reference (<code>Jan:Mar!B2</code>) sums cell <code>B2</code> across every sheet
+   from <code>Jan</code> through <code>Mar</code> inclusive — including any sheet later
+   inserted between them.</li>
+<li>Manual check: Widget sales are 500 + 600 + 550 = <code>1650</code>. <code>B2</code>
+   should show <code>1650</code>.</li>
+<li>Fill down for Gadget (<code>Jan:Mar!B3</code> → <code>300+350+400 = 1050</code>) and
+   Gizmo (<code>Jan:Mar!B4</code> → <code>200+150+250 = 600</code>).</li>
+</ol>
+<h2 id="3-cross-sheet-references-single-sheet">3. Cross-sheet references (single sheet)<a class="headerlink" href="#3-cross-sheet-references-single-sheet" title="Permanent link">&para;</a></h2>
+<ol>
+<li>In <code>Summary!D2</code>, reference just February's Widget figure directly:
+   <code>=Feb!B2</code>
+   This returns <code>600</code> — a plain pointer to one cell on one other
+   sheet, unlike the 3-D reference which aggregates across a sheet
+   range.</li>
+<li>Use this pattern to build a month-by-month comparison table
+   without re-typing data: <code>Summary!D2:F4</code> referencing <code>Jan!B2:B4</code>,
+   <code>Feb!B2:B4</code>, <code>Mar!B2:B4</code> respectively for each product row.</li>
+</ol>
+<h2 id="4-cross-workbook-references">4. Cross-workbook references<a class="headerlink" href="#4-cross-workbook-references" title="Permanent link">&para;</a></h2>
+<ol>
+<li>With both workbooks open, a formula referencing another open file
+   looks like: <code>='[Budget2026.xlsx]Jan'!$B$2</code> (external workbook name
+   in square brackets, sheet name, then cell).</li>
+<li>If the source workbook is closed, Excel keeps the full path:
+   <code>='C:\Reports\[Budget2026.xlsx]Jan'!$B$2</code> — this still works and
+   updates when the source file changes, but breaks if the file is
+   moved or renamed. Use <strong>Data → Edit Links</strong> to repoint broken links
+   after a file move, rather than manually rewriting every formula.</li>
+<li>Best practice: keep workbooks that link to each other in the same
+   folder, and avoid renaming source files once other workbooks depend
+   on them.</li>
+</ol>
+<h2 id="5-grouping-sheets-for-identical-edits">5. Grouping sheets for identical edits<a class="headerlink" href="#5-grouping-sheets-for-identical-edits" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Click the <code>Jan</code> tab, then Shift-click the <code>Mar</code> tab to select all
+   three as a group (tabs turn white, title bar shows <code>[Group]</code>).</li>
+<li>Any edit made now — e.g. typing a header in <code>A1</code> or applying bold
+   formatting — applies identically to <code>Jan</code>, <code>Feb</code>, and <code>Mar</code>
+   simultaneously. This is efficient for applying the same formatting
+   or a new formula across many structurally identical sheets, but
+   dangerous if forgotten: right-click a tab → <strong>Ungroup Sheets</strong> as
+   soon as the batch edit is done, or a later "one-sheet" edit will
+   silently overwrite all grouped sheets.</li>
+</ol>
+<h2 id="cheat-sheet">Cheat sheet<a class="headerlink" href="#cheat-sheet" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Reference type</th>
+<th>Syntax</th>
+<th>Behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3-D reference</td>
+<td><code>=SUM(Jan:Mar!B2)</code></td>
+<td>Aggregates one cell across a sheet range</td>
+</tr>
+<tr>
+<td>Cross-sheet</td>
+<td><code>=Feb!B2</code></td>
+<td>Points to one cell on one other sheet</td>
+</tr>
+<tr>
+<td>Cross-workbook (open)</td>
+<td><code>='[File.xlsx]Sheet'!B2</code></td>
+<td>Live link while both files open</td>
+</tr>
+<tr>
+<td>Cross-workbook (closed)</td>
+<td><code>='C:\path\[File.xlsx]Sheet'!B2</code></td>
+<td>Full path required</td>
+</tr>
+<tr>
+<td>Fix broken links</td>
+<td>Data → Edit Links → Change Source</td>
+<td>Repoints after a file move/rename</td>
+</tr>
+</tbody>
+</table>
+<h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
+<p>Add a <code>Summary!B5</code> total-of-totals: <code>=SUM(B2:B4)</code> and confirm it
+equals <code>1650+1050+600=3300</code>, then cross-check that same figure with a
+single 3-D reference over the full range: <code>=SUM(Jan:Mar!B2:B4)</code> — both
+should return <code>3300</code>.</p>
 
 
 

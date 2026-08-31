@@ -1858,6 +1858,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07 · Building Excel-Based Tools for Teams
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1874,6 +1892,102 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-worked-dataset-a-shared-budget-request-form" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Worked dataset — a shared budget request form
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-protecting-structure-while-keeping-inputs-editable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Protecting structure while keeping inputs editable
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-data-validation-for-consistent-input" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Data validation for consistent input
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-packaging-shared-logic-as-an-add-in" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Packaging shared logic as an Add-in
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-co-authoring-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Co-authoring considerations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cheat sheet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1991,6 +2105,91 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-worked-dataset-a-shared-budget-request-form" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Worked dataset — a shared budget request form
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-protecting-structure-while-keeping-inputs-editable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Protecting structure while keeping inputs editable
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-data-validation-for-consistent-input" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Data validation for consistent input
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-packaging-shared-logic-as-an-add-in" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Packaging shared logic as an Add-in
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-co-authoring-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Co-authoring considerations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cheat sheet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2010,8 +2209,137 @@
 
 
 <h1 id="07-building-excel-based-tools-for-teams">07 · Building Excel-Based Tools for Teams<a class="headerlink" href="#07-building-excel-based-tools-for-teams" title="Permanent link">&para;</a></h1>
-<p>This module is part of Level 4 · Master.</p>
-<p>More lessons are on the way — check back soon.</p>
+<p>This module covers packaging a workbook so a team can use it safely and
+consistently: protected structure, an Add-in for shared custom
+functions, and a co-authoring-friendly layout.</p>
+<h2 id="1-worked-dataset-a-shared-budget-request-form">1. Worked dataset — a shared budget request form<a class="headerlink" href="#1-worked-dataset-a-shared-budget-request-form" title="Permanent link">&para;</a></h2>
+<p>Sheet <code>Form</code>, <code>A1:B5</code>:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>A</th>
+<th>B</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1</strong></td>
+<td>Requestor</td>
+<td>(blank, to be filled in)</td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td>Department</td>
+<td>(blank)</td>
+</tr>
+<tr>
+<td><strong>3</strong></td>
+<td>Amount Requested</td>
+<td>(blank)</td>
+</tr>
+<tr>
+<td><strong>4</strong></td>
+<td>Approved?</td>
+<td><code>=IF(B3&lt;=5000,"Auto-approved","Needs manager sign-off")</code></td>
+</tr>
+<tr>
+<td><strong>5</strong></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>With <code>B3=3200</code>, <code>B4</code> reads <code>"Auto-approved"</code>; with <code>B3=7500</code>, <code>B4</code>
+reads <code>"Needs manager sign-off"</code> — the rule cell is the shared piece
+of logic every requester relies on without needing to know the
+threshold.</p>
+<h2 id="2-protecting-structure-while-keeping-inputs-editable">2. Protecting structure while keeping inputs editable<a class="headerlink" href="#2-protecting-structure-while-keeping-inputs-editable" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Select <code>B1:B3</code> (the only cells a team member should edit) →
+   <strong>Format Cells → Protection → uncheck Locked</strong>.</li>
+<li><strong>Review → Protect Sheet</strong> (optionally with a password) locks every
+   <em>other</em> cell, including the <code>B4</code> formula — a user can fill in the
+   form but cannot accidentally overwrite the approval rule.</li>
+<li>This is the standard shared-tool pattern: unlock only the input
+   cells before protecting the sheet, since every cell is Locked by
+   default.</li>
+</ol>
+<h2 id="3-data-validation-for-consistent-input">3. Data validation for consistent input<a class="headerlink" href="#3-data-validation-for-consistent-input" title="Permanent link">&para;</a></h2>
+<ol>
+<li><code>B2</code> (Department): <strong>Data → Data Validation → List</strong> →
+   <code>Engineering,Sales,Support,Finance</code> — restricts entries to a fixed
+   set so downstream <code>SUMIFS</code>/PivotTables aggregating by department
+   never split "Sales" and "sales" into two categories.</li>
+<li><code>B3</code> (Amount): <strong>Data Validation → Decimal → greater than 0</strong> —
+   prevents a blank or negative submission from silently producing a
+   nonsensical <code>Approved?</code> result.</li>
+</ol>
+<h2 id="4-packaging-shared-logic-as-an-add-in">4. Packaging shared logic as an Add-in<a class="headerlink" href="#4-packaging-shared-logic-as-an-add-in" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Write a reusable custom function in a standard VBA module, e.g.:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Function ApprovalStatus(amount As Double) As String
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    If amount &lt;= 5000 Then
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        ApprovalStatus = "Auto-approved"
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    Else
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        ApprovalStatus = "Needs manager sign-off"
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    End If
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>End Function
+</code></pre></div></li>
+<li>Save the workbook containing this module as an <strong>Excel Add-in
+   (.xlam)</strong> (<strong>File → Save As → Excel Add-In</strong>).</li>
+<li>Once loaded (<strong>File → Options → Add-ins → Manage: Excel Add-ins →
+   Browse</strong>) by every team member, <code>=ApprovalStatus(B3)</code> is available
+   in <em>any</em> workbook they open — this is how a team standardizes a
+   business rule once instead of pasting the same <code>IF</code> formula into
+   every new request form, and a future rule change (say, raising the
+   threshold to <code>7500</code>) only needs to be made in the one <code>.xlam</code> file.</li>
+</ol>
+<h2 id="5-co-authoring-considerations">5. Co-authoring considerations<a class="headerlink" href="#5-co-authoring-considerations" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Store the shared workbook in OneDrive/SharePoint, not a local drive,
+  so <strong>Co-authoring</strong> allows multiple people to edit simultaneously
+  with per-cell change tracking, instead of the older "locked for
+  editing by another user" exclusive-lock behavior.</li>
+<li>Structured References (Tables) co-author more reliably than raw cell
+  ranges, since a Table's formulas auto-adjust as rows are added by
+  different users at the same time.</li>
+<li>Avoid VBA macros in a co-authored file when possible — VBA project
+  changes do not merge between simultaneous editors the way cell edits
+  do, and can silently desync.</li>
+</ul>
+<h2 id="cheat-sheet">Cheat sheet<a class="headerlink" href="#cheat-sheet" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Technique</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Unlock inputs, then Protect Sheet</td>
+<td>Let users fill in data without touching the logic</td>
+</tr>
+<tr>
+<td>Data Validation (List/Decimal)</td>
+<td>Force consistent, valid input across every user</td>
+</tr>
+<tr>
+<td><code>.xlam</code> Add-in</td>
+<td>Ship one shared custom function to every team member's Excel</td>
+</tr>
+<tr>
+<td>OneDrive/SharePoint + Tables</td>
+<td>Reliable simultaneous co-authoring</td>
+</tr>
+</tbody>
+</table>
+<h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
+<p>Change the Add-in's <code>ApprovalStatus</code> threshold from <code>5000</code> to <code>7500</code>,
+reload the Add-in, and confirm a request of <code>B3=6000</code> now reads
+<code>"Auto-approved"</code> instead of <code>"Needs manager sign-off"</code> — without
+editing the request-form workbook itself.</p>
 
 
 

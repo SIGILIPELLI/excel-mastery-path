@@ -1802,6 +1802,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05 · Performance Optimization for Large Workbooks
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1818,6 +1836,113 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-worked-dataset-a-lookup-heavy-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Worked dataset — a lookup-heavy sheet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-volatile-functions-the-hidden-cost" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Volatile functions — the hidden cost
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-lookup-efficiency-exact-match-and-sorted-ranges" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Lookup efficiency — exact match and sorted ranges
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-calculation-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Calculation mode
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-vba-performance-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. VBA performance pattern
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-structural-fixes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Structural fixes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cheat sheet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1991,6 +2116,102 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-worked-dataset-a-lookup-heavy-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Worked dataset — a lookup-heavy sheet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-volatile-functions-the-hidden-cost" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Volatile functions — the hidden cost
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-lookup-efficiency-exact-match-and-sorted-ranges" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Lookup efficiency — exact match and sorted ranges
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-calculation-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Calculation mode
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-vba-performance-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. VBA performance pattern
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-structural-fixes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Structural fixes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cheat sheet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2010,8 +2231,180 @@
 
 
 <h1 id="05-performance-optimization-for-large-workbooks">05 · Performance Optimization for Large Workbooks<a class="headerlink" href="#05-performance-optimization-for-large-workbooks" title="Permanent link">&para;</a></h1>
-<p>This module is part of Level 4 · Master.</p>
-<p>More lessons are on the way — check back soon.</p>
+<p>This module covers why a workbook slows down as it grows, and the
+concrete fixes: calculation settings, volatile-function avoidance,
+efficient lookups, and VBA screen/calculation control.</p>
+<h2 id="1-worked-dataset-a-lookup-heavy-sheet">1. Worked dataset — a lookup-heavy sheet<a class="headerlink" href="#1-worked-dataset-a-lookup-heavy-sheet" title="Permanent link">&para;</a></h2>
+<p>Sheet <code>Big</code>, <code>A1:C6</code>:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1</strong></td>
+<td>ID</td>
+<td>Name</td>
+<td>Score</td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td>101</td>
+<td>Ana</td>
+<td>88</td>
+</tr>
+<tr>
+<td><strong>3</strong></td>
+<td>102</td>
+<td>Ben</td>
+<td>92</td>
+</tr>
+<tr>
+<td><strong>4</strong></td>
+<td>103</td>
+<td>Cid</td>
+<td>75</td>
+</tr>
+<tr>
+<td><strong>5</strong></td>
+<td>104</td>
+<td>Dee</td>
+<td>95</td>
+</tr>
+<tr>
+<td><strong>6</strong></td>
+<td>105</td>
+<td>Eli</td>
+<td>81</td>
+</tr>
+</tbody>
+</table>
+<p>Imagine this pattern repeated across 500,000 rows in a real workbook —
+the fixes below matter precisely because they scale differently as row
+count grows.</p>
+<h2 id="2-volatile-functions-the-hidden-cost">2. Volatile functions — the hidden cost<a class="headerlink" href="#2-volatile-functions-the-hidden-cost" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>NOW()</code>, <code>TODAY()</code>, <code>RAND()</code>, <code>RANDBETWEEN()</code>, <code>OFFSET()</code>, and
+  <code>INDIRECT()</code> are <strong>volatile</strong>: Excel recalculates them on <em>every</em>
+  worksheet recalculation, even if nothing they depend on changed.</li>
+<li>A single <code>=OFFSET(A1,0,0,COUNTA(A:A),1)</code> used as a named range in a
+  workbook with thousands of formulas referencing it forces a full
+  recalculation cascade constantly.</li>
+<li>Fix: replace <code>OFFSET</code>-based dynamic ranges with Excel Tables (which
+  auto-expand without a volatile formula) or <code>INDEX</code> (non-volatile):
+  <code>=INDEX(A:A,1):INDEX(A:A,COUNTA(A:A))</code> returns the same dynamic range
+  as the <code>OFFSET</code> version without forcing constant recalculation.</li>
+</ul>
+<h2 id="3-lookup-efficiency-exact-match-and-sorted-ranges">3. Lookup efficiency — exact match and sorted ranges<a class="headerlink" href="#3-lookup-efficiency-exact-match-and-sorted-ranges" title="Permanent link">&para;</a></h2>
+<ol>
+<li><code>=VLOOKUP(103,A2:C6,3,FALSE)</code> on the small table returns <code>75</code> (Cid's
+   score) correctly, but on 500,000 rows, <code>FALSE</code> (exact match) is an
+   unsorted linear-ish scan in the worst case — slow at scale.</li>
+<li>If the lookup column is sorted, <code>=VLOOKUP(103,A2:C6,3,TRUE)</code> (or
+   omitted, since <code>TRUE</code> is default) uses a binary search — dramatically
+   faster on large sorted data — but returns wrong results silently on
+   unsorted data, so only use it when the ID column is guaranteed
+   sorted.</li>
+<li><code>XLOOKUP</code> (<code>=XLOOKUP(103,A2:A6,C2:C6)</code>) is exact-match by default,
+   as fast as <code>VLOOKUP(...,FALSE)</code> on modern Excel's optimized engine,
+   and doesn't require the lookup column to be the leftmost column —
+   preferred where available.</li>
+</ol>
+<h2 id="4-calculation-mode">4. Calculation mode<a class="headerlink" href="#4-calculation-mode" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Formulas → Calculation Options → Manual</strong> stops Excel from
+   recalculating after every single cell edit — essential when bulk-
+   editing a large workbook, since Automatic mode would otherwise
+   recalculate the entire dependency tree after each keystroke commit.</li>
+<li>Press <strong>F9</strong> to recalculate manually once all edits are made, or
+   <strong>Shift+F9</strong> to recalculate only the active sheet.</li>
+<li>Remember to switch back to Automatic before handing the workbook to
+   someone else — a workbook stuck in Manual mode silently shows stale
+   numbers to anyone who doesn't know to press F9.</li>
+</ol>
+<h2 id="5-vba-performance-pattern">5. VBA performance pattern<a class="headerlink" href="#5-vba-performance-pattern" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Sub FastBulkUpdate()
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    Application.ScreenUpdating = False
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    Application.Calculation = xlCalculationManual
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    Application.EnableEvents = False
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    Dim i As Long
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    For i = 2 To 500000
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>        Cells(i, 3).Value = Cells(i, 3).Value * 1.05
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    Next i
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    Application.Calculation = xlCalculationAutomatic
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>    Application.ScreenUpdating = True
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>    Application.EnableEvents = True
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>End Sub
+</code></pre></div>
+<p>Turning off screen updating and automatic calculation before a large
+loop, then restoring both afterward, is the single biggest VBA
+performance fix — a 500,000-row loop with screen updating left on can
+be an order of magnitude slower because Excel repaints the screen on
+every cell write.</p>
+<h2 id="6-structural-fixes">6. Structural fixes<a class="headerlink" href="#6-structural-fixes" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>Fix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Whole-column references (<code>SUM(A:A)</code>) in many formulas</td>
+<td>Reference a bounded range or Table column instead — a whole-column reference forces Excel to consider a million+ rows</td>
+</tr>
+<tr>
+<td>Many <code>SUMIF</code>/array formulas over huge ranges</td>
+<td>Move heavy aggregation into a PivotTable or Power Pivot measure, which uses an optimized engine instead of cell-by-cell formulas</td>
+</tr>
+<tr>
+<td>A workbook with dozens of unused formatted rows/columns beyond the real data</td>
+<td>Delete them and save — Excel tracks a "used range" that bloats file size and recalculation scope even for empty formatted cells</td>
+</tr>
+</tbody>
+</table>
+<h2 id="cheat-sheet">Cheat sheet<a class="headerlink" href="#cheat-sheet" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Technique</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Avoid <code>OFFSET</code>/<code>INDIRECT</code></td>
+<td>Removes forced full recalculation</td>
+</tr>
+<tr>
+<td><code>XLOOKUP</code> / sorted <code>VLOOKUP(...,TRUE)</code></td>
+<td>Faster large-scale lookups</td>
+</tr>
+<tr>
+<td>Manual calculation during bulk edits</td>
+<td>Avoids recalculating after every keystroke</td>
+</tr>
+<tr>
+<td><code>ScreenUpdating=False</code> + <code>Calculation=Manual</code> in VBA loops</td>
+<td>Major speedup for bulk VBA writes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
+<p>Rewrite Section 5's macro to also avoid recalculating on every
+iteration by only setting <code>Application.Calculation = xlCalculationAutomatic</code>
+once at the very end (already done above) — then explain in one
+sentence why calling <code>Range("C2:C500000").Value =
+Range("C2:C500000").Value</code> (an array-style bulk write) would be even
+faster than the per-cell loop.</p>
 
 
 

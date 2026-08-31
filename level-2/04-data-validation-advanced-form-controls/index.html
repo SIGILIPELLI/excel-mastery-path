@@ -1026,6 +1026,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 · Data Validation Advanced & Form Controls
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1042,6 +1060,91 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-worked-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Worked dataset
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-named-ranges-for-dependent-dropdowns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Named ranges for dependent dropdowns
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-custom-validation-formulas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Custom validation formulas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-form-controls-combo-box-and-check-box" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Form Controls — Combo Box and Check Box
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cheat sheet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1991,6 +2094,80 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-worked-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Worked dataset
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-named-ranges-for-dependent-dropdowns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Named ranges for dependent dropdowns
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-custom-validation-formulas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Custom validation formulas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-form-controls-combo-box-and-check-box" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Form Controls — Combo Box and Check Box
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cheat sheet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2010,8 +2187,152 @@
 
 
 <h1 id="04-data-validation-advanced-form-controls">04 · Data Validation Advanced &amp; Form Controls<a class="headerlink" href="#04-data-validation-advanced-form-controls" title="Permanent link">&para;</a></h1>
-<p>This module is part of Level 2 · Intermediate.</p>
-<p>More lessons are on the way — check back soon.</p>
+<p>Level 1 covered basic dropdown lists. This module covers dependent
+(cascading) dropdowns, custom validation formulas, and interactive
+Form Controls (option buttons, checkboxes, combo boxes) that let a
+sheet respond to user clicks without VBA.</p>
+<h2 id="1-worked-dataset">1. Worked dataset<a class="headerlink" href="#1-worked-dataset" title="Permanent link">&para;</a></h2>
+<p>Build this table on a sheet named <code>Catalog</code>, <code>A1:B7</code>:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>A</th>
+<th>B</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1</strong></td>
+<td>Category</td>
+<td>Item</td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td>Fruit</td>
+<td>Apple</td>
+</tr>
+<tr>
+<td><strong>3</strong></td>
+<td>Fruit</td>
+<td>Banana</td>
+</tr>
+<tr>
+<td><strong>4</strong></td>
+<td>Fruit</td>
+<td>Cherry</td>
+</tr>
+<tr>
+<td><strong>5</strong></td>
+<td>Veg</td>
+<td>Carrot</td>
+</tr>
+<tr>
+<td><strong>6</strong></td>
+<td>Veg</td>
+<td>Potato</td>
+</tr>
+<tr>
+<td><strong>7</strong></td>
+<td>Veg</td>
+<td>Onion</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2-named-ranges-for-dependent-dropdowns">2. Named ranges for dependent dropdowns<a class="headerlink" href="#2-named-ranges-for-dependent-dropdowns" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Build two named lists: select <code>B2:B4</code> (Apple, Banana, Cherry) and
+   name it <code>Fruit</code> (Formulas → Define Name). Select <code>B5:B7</code> (Carrot,
+   Potato, Onion) and name it <code>Veg</code>.</li>
+<li>Type <code>Fruit</code> in <code>D1</code> and <code>Veg</code> in <code>E1</code> as the two category labels
+   the first dropdown will offer.</li>
+<li>In <code>G1</code>, set Data Validation → List → Source <code>=D1:E1</code> (Fruit, Veg).
+   This is the first dropdown.</li>
+<li>In <code>G2</code>, set Data Validation → List → Source
+   <code>=INDIRECT(G1)</code>. <code>INDIRECT</code> turns the <em>text</em> <code>"Fruit"</code> selected in
+   <code>G1</code> into a reference to the named range <code>Fruit</code>, so <code>G2</code>'s list
+   changes to Apple/Banana/Cherry when <code>G1="Fruit"</code>, and to
+   Carrot/Potato/Onion when <code>G1="Veg"</code>. This is the standard
+   cascading-dropdown pattern.</li>
+<li>Manual check: set <code>G1</code> to <code>Veg</code>. <code>INDIRECT("Veg")</code> resolves to the
+   named range <code>Veg</code> = <code>B5:B7</code> = Carrot, Potato, Onion — the <code>G2</code>
+   dropdown should offer exactly those three, not the fruits.</li>
+</ol>
+<h2 id="3-custom-validation-formulas">3. Custom validation formulas<a class="headerlink" href="#3-custom-validation-formulas" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Select <code>H2</code>, Data Validation → Custom, Formula:
+   <code>=AND(H2&gt;0,H2&lt;=100)</code>
+   This restricts entry to numbers strictly between 0 and 100
+   inclusive of 100 — typing <code>150</code> or <code>0</code> is rejected, <code>100</code> is
+   accepted. Trace by hand: <code>H2=100</code> → <code>AND(100&gt;0,100&lt;=100)</code> →
+   <code>AND(TRUE,TRUE)</code> → <code>TRUE</code>, allowed. <code>H2=0</code> → <code>AND(FALSE,TRUE)</code> →
+   <code>FALSE</code>, rejected.</li>
+<li>Select <code>I2</code>, Data Validation → Custom, Formula:
+   <code>=COUNTIF($I$2:$I$10,I2)=1</code>
+   This blocks duplicate entries anywhere in <code>I2:I10</code> — if the value
+   being typed already appears once elsewhere in the range, the count
+   becomes <code>2</code> and the formula returns <code>FALSE</code>, rejecting the entry.</li>
+</ol>
+<h2 id="4-form-controls-combo-box-and-check-box">4. Form Controls — Combo Box and Check Box<a class="headerlink" href="#4-form-controls-combo-box-and-check-box" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Enable the Developer tab (File → Options → Customize Ribbon →
+   check <strong>Developer</strong>).</li>
+<li>Developer → Insert → Form Controls → <strong>Combo Box</strong>. Draw it near
+   <code>K1</code>. Right-click → Format Control → Input range <code>B2:B7</code>, Cell
+   link <code>K2</code>. Selecting an item in the combo box now writes that
+   item's <strong>position number</strong> (1–6) into <code>K2</code>, not the text itself —
+   this is the key gotcha with Form Control combo boxes.</li>
+<li>In <code>K3</code>, retrieve the actual text: <code>=INDEX(B2:B7,K2)</code>. If the combo
+   box shows "Potato" selected (the 5th item in <code>B2:B7</code>), <code>K2</code> holds
+   <code>5</code> and <code>K3</code> becomes <code>=INDEX(B2:B7,5)</code> = <code>Potato</code>. Confirm by
+   counting: Apple(1), Banana(2), Cherry(3), Carrot(4), Potato(5),
+   Onion(6) — position 5 is indeed Potato.</li>
+<li>Developer → Insert → Form Controls → <strong>Check Box</strong>. Right-click →
+   Format Control → Cell link <code>L1</code>. Checking the box writes <code>TRUE</code> to
+   <code>L1</code>, unchecking writes <code>FALSE</code> — use <code>=IF(L1,"Included","Excluded")</code>
+   in <code>L2</code> to turn that boolean into a readable label.</li>
+</ol>
+<h2 id="cheat-sheet">Cheat sheet<a class="headerlink" href="#cheat-sheet" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>How</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>List validation</td>
+<td>Data Validation → List → Source range or comma list</td>
+</tr>
+<tr>
+<td>Cascading dropdown</td>
+<td>Named ranges per category + <code>=INDIRECT(cell)</code> as Source</td>
+</tr>
+<tr>
+<td>Custom rule</td>
+<td>Data Validation → Custom → formula returning TRUE/FALSE</td>
+</tr>
+<tr>
+<td>No duplicates</td>
+<td><code>=COUNTIF($range,cell)=1</code> as Custom formula</td>
+</tr>
+<tr>
+<td>Combo Box (Form Control)</td>
+<td>Input range + Cell link (returns position number)</td>
+</tr>
+<tr>
+<td>Position → text</td>
+<td><code>=INDEX(range,cell_link)</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
+<p>Build the cascading dropdown in Section 2, then set <code>G1</code> to <code>Fruit</code>
+and confirm <code>G2</code> only offers Apple/Banana/Cherry. Add a custom
+validation rule on a new cell <code>M2</code> that only accepts even numbers:
+<code>=MOD(M2,2)=0</code> — verify by hand that <code>4</code> is accepted (<code>MOD(4,2)=0</code>)
+and <code>7</code> is rejected (<code>MOD(7,2)=1</code>).</p>
 
 
 

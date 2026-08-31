@@ -1484,6 +1484,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07 · Financial Modeling Techniques
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1500,6 +1518,102 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-worked-dataset-an-investment-decision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Worked dataset — an investment decision
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-npv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. NPV
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-irr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. IRR
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-amortization-schedule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Amortization schedule
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-sensitivity-separating-inputs-from-calculations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Sensitivity — separating inputs from calculations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cheat sheet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1991,6 +2105,91 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-worked-dataset-an-investment-decision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Worked dataset — an investment decision
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-npv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. NPV
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-irr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. IRR
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-amortization-schedule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Amortization schedule
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-sensitivity-separating-inputs-from-calculations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Sensitivity — separating inputs from calculations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cheat sheet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2010,8 +2209,165 @@
 
 
 <h1 id="07-financial-modeling-techniques">07 · Financial Modeling Techniques<a class="headerlink" href="#07-financial-modeling-techniques" title="Permanent link">&para;</a></h1>
-<p>This module is part of Level 3 · Advanced.</p>
-<p>More lessons are on the way — check back soon.</p>
+<p>This module covers the core building blocks of a financial model: NPV,
+IRR, amortization schedules, and structuring a model with clearly
+separated inputs, calculations, and outputs — the standard layout
+professional analysts use.</p>
+<h2 id="1-worked-dataset-an-investment-decision">1. Worked dataset — an investment decision<a class="headerlink" href="#1-worked-dataset-an-investment-decision" title="Permanent link">&para;</a></h2>
+<p>Build this on a sheet named <code>Model</code>, <code>A1:B6</code>:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>A</th>
+<th>B</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1</strong></td>
+<td>Initial Investment</td>
+<td>-10000</td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td>Year 1 Cash Flow</td>
+<td>3000</td>
+</tr>
+<tr>
+<td><strong>3</strong></td>
+<td>Year 2 Cash Flow</td>
+<td>4000</td>
+</tr>
+<tr>
+<td><strong>4</strong></td>
+<td>Year 3 Cash Flow</td>
+<td>5000</td>
+</tr>
+<tr>
+<td><strong>5</strong></td>
+<td>Year 4 Cash Flow</td>
+<td>3500</td>
+</tr>
+<tr>
+<td><strong>6</strong></td>
+<td>Discount Rate</td>
+<td>0.10</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2-npv">2. NPV<a class="headerlink" href="#2-npv" title="Permanent link">&para;</a></h2>
+<ol>
+<li>In <code>B8</code>: <code>=B1+NPV(B6,B2:B5)</code>
+   <code>NPV()</code> discounts a series of <em>future</em> cash flows (it assumes the
+   first value in the range occurs one period from now), so the
+   upfront investment in <code>B1</code> (which happens at time 0) is added
+   separately, outside the NPV function.</li>
+<li>Manual check, discounting each flow by <code>1.10^n</code>:
+   Year1: <code>3000/1.10 = 2727.27</code>
+   Year2: <code>4000/1.10^2 = 4000/1.21 = 3305.79</code>
+   Year3: <code>5000/1.10^3 = 5000/1.331 = 3756.57</code>
+   Year4: <code>3500/1.10^4 = 3500/1.4641 = 2390.55</code>
+   Sum of discounted flows: <code>2727.27+3305.79+3756.57+2390.55 =
+   12180.18</code>. Add <code>B1 = -10000</code>: NPV ≈ <code>2180.18</code>. A positive NPV means
+   the investment is expected to create value at a 10% discount rate.</li>
+</ol>
+<h2 id="3-irr">3. IRR<a class="headerlink" href="#3-irr" title="Permanent link">&para;</a></h2>
+<ol>
+<li>In <code>B9</code>: <code>=IRR(B1:B5)</code>
+   IRR is the discount rate at which NPV would be exactly zero.</li>
+<li>Sanity check: since NPV at 10% is positive (<code>+2180.18</code>), the true
+   IRR must be <strong>higher</strong> than 10% (a higher discount rate shrinks NPV
+   toward zero). Excel's IRR should return roughly <code>21%</code> — confirm the
+   returned rate is indeed above 10%, consistent with the NPV sign.</li>
+</ol>
+<h2 id="4-amortization-schedule">4. Amortization schedule<a class="headerlink" href="#4-amortization-schedule" title="Permanent link">&para;</a></h2>
+<p>Build a loan schedule for a <code>20000</code> loan at <code>6%</code> annual, 5 years,
+<code>E1:H6</code>:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>E</th>
+<th>F</th>
+<th>G</th>
+<th>H</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1</strong></td>
+<td>Year</td>
+<td>Payment</td>
+<td>Interest</td>
+<td>Principal</td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td>1</td>
+<td><code>=-PMT($B$6,5,20000)</code></td>
+<td><code>=20000*$B$6</code></td>
+<td><code>=E2payment-G2</code></td>
+</tr>
+</tbody>
+</table>
+<p>Simplify with concrete formulas instead, <code>E1:H6</code>:</p>
+<ol>
+<li><code>F2</code>: <code>=-PMT(0.06,5,20000)</code> ≈ <code>4747.11</code> (annual payment).</li>
+<li><code>G2</code> (Year 1 interest): <code>=20000*0.06 = 1200</code>.</li>
+<li><code>H2</code> (Year 1 principal repaid): <code>=F2-G2 ≈ 4747.11-1200=3547.11</code>.</li>
+<li>Remaining balance after Year 1: <code>20000-3547.11=16452.89</code>. Year 2
+   interest: <code>=16452.89*0.06≈987.17</code>. Year 2 principal:
+   <code>≈4747.11-987.17=3759.94</code>. Notice interest shrinks and principal
+   grows each year as the balance declines — the hallmark shape of an
+   amortization schedule.</li>
+</ol>
+<h2 id="5-sensitivity-separating-inputs-from-calculations">5. Sensitivity — separating inputs from calculations<a class="headerlink" href="#5-sensitivity-separating-inputs-from-calculations" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Best practice: keep every raw assumption (discount rate, growth
+   rate, loan rate) in a clearly labeled "Inputs" block (like <code>B1:B6</code>
+   here), and have every calculation formula reference those cells —
+   never hardcode a rate inside a calculation formula. This is why
+   Section 2's NPV formula references <code>$B$6</code> rather than typing <code>0.10</code>
+   directly: changing one input cell should flow through the entire
+   model.</li>
+<li>Test this: change <code>B6</code> from <code>0.10</code> to <code>0.08</code> and confirm <code>B8</code>'s NPV
+   recalculates upward (a lower discount rate increases the present
+   value of future cash flows) without editing any other formula.</li>
+</ol>
+<h2 id="cheat-sheet">Cheat sheet<a class="headerlink" href="#cheat-sheet" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>NPV(rate, values)</code></td>
+<td>Present value of a series of <em>future</em> cash flows</td>
+</tr>
+<tr>
+<td><code>IRR(values)</code></td>
+<td>Discount rate that makes NPV = 0</td>
+</tr>
+<tr>
+<td><code>PMT(rate,nper,pv)</code></td>
+<td>Fixed periodic payment for a loan/annuity</td>
+</tr>
+<tr>
+<td>Amortization</td>
+<td>Interest = balance × rate; Principal = Payment − Interest</td>
+</tr>
+</tbody>
+</table>
+<h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
+<p>Recompute NPV at a discount rate of <code>15%</code> instead of <code>10%</code> and confirm
+it drops compared to Section 2's <code>2180.18</code> (a higher discount rate
+always lowers NPV, all else equal) — then check whether it goes
+negative, which would mean the investment fails to clear a 15% hurdle
+rate.</p>
 
 
 

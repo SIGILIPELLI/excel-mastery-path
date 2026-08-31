@@ -1372,6 +1372,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 · Power Pivot & the Data Model
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1388,6 +1406,91 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-worked-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Worked dataset
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-adding-tables-to-the-data-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Adding tables to the Data Model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-creating-the-relationship" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Creating the relationship
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-building-a-cross-table-pivottable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Building a cross-table PivotTable
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cheat sheet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1991,6 +2094,80 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-worked-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Worked dataset
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-adding-tables-to-the-data-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Adding tables to the Data Model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-creating-the-relationship" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Creating the relationship
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-building-a-cross-table-pivottable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Building a cross-table PivotTable
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cheat sheet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2010,8 +2187,165 @@
 
 
 <h1 id="03-power-pivot-the-data-model">03 · Power Pivot &amp; the Data Model<a class="headerlink" href="#03-power-pivot-the-data-model" title="Permanent link">&para;</a></h1>
-<p>This module is part of Level 3 · Advanced.</p>
-<p>More lessons are on the way — check back soon.</p>
+<p>Power Pivot lets multiple tables live in one workbook's <strong>Data Model</strong>,
+related to each other like a small database, so a single PivotTable
+can pull fields from several tables at once without VLOOKUP glue
+columns.</p>
+<h2 id="1-worked-dataset">1. Worked dataset<a class="headerlink" href="#1-worked-dataset" title="Permanent link">&para;</a></h2>
+<p><code>Sales</code> table (<code>A1:C6</code>), name it <code>Sales</code>:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1</strong></td>
+<td>ProductID</td>
+<td>Qty</td>
+<td>Rep</td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td>P1</td>
+<td>10</td>
+<td>Alan</td>
+</tr>
+<tr>
+<td><strong>3</strong></td>
+<td>P2</td>
+<td>5</td>
+<td>Priya</td>
+</tr>
+<tr>
+<td><strong>4</strong></td>
+<td>P1</td>
+<td>8</td>
+<td>Sam</td>
+</tr>
+<tr>
+<td><strong>5</strong></td>
+<td>P3</td>
+<td>12</td>
+<td>Alan</td>
+</tr>
+<tr>
+<td><strong>6</strong></td>
+<td>P2</td>
+<td>6</td>
+<td>Priya</td>
+</tr>
+</tbody>
+</table>
+<p><code>Products</code> table (<code>A1:B4</code>), name it <code>Products</code>:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>A</th>
+<th>B</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1</strong></td>
+<td>ProductID</td>
+<td>Price</td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td>P1</td>
+<td>20</td>
+</tr>
+<tr>
+<td><strong>3</strong></td>
+<td>P2</td>
+<td>35</td>
+</tr>
+<tr>
+<td><strong>4</strong></td>
+<td>P3</td>
+<td>15</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2-adding-tables-to-the-data-model">2. Adding tables to the Data Model<a class="headerlink" href="#2-adding-tables-to-the-data-model" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Click inside <code>Sales</code> → Power Pivot tab → <strong>Add to Data Model</strong>
+   (this also converts it to an Excel Table if not already one).
+   Repeat for <code>Products</code>.</li>
+<li>In the Power Pivot window, Diagram View shows both tables as boxes
+   with their columns listed — no relationship line yet.</li>
+</ol>
+<h2 id="3-creating-the-relationship">3. Creating the relationship<a class="headerlink" href="#3-creating-the-relationship" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Drag <code>ProductID</code> in <code>Sales</code> onto <code>ProductID</code> in <code>Products</code> (or Home
+   → Create Relationship, picking <code>Sales.ProductID</code> →
+   <code>Products.ProductID</code>).</li>
+<li>This is a one-to-many relationship: one row in <code>Products</code> (e.g.
+   <code>P1</code>, Price 20) relates to many rows in <code>Sales</code> (P1 appears twice:
+   rows 2 and 4). The relationship must run from the "many" side
+   (<code>Sales</code>) to the "one" side (<code>Products</code>) — <code>ProductID</code> is unique in
+   <code>Products</code> but repeats in <code>Sales</code>.</li>
+</ol>
+<h2 id="4-building-a-cross-table-pivottable">4. Building a cross-table PivotTable<a class="headerlink" href="#4-building-a-cross-table-pivottable" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Insert → PivotTable → <strong>Use this workbook's Data Model</strong>. In the
+   field list, both <code>Sales</code> and <code>Products</code> appear as separate groups.</li>
+<li>Rows: <code>Sales[Rep]</code>. Values: sum of <code>Sales[Qty]</code>. Add a calculated
+   column first (see Section 5) to bring <code>Price</code> across the
+   relationship.</li>
+<li>In Power Pivot window, add a calculated column in <code>Sales</code>:
+   <code>Revenue = Sales[Qty] * RELATED(Products[Price])</code>
+   <code>RELATED()</code> pulls a value from the "one" side of the relationship
+   into each row of the "many" side — here, each Sales row looks up
+   its own ProductID's Price from <code>Products</code>.</li>
+<li>Manual check: row 2 (P1, Qty 10) → Price 20 → Revenue <code>200</code>. Row 3
+   (P2, Qty 5) → Price 35 → Revenue <code>175</code>. Row 4 (P1, Qty 8) → Price
+   20 → Revenue <code>160</code>. Row 5 (P3, Qty 12) → Price 15 → Revenue <code>180</code>.
+   Row 6 (P2, Qty 6) → Price 35 → Revenue <code>210</code>.</li>
+<li>Back in the PivotTable, add <code>Sum of Revenue</code> to Values, Rows still
+   <code>Rep</code>. Alan: rows 2,5 → <code>200+180=380</code>. Priya: rows 3,6 →
+   <code>175+210=385</code>. Sam: row 4 → <code>160</code>. Total across all reps:
+   <code>380+385+160=925</code>, which should also equal the grand total shown
+   at the bottom of the PivotTable.</li>
+</ol>
+<h2 id="cheat-sheet">Cheat sheet<a class="headerlink" href="#cheat-sheet" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>How</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Add a table to the Data Model</td>
+<td>Power Pivot → Add to Data Model</td>
+</tr>
+<tr>
+<td>Create a relationship</td>
+<td>Diagram View → drag key column to key column</td>
+</tr>
+<tr>
+<td>Pull a value across a relationship</td>
+<td><code>RELATED(Table[Column])</code> (many→one direction)</td>
+</tr>
+<tr>
+<td>PivotTable from multiple tables</td>
+<td>Insert PivotTable → Use this workbook's Data Model</td>
+</tr>
+</tbody>
+</table>
+<h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
+<p>Add a calculated column <code>HighValue = IF(Sales[Revenue] &gt;= 200,
+"Yes", "No")</code>. The five Revenue values from Section 4 are
+<code>200, 175, 160, 180, 210</code> — only <code>200</code> and <code>210</code> satisfy <code>&gt;=200</code>, so
+exactly two rows should read <code>Yes</code>, the remaining three <code>No</code>.</p>
 
 
 

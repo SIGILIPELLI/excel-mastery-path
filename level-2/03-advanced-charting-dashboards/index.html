@@ -998,6 +998,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 · Advanced Charting & Dashboards
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1014,6 +1032,102 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-worked-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Worked dataset
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-combination-chart-with-a-secondary-axis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Combination chart with a secondary axis
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-sparklines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Sparklines
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-dashboard-layout-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Dashboard layout principles
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-chart-formulas-as-titles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Chart formulas as titles
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cheat sheet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1991,6 +2105,91 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-worked-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Worked dataset
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-combination-chart-with-a-secondary-axis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Combination chart with a secondary axis
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-sparklines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Sparklines
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-dashboard-layout-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Dashboard layout principles
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-chart-formulas-as-titles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Chart formulas as titles
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cheat sheet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2010,8 +2209,166 @@
 
 
 <h1 id="03-advanced-charting-dashboards">03 · Advanced Charting &amp; Dashboards<a class="headerlink" href="#03-advanced-charting-dashboards" title="Permanent link">&para;</a></h1>
-<p>This module is part of Level 2 · Intermediate.</p>
-<p>More lessons are on the way — check back soon.</p>
+<p>Level 1 covered basic column/line/pie charts. This module covers
+combination charts, secondary axes, sparklines, and the layout
+principles that turn a handful of charts into a coherent one-page
+dashboard.</p>
+<h2 id="1-worked-dataset">1. Worked dataset<a class="headerlink" href="#1-worked-dataset" title="Permanent link">&para;</a></h2>
+<p>Build this table on a sheet named <code>Perf</code>, <code>A1:D7</code>:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+<th>D</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1</strong></td>
+<td>Month</td>
+<td>Revenue</td>
+<td>Units</td>
+<td>Margin%</td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td>Jan</td>
+<td>12000</td>
+<td>240</td>
+<td>0.32</td>
+</tr>
+<tr>
+<td><strong>3</strong></td>
+<td>Feb</td>
+<td>13500</td>
+<td>260</td>
+<td>0.30</td>
+</tr>
+<tr>
+<td><strong>4</strong></td>
+<td>Mar</td>
+<td>11000</td>
+<td>210</td>
+<td>0.35</td>
+</tr>
+<tr>
+<td><strong>5</strong></td>
+<td>Apr</td>
+<td>15500</td>
+<td>300</td>
+<td>0.29</td>
+</tr>
+<tr>
+<td><strong>6</strong></td>
+<td>May</td>
+<td>16200</td>
+<td>305</td>
+<td>0.31</td>
+</tr>
+<tr>
+<td><strong>7</strong></td>
+<td>Jun</td>
+<td>14800</td>
+<td>275</td>
+<td>0.33</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2-combination-chart-with-a-secondary-axis">2. Combination chart with a secondary axis<a class="headerlink" href="#2-combination-chart-with-a-secondary-axis" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Select <code>A1:B7</code>, then hold <strong>Ctrl</strong> and also select <code>D1:D7</code>
+   (Revenue and Margin%, skipping Units).</li>
+<li>Insert → Charts → Combo Chart → <strong>Create Custom Combo Chart</strong>.</li>
+<li>Set <code>Revenue</code> to <strong>Clustered Column</strong> on the Primary Axis, and
+   <code>Margin%</code> to <strong>Line</strong> with <strong>Secondary Axis</strong> checked. Revenue runs
+   in the thousands while Margin% is a fraction near 0.30 — on one
+   axis the line would be invisible flat, so the secondary axis is
+   required whenever two series differ in scale by an order of
+   magnitude or more.</li>
+<li>Verify visually: March has the lowest Revenue (11000) but the
+   highest Margin% (0.35) — the column should dip while the line
+   peaks at the same point, confirming the two axes are independent.</li>
+</ol>
+<h2 id="3-sparklines">3. Sparklines<a class="headerlink" href="#3-sparklines" title="Permanent link">&para;</a></h2>
+<ol>
+<li>In <code>F1</code>, Insert → Sparklines → <strong>Line</strong>. Data Range <code>B2:B7</code>
+   (Revenue), Location Range <code>F1</code>. This draws a small in-cell trend
+   line summarizing the whole Revenue column.</li>
+<li>Repeat for <code>F2</code> with Data Range <code>C2:C7</code> (Units), and <code>F3</code> with Data
+   Range <code>D2:D7</code> (Margin%). Now three trend lines — Revenue, Units,
+   Margin% — sit stacked for a quick visual scan.</li>
+<li>Manually confirm the Revenue sparkline's shape: values rise
+   12000→13500, dip to 11000, then climb to a peak of 16200 in May
+   before easing to 14800 — the sparkline's line should show exactly
+   that up-up-down-up-up-down zigzag.</li>
+<li>This stacked-sparkline pattern (one sparkline per KPI, sharing a
+   column) is the layout used in KPI dashboard headers, where a viewer
+   scans trend shape without needing a full chart per metric.</li>
+</ol>
+<h2 id="4-dashboard-layout-principles">4. Dashboard layout principles<a class="headerlink" href="#4-dashboard-layout-principles" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Grid alignment</strong> — snap chart edges to cell boundaries (hold
+   <strong>Alt</strong> while dragging) so all dashboard tiles line up into rows
+   and columns, not a scattered collage.</li>
+<li><strong>One message per chart</strong> — a combo chart answering "did margin
+   hold up as revenue grew" is stronger than one chart trying to show
+   Revenue, Units, and Margin% all as equal-weight columns.</li>
+<li><strong>Consistent color coding</strong> — pick one color for Revenue everywhere
+   in the workbook (e.g. blue) and reuse it in every chart; a viewer
+   scanning multiple tiles shouldn't have to re-learn the legend each
+   time.</li>
+<li><strong>Freeze the top row</strong> (View → Freeze Panes → Freeze Top Row) above
+   dashboard tiles that reference a scrolling table below them, so
+   titles stay visible while a user scrolls the raw data.</li>
+</ol>
+<h2 id="5-chart-formulas-as-titles">5. Chart formulas as titles<a class="headerlink" href="#5-chart-formulas-as-titles" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Link a chart title to a cell so it updates automatically: click the
+   chart title, type <code>=Perf!$G$1</code> in the formula bar, and put a
+   summary formula in <code>G1</code>, e.g.
+   <code>="Revenue Trend — Peak "&amp;TEXT(MAX(B2:B7),"$#,##0")</code></li>
+<li>Manual check: <code>MAX(B2:B7)</code> over <code>12000,13500,11000,15500,16200,14800</code>
+   is <code>16200</code> (May). <code>TEXT(16200,"$#,##0")</code> formats it as <code>$16,200</code>, so
+   the title reads <code>Revenue Trend — Peak $16,200</code>.</li>
+</ol>
+<h2 id="cheat-sheet">Cheat sheet<a class="headerlink" href="#cheat-sheet" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Steps</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Combo chart</td>
+<td>Select series → Insert → Combo Chart → set type + axis per series</td>
+</tr>
+<tr>
+<td>Secondary axis</td>
+<td>Chart element → Format Data Series → Secondary Axis</td>
+</tr>
+<tr>
+<td>Sparkline</td>
+<td>Insert → Sparklines → Line/Column/Win-Loss → set Data Range</td>
+</tr>
+<tr>
+<td>Linked chart title</td>
+<td>Click title → type <code>=Sheet!$Cell</code> in formula bar</td>
+</tr>
+</tbody>
+</table>
+<h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
+<p>Using the <code>Perf</code> table, build a combo chart with Revenue as columns
+(primary axis) and Units as a line (secondary axis), then confirm by
+eye that April (highest Revenue, 15500, and highest Units, 300) shows
+both series peaking together — unlike Margin%, Revenue and Units move
+together here, so decide whether a secondary axis is even necessary
+for that pairing (it isn't, since both are large numbers on a similar
+scale) and re-plot them on one shared axis instead.</p>
 
 
 

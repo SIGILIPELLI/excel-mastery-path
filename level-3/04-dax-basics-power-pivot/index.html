@@ -1400,6 +1400,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 · DAX Basics for Power Pivot
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1416,6 +1434,102 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-worked-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Worked dataset
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-a-basic-measure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. A basic measure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-a-measure-using-related-equivalent-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. A measure using RELATED-equivalent logic
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-calculate-and-filter-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. CALCULATE and filter context
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-average-and-ratio-measures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Average and ratio measures
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cheat sheet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1991,6 +2105,91 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-worked-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Worked dataset
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-a-basic-measure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. A basic measure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-a-measure-using-related-equivalent-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. A measure using RELATED-equivalent logic
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-calculate-and-filter-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. CALCULATE and filter context
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-average-and-ratio-measures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Average and ratio measures
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cheat sheet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2010,8 +2209,105 @@
 
 
 <h1 id="04-dax-basics-for-power-pivot">04 · DAX Basics for Power Pivot<a class="headerlink" href="#04-dax-basics-for-power-pivot" title="Permanent link">&para;</a></h1>
-<p>This module is part of Level 3 · Advanced.</p>
-<p>More lessons are on the way — check back soon.</p>
+<p>DAX (Data Analysis Expressions) is Power Pivot's formula language.
+Unlike a calculated <em>column</em> (evaluated row by row), a DAX <strong>measure</strong>
+is computed dynamically based on whatever filter context a PivotTable
+applies — the same measure returns different numbers depending on
+which row/column it's placed in.</p>
+<h2 id="1-worked-dataset">1. Worked dataset<a class="headerlink" href="#1-worked-dataset" title="Permanent link">&para;</a></h2>
+<p>Reuse the <code>Sales</code>/<code>Products</code> Data Model from Module 3, or rebuild:</p>
+<p><code>Sales</code> (<code>A1:C6</code>): ProductID/Qty/Rep — <code>P1,10,Alan</code>; <code>P2,5,Priya</code>;
+<code>P1,8,Sam</code>; <code>P3,12,Alan</code>; <code>P2,6,Priya</code>.</p>
+<p><code>Products</code> (<code>A1:B4</code>): ProductID/Price — <code>P1,20</code>; <code>P2,35</code>; <code>P3,15</code>.
+Relationship: <code>Sales[ProductID]</code> → <code>Products[ProductID]</code>.</p>
+<h2 id="2-a-basic-measure">2. A basic measure<a class="headerlink" href="#2-a-basic-measure" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Power Pivot → <strong>Measures</strong> → New Measure. Name <code>Total Qty</code>,
+   formula: <code>Total Qty := SUM(Sales[Qty])</code>.</li>
+<li>Drop it into a PivotTable with Rows = <code>Sales[Rep]</code>. Manual check:
+   Alan (rows 2,5) → <code>10+12=22</code>. Priya (rows 3,6) → <code>5+6=11</code>. Sam
+   (row 4) → <code>8</code>. Grand total <code>22+11+8=41</code>, which also equals
+   <code>SUM</code> of all six Qty values: <code>10+5+8+12+6=41</code>. ✓</li>
+</ol>
+<h2 id="3-a-measure-using-related-equivalent-logic">3. A measure using RELATED-equivalent logic<a class="headerlink" href="#3-a-measure-using-related-equivalent-logic" title="Permanent link">&para;</a></h2>
+<ol>
+<li>New Measure: <code>Total Revenue := SUMX(Sales, Sales[Qty] *
+   RELATED(Products[Price]))</code></li>
+<li><code>SUMX</code> is an iterator — it walks each row of <code>Sales</code>, computes
+   <code>Qty * RELATED(Price)</code> per row, then sums the results. This is the
+   measure-level equivalent of the calculated column from Module 3.</li>
+<li>Manual check by Rep: Alan = <code>10*20 + 12*15 = 200+180=380</code>. Priya =
+   <code>5*35 + 6*35 = 175+210=385</code>. Sam = <code>8*20=160</code>. Total <code>380+385+160
+   =925</code> — matches Module 3's calculated-column total exactly, which
+   is the expected consistency check between the two approaches.</li>
+</ol>
+<h2 id="4-calculate-and-filter-context">4. CALCULATE and filter context<a class="headerlink" href="#4-calculate-and-filter-context" title="Permanent link">&para;</a></h2>
+<ol>
+<li>New Measure: <code>Alan Revenue := CALCULATE([Total Revenue],
+   Sales[Rep] = "Alan")</code></li>
+<li><code>CALCULATE</code> overrides the current filter context with an explicit
+   condition. Regardless of which row of a PivotTable this measure
+   sits in, it always computes Total Revenue <strong>as if</strong> filtered to
+   Alan only.</li>
+<li>Manual check: this must always show <code>380</code> (Alan's total from
+   Section 3), even when placed next to Priya's row in a PivotTable —
+   that fixed value regardless of row context is exactly what
+   distinguishes <code>CALCULATE</code> from a plain measure.</li>
+</ol>
+<h2 id="5-average-and-ratio-measures">5. Average and ratio measures<a class="headerlink" href="#5-average-and-ratio-measures" title="Permanent link">&para;</a></h2>
+<ol>
+<li>New Measure: <code>Avg Deal Size := AVERAGEX(Sales, Sales[Qty] *
+   RELATED(Products[Price]))</code></li>
+<li>Manual check: the five per-row revenues are <code>200, 175, 160, 180,
+   210</code>. Sum <code>925</code>, count <code>5</code>, average <code>185</code>. The measure must return
+   <code>185</code>.</li>
+<li>New Measure: <code>% of Total := DIVIDE([Total Revenue],
+   CALCULATE([Total Revenue], ALL(Sales)))</code>
+   <code>DIVIDE(numerator, denominator)</code> is DAX's safe division — it
+   returns blank instead of <code>#DIV/0!</code> if the denominator is zero.
+   <code>ALL(Sales)</code> removes any row-context filter, so the denominator is
+   always the grand total <code>925</code> regardless of which Rep row this sits
+   in. Placed on Alan's row: <code>380/925 ≈ 41.1%</code>.</li>
+</ol>
+<h2 id="cheat-sheet">Cheat sheet<a class="headerlink" href="#cheat-sheet" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>DAX construct</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SUM(Table[Col])</code></td>
+<td>Simple column total</td>
+</tr>
+<tr>
+<td><code>SUMX(Table, expr)</code></td>
+<td>Row-by-row iterator, then sum</td>
+</tr>
+<tr>
+<td><code>AVERAGEX(Table, expr)</code></td>
+<td>Row-by-row iterator, then average</td>
+</tr>
+<tr>
+<td><code>CALCULATE(expr, filter)</code></td>
+<td>Override the current filter context</td>
+</tr>
+<tr>
+<td><code>ALL(Table)</code></td>
+<td>Remove filters — useful for grand-total denominators</td>
+</tr>
+<tr>
+<td><code>DIVIDE(num, denom)</code></td>
+<td>Division that returns blank instead of erroring on 0</td>
+</tr>
+</tbody>
+</table>
+<h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
+<p>Build <code>Priya % of Total := DIVIDE(CALCULATE([Total Revenue],
+Sales[Rep]="Priya"), CALCULATE([Total Revenue], ALL(Sales)))</code> and
+manually verify: <code>385/925 ≈ 41.6%</code>.</p>
 
 
 

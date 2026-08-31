@@ -1316,6 +1316,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 · VBA Basics for Automation
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1332,6 +1350,102 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-worked-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Worked dataset
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-the-range-and-cells-objects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. The Range and Cells objects
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-variables-and-a-for-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Variables and a For loop
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-conditional-logic-flagging-low-stock" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Conditional logic — flagging low stock
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-a-user-facing-sub-with-inputbox" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. A user-facing Sub with InputBox
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cheat sheet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1991,6 +2105,91 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-worked-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Worked dataset
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-the-range-and-cells-objects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. The Range and Cells objects
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-variables-and-a-for-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Variables and a For loop
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-conditional-logic-flagging-low-stock" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Conditional logic — flagging low stock
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-a-user-facing-sub-with-inputbox" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. A user-facing Sub with InputBox
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cheat sheet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2010,8 +2209,165 @@
 
 
 <h1 id="01-vba-basics-for-automation">01 · VBA Basics for Automation<a class="headerlink" href="#01-vba-basics-for-automation" title="Permanent link">&para;</a></h1>
-<p>This module is part of Level 3 · Advanced.</p>
-<p>More lessons are on the way — check back soon.</p>
+<p>VBA (Visual Basic for Applications) is the programming language behind
+Excel. This module writes hand-typed VBA — variables, loops, <code>If</code>
+logic, and the Range/Cells object model — rather than relying on the
+macro recorder from Level 2.</p>
+<h2 id="1-worked-dataset">1. Worked dataset<a class="headerlink" href="#1-worked-dataset" title="Permanent link">&para;</a></h2>
+<p>Build this on a sheet named <code>Sheet1</code>, <code>A1:B6</code>:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>A</th>
+<th>B</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1</strong></td>
+<td>Item</td>
+<td>Qty</td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td>Pen</td>
+<td>12</td>
+</tr>
+<tr>
+<td><strong>3</strong></td>
+<td>Book</td>
+<td>3</td>
+</tr>
+<tr>
+<td><strong>4</strong></td>
+<td>Bag</td>
+<td>25</td>
+</tr>
+<tr>
+<td><strong>5</strong></td>
+<td>Pencil</td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>6</strong></td>
+<td>Eraser</td>
+<td>8</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2-the-range-and-cells-objects">2. The Range and Cells objects<a class="headerlink" href="#2-the-range-and-cells-objects" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Alt+F11 opens the VBA editor. Insert → Module. Type:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Sub ShowValue()
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    MsgBox Range("B2").Value
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>End Sub
+</code></pre></div></li>
+<li>Press F5 to run. A message box shows <code>12</code> — <code>Range("B2").Value</code>
+   reads cell B2's contents. <code>Cells(2,2)</code> is equivalent (row 2,
+   column 2), useful inside loops where row/column are variables.</li>
+</ol>
+<h2 id="3-variables-and-a-for-loop">3. Variables and a For loop<a class="headerlink" href="#3-variables-and-a-for-loop" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Type:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Sub SumQty()
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    Dim total As Long
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    Dim i As Integer
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    total = 0
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    For i = 2 To 6
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>        total = total + Cells(i, 2).Value
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    Next i
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    MsgBox "Total: " &amp; total
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>End Sub
+</code></pre></div></li>
+<li>Manual check: <code>12+3+25+0+8 = 48</code>. The message box must read
+   <code>Total: 48</code>.</li>
+<li><code>Dim</code> declares a variable's type. <code>Long</code> holds integers safely for
+   sums that might exceed <code>Integer</code>'s ~32,767 limit; <code>Integer</code> is fine
+   for a small loop counter like <code>i</code>.</li>
+</ol>
+<h2 id="4-conditional-logic-flagging-low-stock">4. Conditional logic — flagging low stock<a class="headerlink" href="#4-conditional-logic-flagging-low-stock" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Type:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Sub FlagLowStock()
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    Dim i As Integer
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    For i = 2 To 6
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>        If Cells(i, 2).Value &lt; 10 Then
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>            Cells(i, 3).Value = "Reorder"
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>            Cells(i, 3).Interior.Color = RGB(255, 199, 206)
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>        Else
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>            Cells(i, 3).Value = "OK"
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>        End If
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>    Next i
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>End Sub
+</code></pre></div></li>
+<li>Manual check row by row: Pen(12)→OK, Book(3)→Reorder, Bag(25)→OK,
+   Pencil(0)→Reorder, Eraser(8)→Reorder. Column <code>C</code> should read
+   <code>OK, Reorder, OK, Reorder, Reorder</code> with the three Reorder cells
+   shaded light red.</li>
+</ol>
+<h2 id="5-a-user-facing-sub-with-inputbox">5. A user-facing Sub with InputBox<a class="headerlink" href="#5-a-user-facing-sub-with-inputbox" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Type:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Sub AddNewItem()
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    Dim newItem As String
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    Dim newQty As Variant
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    Dim nextRow As Long
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    newItem = InputBox("Item name:")
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    newQty = InputBox("Quantity:")
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    If newItem = "" Then Exit Sub
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>    nextRow = Cells(Rows.Count, 1).End(xlUp).Row + 1
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>    Cells(nextRow, 1).Value = newItem
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>    Cells(nextRow, 2).Value = newQty
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>End Sub
+</code></pre></div></li>
+<li><code>Cells(Rows.Count, 1).End(xlUp).Row</code> is the standard "find the last
+   used row" idiom: it starts at the bottom of the sheet and jumps up
+   to the last non-empty cell in column A, so <code>+1</code> gives the first
+   empty row — here, row 6 has data, so <code>nextRow</code> = <code>7</code>.</li>
+<li>Run it, enter <code>Stapler</code> and <code>15</code> — row 7 should now read
+   <code>Stapler, 15</code>.</li>
+</ol>
+<h2 id="cheat-sheet">Cheat sheet<a class="headerlink" href="#cheat-sheet" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Syntax</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Read/write a cell</td>
+<td><code>Range("B2").Value</code> or <code>Cells(2,2).Value</code></td>
+</tr>
+<tr>
+<td>Declare a variable</td>
+<td><code>Dim name As Type</code></td>
+</tr>
+<tr>
+<td>Loop a fixed range</td>
+<td><code>For i = 2 To 6 ... Next i</code></td>
+</tr>
+<tr>
+<td>Conditional</td>
+<td><code>If cond Then ... Else ... End If</code></td>
+</tr>
+<tr>
+<td>Last used row</td>
+<td><code>Cells(Rows.Count, col).End(xlUp).Row</code></td>
+</tr>
+<tr>
+<td>Prompt the user</td>
+<td><code>InputBox("prompt text")</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
+<p>Write <code>Sub AverageQty()</code> that loops <code>B2:B6</code>, sums the values, divides
+by the count (<code>5</code>), and shows the result in a <code>MsgBox</code>. Manually
+verify: sum <code>48</code> from Section 3, divided by <code>5</code> = <code>9.6</code>. The macro's
+message box must show <code>9.6</code>.</p>
 
 
 

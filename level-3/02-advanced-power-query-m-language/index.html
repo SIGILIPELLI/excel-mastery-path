@@ -1344,6 +1344,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 · Advanced Power Query (M Language Basics)
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1360,6 +1378,102 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-worked-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Worked dataset
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-viewing-the-m-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Viewing the M code
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-custom-column-with-m" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Custom column with M
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-merging-two-queries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Merging two queries
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-editing-m-by-hand" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Editing M by hand
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cheat sheet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1991,6 +2105,91 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-worked-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Worked dataset
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-viewing-the-m-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Viewing the M code
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-custom-column-with-m" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Custom column with M
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-merging-two-queries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Merging two queries
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-editing-m-by-hand" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Editing M by hand
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cheat sheet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2010,8 +2209,174 @@
 
 
 <h1 id="02-advanced-power-query-m-language-basics">02 · Advanced Power Query (M Language Basics)<a class="headerlink" href="#02-advanced-power-query-m-language-basics" title="Permanent link">&para;</a></h1>
-<p>This module is part of Level 3 · Advanced.</p>
-<p>More lessons are on the way — check back soon.</p>
+<p>Every Power Query transformation is really generating code in the <strong>M</strong>
+language, visible via the Advanced Editor. This module reads and
+hand-edits M directly — custom columns, conditional logic, and merging
+two queries — instead of only clicking Ribbon buttons.</p>
+<h2 id="1-worked-dataset">1. Worked dataset<a class="headerlink" href="#1-worked-dataset" title="Permanent link">&para;</a></h2>
+<p>Two tables, both converted to Excel Tables.</p>
+<p><code>Orders</code> (<code>A1:C6</code>):</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1</strong></td>
+<td>OrderID</td>
+<td>CustID</td>
+<td>Amount</td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td>1</td>
+<td>C1</td>
+<td>500</td>
+</tr>
+<tr>
+<td><strong>3</strong></td>
+<td>2</td>
+<td>C2</td>
+<td>300</td>
+</tr>
+<tr>
+<td><strong>4</strong></td>
+<td>3</td>
+<td>C1</td>
+<td>800</td>
+</tr>
+<tr>
+<td><strong>5</strong></td>
+<td>4</td>
+<td>C3</td>
+<td>200</td>
+</tr>
+<tr>
+<td><strong>6</strong></td>
+<td>5</td>
+<td>C2</td>
+<td>450</td>
+</tr>
+</tbody>
+</table>
+<p><code>Customers</code> (<code>A1:B4</code>):</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>A</th>
+<th>B</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1</strong></td>
+<td>CustID</td>
+<td>Name</td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td>C1</td>
+<td>Alan</td>
+</tr>
+<tr>
+<td><strong>3</strong></td>
+<td>C2</td>
+<td>Priya</td>
+</tr>
+<tr>
+<td><strong>4</strong></td>
+<td>C3</td>
+<td>Sam</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2-viewing-the-m-code">2. Viewing the M code<a class="headerlink" href="#2-viewing-the-m-code" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Load <code>Orders</code> into Power Query (Data → From Table/Range). View →
+   <strong>Advanced Editor</strong>. The base query looks like:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>let
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    Source = Excel.CurrentWorkbook(){[Name="Orders"]}[Content]
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>in
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    Source
+</code></pre></div></li>
+<li>Every UI action (a filter, a rename, a group) appends another line
+   inside the <code>let...in</code> block, bound to a name, and the final <code>in</code>
+   line names which step's output is returned.</li>
+</ol>
+<h2 id="3-custom-column-with-m">3. Custom column with M<a class="headerlink" href="#3-custom-column-with-m" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Add Column → Custom Column, name <code>Tier</code>, formula:
+   <code>if [Amount] &gt;= 500 then "Large" else "Small"</code></li>
+<li>This appends a step to the M code:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>#"Added Custom" = Table.AddColumn(#"Changed Type", "Tier",
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    each if [Amount] &gt;= 500 then "Large" else "Small")
+</code></pre></div></li>
+<li>Manual check row by row: 500→Large, 300→Small, 800→Large,
+   200→Small, 450→Small. Three Small, two Large.</li>
+</ol>
+<h2 id="4-merging-two-queries">4. Merging two queries<a class="headerlink" href="#4-merging-two-queries" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Load <code>Customers</code> as its own query too. In the <code>Orders</code> query,
+   Home → <strong>Merge Queries</strong>. Match <code>Orders.CustID</code> to
+   <code>Customers.CustID</code>, Join Kind <strong>Left Outer</strong> (keep every order, add
+   customer info where it matches).</li>
+<li>Underlying M: <code>Table.NestedJoin(Orders, {"CustID"}, Customers,
+   {"CustID"}, "Customers", JoinKind.LeftOuter)</code>. Expand the new
+   <code>Customers</code> column, keeping only <code>Name</code>.</li>
+<li>Manual check: OrderID 1 (CustID C1) → Alan; OrderID 2 (C2) → Priya;
+   OrderID 3 (C1) → Alan; OrderID 4 (C3) → Sam; OrderID 5 (C2) →
+   Priya. Every order row must now show the correct customer name.</li>
+</ol>
+<h2 id="5-editing-m-by-hand">5. Editing M by hand<a class="headerlink" href="#5-editing-m-by-hand" title="Permanent link">&para;</a></h2>
+<ol>
+<li>In the Advanced Editor, manually insert a step that trims
+   whitespace from the Name column defensively, even though this
+   dataset has none:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>#"Trimmed Name" = Table.TransformColumns(#"Expanded Customers",
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    {{"Name", Text.Trim, type text}})
+</code></pre></div>
+   and update the final <code>in</code> line to <code>in #"Trimmed Name"</code>.</li>
+<li>This demonstrates the general <code>Table.TransformColumns</code> pattern:
+   <code>Table.TransformColumns(table, {{"ColumnName", function, type}})</code>
+   applies <code>function</code> to every value in <code>ColumnName</code>.</li>
+</ol>
+<h2 id="cheat-sheet">Cheat sheet<a class="headerlink" href="#cheat-sheet" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>M function</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Table.AddColumn(table,name,each expr)</code></td>
+<td>Add a computed column</td>
+</tr>
+<tr>
+<td><code>Table.NestedJoin(...)</code></td>
+<td>Merge two tables (the engine behind Merge Queries)</td>
+</tr>
+<tr>
+<td><code>Table.TransformColumns(table,{{col,fn,type}})</code></td>
+<td>Apply a function to a column</td>
+</tr>
+<tr>
+<td><code>let ... in ...</code></td>
+<td>Every query's structure: named steps, final returned step</td>
+</tr>
+</tbody>
+</table>
+<h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
+<p>Add a custom column <code>AmountWithTax</code> using M:
+<code>each [Amount] * 1.08</code>. Manually verify row 1: <code>500*1.08=540</code>, row 3:
+<code>800*1.08=864</code>. Confirm the query's output matches both by hand.</p>
 
 
 

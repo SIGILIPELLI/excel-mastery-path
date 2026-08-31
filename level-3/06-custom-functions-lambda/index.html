@@ -1456,6 +1456,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06 · Building Custom Functions with LAMBDA
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1472,6 +1490,113 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-worked-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Worked dataset
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-a-simple-lambda" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. A simple LAMBDA
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-naming-it-as-a-reusable-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Naming it as a reusable function
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-lambda-with-conditional-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. LAMBDA with conditional logic
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-recursive-lambda-advanced" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Recursive LAMBDA (advanced)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-combining-lambda-with-let-for-readability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Combining LAMBDA with LET for readability
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cheat sheet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1991,6 +2116,102 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-worked-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Worked dataset
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-a-simple-lambda" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. A simple LAMBDA
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-naming-it-as-a-reusable-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Naming it as a reusable function
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-lambda-with-conditional-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. LAMBDA with conditional logic
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-recursive-lambda-advanced" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Recursive LAMBDA (advanced)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-combining-lambda-with-let-for-readability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Combining LAMBDA with LET for readability
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cheat-sheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cheat sheet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2010,8 +2231,130 @@
 
 
 <h1 id="06-building-custom-functions-with-lambda">06 · Building Custom Functions with LAMBDA<a class="headerlink" href="#06-building-custom-functions-with-lambda" title="Permanent link">&para;</a></h1>
-<p>This module is part of Level 3 · Advanced.</p>
-<p>More lessons are on the way — check back soon.</p>
+<p><code>LAMBDA</code> lets you define a reusable custom function entirely in
+worksheet formulas — no VBA required — and give it a name via the Name
+Manager so it behaves like a built-in function everywhere in the
+workbook.</p>
+<h2 id="1-worked-dataset">1. Worked dataset<a class="headerlink" href="#1-worked-dataset" title="Permanent link">&para;</a></h2>
+<p>Build this on a sheet named <code>Prices</code>, <code>A1:C5</code>:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1</strong></td>
+<td>Item</td>
+<td>Cost</td>
+<td>MarkupPct</td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td>Pen</td>
+<td>10</td>
+<td>0.20</td>
+</tr>
+<tr>
+<td><strong>3</strong></td>
+<td>Book</td>
+<td>50</td>
+<td>0.15</td>
+</tr>
+<tr>
+<td><strong>4</strong></td>
+<td>Bag</td>
+<td>200</td>
+<td>0.10</td>
+</tr>
+<tr>
+<td><strong>5</strong></td>
+<td>Gizmo</td>
+<td>80</td>
+<td>0.25</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2-a-simple-lambda">2. A simple LAMBDA<a class="headerlink" href="#2-a-simple-lambda" title="Permanent link">&para;</a></h2>
+<ol>
+<li>In <code>D2</code>, without naming it yet, test the raw expression:
+   <code>=LAMBDA(cost,pct,cost*(1+pct))(B2,C2)</code>
+   A <code>LAMBDA</code> defines parameters then a formula using them; the
+   trailing <code>(B2,C2)</code> immediately calls it with those arguments.</li>
+<li>Manual check: <code>10*(1+0.20)=12</code>. <code>D2</code> should show <code>12</code>.</li>
+</ol>
+<h2 id="3-naming-it-as-a-reusable-function">3. Naming it as a reusable function<a class="headerlink" href="#3-naming-it-as-a-reusable-function" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Formulas → Define Name. Name: <code>SellPrice</code>. Refers to:
+   <code>=LAMBDA(cost,pct,cost*(1+pct))</code></li>
+<li>Now in <code>D2:D5</code>, use it like a built-in function:
+   <code>=SellPrice(B2,C2)</code></li>
+<li>Manual check all four rows: Pen <code>10*1.20=12</code>; Book <code>50*1.15=57.5</code>;
+   Bag <code>200*1.10=220</code>; Gizmo <code>80*1.25=100</code>.</li>
+</ol>
+<h2 id="4-lambda-with-conditional-logic">4. LAMBDA with conditional logic<a class="headerlink" href="#4-lambda-with-conditional-logic" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Define a second named LAMBDA, <code>PriceTier</code>:
+   <code>=LAMBDA(price,IF(price&gt;=150,"Premium",IF(price&gt;=50,"Standard","Budget")))</code></li>
+<li>Apply it: <code>=PriceTier(D2)</code> for each row. Using the sell prices from
+   Section 3 (12, 57.5, 220, 100): Pen(12)→Budget, Book(57.5)→Standard,
+   Bag(220)→Premium, Gizmo(100)→Standard.</li>
+</ol>
+<h2 id="5-recursive-lambda-advanced">5. Recursive LAMBDA (advanced)<a class="headerlink" href="#5-recursive-lambda-advanced" title="Permanent link">&para;</a></h2>
+<ol>
+<li><code>LAMBDA</code> can call itself by name if defined with that name via
+   Define Name, enabling recursion without VBA. Define <code>FactorialFn</code>:
+   <code>=LAMBDA(n,IF(n&lt;=1,1,n*FactorialFn(n-1)))</code></li>
+<li>Test with <code>=FactorialFn(5)</code>. Manual check: <code>5! = 5*4*3*2*1 = 120</code>.
+   Trace the recursion: <code>FactorialFn(5)=5*FactorialFn(4)
+   =5*4*FactorialFn(3)=5*4*3*FactorialFn(2)=5*4*3*2*FactorialFn(1)
+   =5*4*3*2*1=120</code>.</li>
+</ol>
+<h2 id="6-combining-lambda-with-let-for-readability">6. Combining LAMBDA with LET for readability<a class="headerlink" href="#6-combining-lambda-with-let-for-readability" title="Permanent link">&para;</a></h2>
+<ol>
+<li><code>LET</code> names intermediate values inside one formula, which pairs
+   well with LAMBDA for clarity. Define <code>Margin</code>:
+   <code>=LAMBDA(cost,price,LET(profit,price-cost,margin,profit/price,margin))</code></li>
+<li>Test <code>=Margin(B2,D2)</code> for Pen: cost <code>10</code>, price <code>12</code> (from Section
+   3). <code>profit=12-10=2</code>, <code>margin=2/12≈0.1667</code> (16.67%).</li>
+</ol>
+<h2 id="cheat-sheet">Cheat sheet<a class="headerlink" href="#cheat-sheet" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Construct</th>
+<th>Syntax</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Inline LAMBDA</td>
+<td><code>=LAMBDA(params,formula)(args)</code></td>
+</tr>
+<tr>
+<td>Named custom function</td>
+<td>Define Name → <code>=LAMBDA(params,formula)</code>, then call <code>=Name(args)</code></td>
+</tr>
+<tr>
+<td>Recursive LAMBDA</td>
+<td>Reference the function's own Defined Name inside its formula</td>
+</tr>
+<tr>
+<td>LET inside LAMBDA</td>
+<td><code>LAMBDA(x,LET(name,expr,...,result))</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
+<p>Define a named LAMBDA <code>RoundedMargin</code> that wraps <code>Margin</code> from Section
+6 and rounds the result to 1 decimal place as a percentage:
+<code>=LAMBDA(cost,price,ROUND(Margin(cost,price)*100,1))</code>. Test on Bag
+(cost <code>200</code>, sell price <code>220</code> from Section 3): margin <code>= (220-200)/220
+≈ 0.0909</code> → <code>9.1</code> after rounding to 1 decimal on the percentage.</p>
 
 
 
