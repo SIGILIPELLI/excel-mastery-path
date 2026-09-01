@@ -1,8 +1,8 @@
 site_name: Excel Mastery Path
 site_description: A structured, module-wise Microsoft Excel training program from entry level to master level, covering formulas, PivotTables, Power Query, VBA, and financial modeling.
-site_url: https://sigilipelli.github.io/excel-skillmastery/
-repo_url: https://github.com/SIGILIPELLI/excel-skillmastery
-repo_name: excel-skillmastery
+site_url: https://sigilipelli.github.io/excel-mastery-path/
+repo_url: https://github.com/SIGILIPELLI/excel-mastery-path
+repo_name: excel-mastery-path
 
 theme:
   name: material
