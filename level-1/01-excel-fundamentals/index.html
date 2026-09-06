@@ -784,6 +784,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2283,6 +2294,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2516,6 +2538,24 @@ drive conditional formatting (Module 3) and IF-based status logic
 </tr>
 </tbody>
 </table>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>Every cell in a worksheet is a node in an in-memory <strong>dependency graph</strong>, not
+just a spot in a grid. When you type a plain value like <code>1200</code> into <code>B2</code>,
+Excel stores it in a sparse internal table keyed by (sheet, row, column) —
+empty cells cost effectively nothing, which is why a workbook with data only
+in the top-left corner of a million-row sheet stays small on disk. The
+<code>.xlsx</code> format itself is a zip archive of XML parts: unzip one and you'll
+find <code>xl/worksheets/sheet1.xml</code> (cell values and formulas), <code>xl/styles.xml</code>
+(formatting), and <code>xl/sharedStrings.xml</code> — Excel deduplicates every text
+string across the whole workbook into one shared table and each cell just
+stores an integer index into it, which is why files with lots of repeated
+text compress far better than files with lots of unique numbers. The Name
+Box and Formula Bar are two views onto the same underlying cell object: the
+Formula Bar always renders the cell's <em>raw content</em> (literal or formula
+string), while the grid renders its <em>cached display value</em> run through the
+cell's number format — this split is exactly why <code>01/15/2026</code> typed into a
+cell is stored internally as the serial number <code>46037</code> (days since
+1899-12-30) with a date format mask applied on top, not as text.</p>
 <h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
 <p>Create a new workbook. Build the 5-category budget table from Section 4
 exactly as shown (Category, Budgeted, Actual). Rename the sheet tab to

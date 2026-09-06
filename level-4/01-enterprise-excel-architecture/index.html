@@ -1912,6 +1912,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2283,6 +2294,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2447,6 +2469,27 @@ Total headcount in <code>A2</code>:
 </tr>
 </tbody>
 </table>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>At enterprise scale, the single-workbook dependency graph model starts
+hitting real architectural limits that shape how large organizations
+actually structure spreadsheets. Excel's recalculation engine is
+fundamentally single-workbook-scoped: cross-workbook references (covered in
+Level 2) rely on cached last-known values precisely because there is no
+unified cross-file dependency graph — each open workbook maintains its own
+graph independently, and "chains" of linked workbooks are really just
+sequential cache refreshes triggered in whatever order you open or update
+links, not a single coherent recalculation. This is the direct architectural
+reason enterprises push toward centralizing shared data in Power Pivot's
+Data Model, a database, or Power BI datasets rather than linked <code>.xlsx</code>
+files: a columnar store like VertiPaq is built for exactly the concurrent,
+large-scale, single-source-of-truth access pattern that file-based
+cross-workbook links handle poorly (no real concurrency control, no atomic
+multi-file consistency, and linear cache-refresh chains that get slower and
+more fragile as more files are chained together). Multithreaded
+recalculation (Excel calculates independent branches of the dependency
+graph in parallel across CPU cores) also only helps within a single
+workbook's graph, which is another reason enterprise architecture favors
+consolidating data rather than fanning it across many linked files.</p>
 <h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
 <p>Using the <code>Department</code>/<code>Budget</code> relationship above, write a DAX measure
 <code>Budget per Head := DIVIDE([Total Budget], [Total Headcount])</code> (define

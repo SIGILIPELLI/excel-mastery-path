@@ -941,6 +941,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2261,6 +2272,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2410,6 +2432,23 @@ the budget's <code>Difference</code> and <code>CategoryInfo</code> data from Mod
 </tr>
 </tbody>
 </table>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p><code>IF</code>, <code>AND</code>, <code>OR</code>, and their relatives are all built on Excel's Boolean
+type, which internally is stored as a 1 or 0 but displays as <code>TRUE</code>/<code>FALSE</code>
+— that's why <code>=TRUE+TRUE</code> evaluates to <code>2</code> and why <code>SUM</code> of a range
+containing logical values (via <code>--</code> or arithmetic coercion) can be used to
+count matches. Nested <code>IF</code> statements are evaluated with <strong>short-circuit
+lazy evaluation</strong>: Excel only computes the branch it actually needs. Given
+<code>=IF(A1&gt;0, expensive_formula_1, expensive_formula_2)</code>, only one of the two
+branches is ever calculated for that cell — this is why wrapping a
+division in <code>IF(B2=0, "", A2/B2)</code> safely avoids a <code>#DIV/0!</code> error rather
+than computing the division first and discarding it: the division branch is
+never entered when the condition is false. <code>AND</code> and <code>OR</code>, by contrast, are
+<em>not</em> short-circuited in the traditional programming sense — they take an
+array of arguments and Excel generally evaluates all of them before
+combining the results, which is why an <code>AND(A1&lt;&gt;0, B1/A1&gt;2)</code> can still throw
+<code>#DIV/0!</code> even though the first condition would have prevented an unsafe
+divide in a short-circuiting language.</p>
 <h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
 <p>Add a <code>Status</code> column to the <code>Budget</code> sheet using the three-way nested
 <code>IF</code> from Section 2, and confirm every row's result matches the expected

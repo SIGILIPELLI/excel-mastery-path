@@ -1743,6 +1743,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2305,6 +2316,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2544,6 +2566,26 @@ comparison a dashboard is supposed to make effortless.</p>
 </tr>
 </tbody>
 </table>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>Two dashboards showing identical numbers can perform very differently
+because of how their formulas interact with the recalculation engine, not
+because of their visual design. Every open, visible cell — even ones not
+currently on screen in a scrolled view — participates in recalculation if
+it's marked dirty, so a "hidden" tab full of heavy helper formulas still
+costs real recalculation time on every edit; hiding a sheet changes
+visibility, not calculation membership. Volatile functions (<code>NOW()</code>,
+<code>TODAY()</code>, <code>RAND()</code>, <code>OFFSET()</code>, <code>INDIRECT()</code>) are the single biggest
+hidden performance tax in dashboard design: the engine can't determine in
+advance what these functions depend on (a <code>TODAY()</code> depends on the system
+clock, not any cell; <code>OFFSET</code>/<code>INDIRECT</code> depend on values it would have to
+evaluate first to even know), so it conservatively re-evaluates every
+volatile cell — and everything downstream of it — on <em>every single</em>
+recalculation, regardless of whether anything relevant actually changed.
+This is precisely why replacing <code>OFFSET</code>-based dynamic ranges with
+structured Table references or <code>INDEX</code>-based ranges (which the engine can
+place into the ordinary non-volatile dependency graph) is one of the most
+effective single changes for making a large interactive dashboard feel
+responsive.</p>
 <h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
 <p>Add a <code>Q1 Target</code> value of <code>30000</code> per region in a new column, then
 build a conditional format on the KPI cells (<code>E5:E8</code>) that turns the

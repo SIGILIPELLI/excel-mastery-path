@@ -1014,6 +1014,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2239,6 +2250,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2440,6 +2462,24 @@ long as it's internally consistent with which rows you built.</p>
 </tr>
 </tbody>
 </table>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>This project ties together several independent engine behaviors you've
+learned across the level, so it's worth being precise about how they
+interact in one workbook. Your <code>SUM</code>/<code>IF</code>/lookup formulas sit in the
+dependency graph, recalculated in topological order every time a budget
+number changes; your conditional formatting rules re-evaluate independently
+on the same trigger, reading the <em>results</em> of those formulas without
+altering them; and if you built a chart or PivotTable on this data, that
+object holds its own separate reference — a live SERIES formula for a
+chart, or a frozen PivotCache snapshot for a PivotTable, meaning the chart
+updates immediately on recalculation while a PivotTable needs an explicit
+Refresh. A common bug at this stage is a chart or summary formula that
+silently stops updating because it references a fixed range (<code>A1:C6</code>)
+rather than a Table or dynamic named range — when you add a 7th budget
+category, the dependency graph has no edge connecting the new row to
+anything downstream, because no formula was ever told to depend on it. That
+is a structural property of how references work, not a bug in the
+recalculation engine.</p>
 <h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
 <p>Finish (or rebuild from scratch) <code>budget-tracker.xlsx</code> against the full
 checklist above. Then extend it with one category of your own choosing —

@@ -1233,6 +1233,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2261,6 +2272,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2432,6 +2454,24 @@ sheet respond to user clicks without VBA.</p>
 </tr>
 </tbody>
 </table>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>Dependent dropdowns (where a second list's options change based on a first
+selection) and form controls both work by exploiting the same
+recalculation-and-lookup machinery you already know, wired together rather
+than by any special "cascading dropdown" feature. A dependent dropdown's
+validation formula typically uses <code>INDIRECT</code> or a dynamic named range built
+from the first cell's value — <code>INDIRECT</code> takes a <em>text string</em> and resolves
+it to an actual range reference at calculation time, which is powerful (the
+same formula can point at completely different ranges depending on other
+cell values) but comes at a real cost: <code>INDIRECT</code> results are opaque to
+Excel's dependency graph, since the engine can't know in advance which
+range a piece of text will resolve to, so cells using it are treated as
+<strong>volatile</strong> and get re-evaluated on every recalculation cycle regardless
+of whether their actual inputs changed. Form controls like Option Buttons
+and Combo Boxes (from the Developer tab) are different again — they aren't
+formulas at all but embedded ActiveX/Form objects that write a value
+directly into a linked cell on user interaction, which is what then feeds
+your dependency-graph formulas downstream.</p>
 <h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
 <p>Build the cascading dropdown in Section 2, then set <code>G1</code> to <code>Fruit</code>
 and confirm <code>G2</code> only offers Apple/Banana/Cherry. Add a custom

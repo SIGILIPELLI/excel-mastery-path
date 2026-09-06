@@ -1979,6 +1979,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2305,6 +2316,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2435,6 +2457,26 @@ Excel's Power Pivot Data Model with its DAX measures (<code>Total Sales</code>,
 </tr>
 </tbody>
 </table>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>Excel and Power BI share the exact same underlying engines for two of the
+most important layers — Power Query's M engine (Mashup Engine) and the
+VertiPaq columnar Data Model — which is why a Power Query or Data Model
+built in Excel can often be migrated to Power BI (or vice versa) with
+minimal rework: the transformation steps and DAX measures are executing
+against the same evaluation semantics in both products, just hosted in a
+different application shell. Where they diverge is the refresh and
+distribution architecture: Excel's Data Model lives inside the workbook
+file itself and refreshes locally when a user opens it or clicks Refresh,
+while a Power BI dataset published to the Service can refresh on a
+schedule server-side, independent of any client being open, using the
+<strong>Power BI Gateway</strong> to reach on-premises data sources securely without
+exposing them directly to the cloud. "Analyze in Excel," which lets Excel
+PivotTables query a published Power BI dataset live, works by having Excel
+send queries in <strong>DAX or MDX</strong> over the network to the Power BI dataset's
+own VertiPaq engine and render the results as an ordinary PivotTable — the
+aggregation is happening remotely in the Power BI Service, not locally in
+Excel's own Data Model, which is why that connection requires network
+access and live credentials rather than working offline.</p>
 <h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
 <p>Using Analyze in Excel against a published <code>Sales</code> dataset, build a
 PivotTable with <code>Region</code> in Rows and the <code>YoY %</code> measure in Values.

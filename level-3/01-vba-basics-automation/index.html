@@ -1536,6 +1536,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2283,6 +2294,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2468,6 +2490,25 @@ macro recorder from Level 2.</p>
 </tr>
 </tbody>
 </table>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>VBA doesn't operate through the same dependency-graph engine that
+worksheet formulas use — it drives Excel through the <strong>Component Object
+Model (COM)</strong>, calling methods and setting properties on real in-process
+objects (<code>Application</code>, <code>Workbook</code>, <code>Worksheet</code>, <code>Range</code>) that represent
+live pieces of the running Excel instance. When VBA writes
+<code>Range("A1").Value = 5</code>, that call goes through the COM interface into the
+same internal cell store formulas use, which is why it <em>does</em> trigger the
+normal dependency-graph recalculation of anything depending on <code>A1</code> — but
+each such call also carries real COM marshalling overhead, which is why
+looping cell-by-cell through a large range from VBA is dramatically slower
+than reading the whole range into a VBA array in one call, operating on the
+in-memory array, and writing it back in one call: that reduces thousands of
+COM round-trips to two. <code>Application.ScreenUpdating = False</code> and
+<code>Application.Calculation = xlCalculationManual</code> exist because VBA, by
+default, triggers Excel's normal screen repaint and recalculation after
+<em>every single</em> property change — disabling them tells the COM layer to
+defer both until you explicitly turn them back on, which is the single
+biggest lever for speeding up a macro that touches many cells.</p>
 <h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
 <p>Write <code>Sub AverageQty()</code> that loops <code>B2:B6</code>, sums the values, divides
 by the count (<code>5</code>), and shows the result in a <code>MsgBox</code>. Manually

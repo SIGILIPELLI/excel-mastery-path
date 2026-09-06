@@ -801,6 +801,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2261,6 +2272,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2426,6 +2448,24 @@ locked (<strong>absolute</strong>). We'll keep using the budget table from Modul
 </tr>
 </tbody>
 </table>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>When you press Enter after typing a formula, Excel doesn't just compute a
+value once — it parses the formula text into a small tree of operations and
+cell references, and registers that cell as a <strong>dependent</strong> of every cell it
+references inside its internal dependency graph. This graph is what makes
+recalculation fast: changing <code>B2</code> doesn't force Excel to re-evaluate every
+formula in the workbook, only the ones reachable by walking outward from
+<code>B2</code> through the dependency edges, in an order that guarantees each cell is
+recalculated only after everything it depends on already has its final
+value (a <strong>topological sort</strong> of the graph). Relative references like <code>B2</code>
+are stored not as a fixed address but as an <em>offset</em> from the formula's own
+cell — copying a formula down a column re-applies that offset from each new
+position, which is why the row number shifts. An absolute reference (<code>$B$2</code>)
+stores a fixed coordinate instead of an offset, so copying it never
+changes it. If the graph ever contains a cycle — a formula that depends,
+directly or through a chain, on itself — Excel can't produce a valid
+evaluation order and flags it as a circular reference rather than looping
+forever.</p>
 <h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
 <p>In <code>budget-tracker.xlsx</code>, add a <code>Difference</code> column (<code>=C2-B2</code>, copied down),
 a <code>Total</code> row using <code>SUM</code> for both Budgeted and Actual, an <code>Average</code> row

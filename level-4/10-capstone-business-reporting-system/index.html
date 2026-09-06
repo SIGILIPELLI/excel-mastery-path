@@ -2173,6 +2173,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2296,6 +2307,17 @@
     <span class="md-ellipsis">
       
         Cheat sheet — how the whole system fits together
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
       
     </span>
   </a>
@@ -2519,6 +2541,25 @@ as <code>RawSales</code> grows well beyond 12 rows.</p>
 </tr>
 </tbody>
 </table>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>A capstone reporting system exercises every layer of the engine stack this
+course has covered, now working together end to end: Power Query's M
+engine (with query folding wherever the source allows it) ingests and
+reshapes raw data outside the worksheet entirely; that output loads into a
+VertiPaq Data Model, where relationships form table-level dependency edges
+used by DAX's <code>CALCULATE</code>-driven filter-context evaluation; PivotTables and
+charts built on that model read from the model's own query engine rather
+than a worksheet dependency graph, while any plain worksheet formulas you
+layer on top still participate in the classic cell-level dependency graph
+recalculated in topological order. The performance and correctness bugs
+most likely to surface at this scale are the ones this course has named
+explicitly at each layer: an unfoldable Power Query step silently pulling
+the entire source table locally, a <code>SUMX</code> iterator used where a plain
+measure would let VertiPaq's columnar scan do the work, a volatile
+worksheet function force-invalidating far more of the sheet than intended,
+or a cross-file link relying on a stale cache — recognizing which layer a
+symptom actually lives in, rather than treating "make it faster" as one
+undifferentiated problem, is the core skill this project is meant to prove.</p>
 <h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
 <p>Append a <code>Jul</code> row for both regions (North <code>28000</code>, South <code>23500</code>),
 run <code>RefreshDashboard</code>, and confirm <code>Total Revenue</code> updates to

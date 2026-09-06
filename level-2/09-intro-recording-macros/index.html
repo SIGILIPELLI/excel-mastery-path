@@ -1384,6 +1384,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2283,6 +2294,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2456,6 +2478,24 @@ button.</p>
 </tr>
 </tbody>
 </table>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>The macro recorder doesn't watch your intentions — it watches the literal
+sequence of Excel Object Model calls your UI actions trigger, and writes out
+VBA statements that reproduce those exact calls. This is why recorded
+macros are usually far more brittle and verbose than hand-written VBA:
+clicking a cell during recording generates a <code>.Select</code> followed by an
+operation on <code>Selection</code>, faithfully mirroring the two-step "select then
+act" nature of mouse interaction, whereas a human writing VBA directly
+would just act on the range object (<code>Range("A1").Value = ...</code>) without ever
+selecting it — selecting a cell has real UI cost (repainting, scrolling)
+that a program doesn't need to pay. It's also why recorded macros often
+hard-code absolute references and specific sheet names: the recorder logs
+the concrete objects your clicks resolved to at record time, with no
+awareness of which parts of that were incidental (which cell happened to be
+active) versus load-bearing (which range you meant). Macros are stored as
+VBA source code inside a hidden project structure within the workbook file
+(which is exactly why saving one requires the <code>.xlsm</code> format — plain
+<code>.xlsx</code> has no container for that VBA project at all).</p>
 <h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
 <p>Record a macro <code>FormatTotals</code> that selects <code>D2:D4</code> (after building the
 Total column from Section 4), applies bold, and adds a border. Run it

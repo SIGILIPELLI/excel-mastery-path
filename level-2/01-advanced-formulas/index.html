@@ -1171,6 +1171,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2305,6 +2316,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2531,6 +2553,26 @@ by hand, then confirming the formula returns the same number.</p>
 </tr>
 </tbody>
 </table>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>Functions like <code>SUMIFS</code>, <code>INDEX/MATCH</code> with multiple criteria, and array
+constants push more work onto Excel's calculation engine per cell, and the
+engine optimizes differently depending on the shape of the work. <code>SUMIFS</code>
+and <code>COUNTIFS</code> build an internal bitmap-like filter for each criteria range
+— rather than looping through rows once per criterion, Excel evaluates each
+criteria range once, combines the resulting match sets, and only then sums
+the matching values — which is why <code>SUMIFS</code> scales better with more
+criteria than an equivalent nested <code>SUMPRODUCT</code> of manually multiplied
+Boolean arrays, even though both can express the same logic. <code>SUMPRODUCT</code>,
+by contrast, has no such optimization: it performs genuine full-array
+arithmetic, multiplying entire ranges element-by-element in memory before
+summing, which is powerful (no need for the criteria structure <code>SUMIFS</code>
+requires) but means its cost grows directly with the size of the ranges
+involved every single recalculation, with no early exit. Nesting functions
+also affects <em>evaluation order</em>, not just readability — Excel evaluates a
+formula's parse tree bottom-up, so the innermost function calls resolve
+first, and a deeply nested formula recalculates every inner call on every
+recalculation pass rather than caching intermediate results, which is
+exactly the inefficiency <code>LET</code> (covered in Level 3) was introduced to fix.</p>
 <h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
 <p>Using the <code>Sales</code> table above, compute: (1) total Amount for West + Feb
 (expected <code>1100</code>), (2) count of deals by Sam over 900 (expected <code>2</code>: 1100

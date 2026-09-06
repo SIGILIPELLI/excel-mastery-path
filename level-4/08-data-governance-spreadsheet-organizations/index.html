@@ -2119,6 +2119,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2298,6 +2309,17 @@
     <span class="md-ellipsis">
       
         Cheat sheet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
       
     </span>
   </a>
@@ -2488,6 +2510,25 @@ relying on a sheet-protection password alone.</p>
 </tr>
 </tbody>
 </table>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>Data governance at the spreadsheet-fleet level runs directly into a
+structural fact about how Excel formulas work: a formula's dependency
+graph edges are private to its own workbook (and, per Level 4 Module 1,
+even cross-workbook links are cache-based rather than a shared live graph),
+so there is no built-in, organization-wide way to know which of hundreds of
+workbooks depend on a given shared source file without literally opening
+each one and inspecting its external link table (<code>Data &gt; Edit Links</code>) — this
+is precisely the gap tools like Power BI datasets, a proper database, or a
+model-lifecycle catalog are built to close: they centralize the
+"who-depends-on-what" answer that individual workbooks' isolated dependency
+graphs cannot provide collectively. Protecting sheets/cells (<code>Review &gt;
+Protect Sheet</code>, cell Locked property) works at a layer <em>below</em> formulas
+entirely — the Locked property is a per-cell attribute checked by the UI
+edit-entry path before a keystroke is allowed to reach the cell store, the
+same interception point Data Validation uses, which is why protection (like
+validation) can be bypassed by any code path that writes to cells without
+going through that UI gate, including VBA running with appropriate
+permissions or an unprotected linked workbook feeding values in.</p>
 <h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
 <p>Using the "many copies" scenario in Section 1, write the Power Query
 <code>M</code> step (or plain formula) each regional manager's report should use

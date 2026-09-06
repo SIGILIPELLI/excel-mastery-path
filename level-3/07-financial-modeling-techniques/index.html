@@ -1704,6 +1704,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2283,6 +2294,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2467,6 +2489,27 @@ professional analysts use.</p>
 </tr>
 </tbody>
 </table>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>Functions like <code>NPV</code>, <code>IRR</code>, and <code>XIRR</code> aren't simple aggregations — they
+implement genuine numerical algorithms under a friendly one-line interface.
+<code>NPV</code> performs a straightforward geometric-series discount calculation, but
+<code>IRR</code> has no closed-form algebraic solution for cash flows beyond two
+periods, so Excel solves it the same way Goal Seek solves any equation:
+iteratively, starting from an initial guess (0.1 by default) and refining
+it via a numerical method (Excel uses an iterative approach similar to
+Newton's method) until successive estimates converge within a tolerance or
+a maximum iteration count is hit — which is exactly why <code>IRR</code> can return
+<code>#NUM!</code> on cash flow patterns with multiple sign changes: those can have
+more than one mathematically valid rate of return, and the iteration can
+converge to a different one than expected, or fail to converge at all,
+depending on the guess. This is also why circular financial models
+(interest expense depending on a debt balance that depends on cumulative
+cash flow that depends on interest expense) require Excel's <strong>iterative
+calculation</strong> mode: the dependency graph's normal requirement — that
+evaluation order be a strict topological sort with no cycles — is
+deliberately relaxed, and the engine instead repeatedly re-evaluates the
+circular cells for a fixed number of iterations or until values stop
+changing beyond a set tolerance.</p>
 <h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
 <p>Recompute NPV at a discount rate of <code>15%</code> instead of <code>10%</code> and confirm
 it drops compared to Section 2's <code>2180.18</code> (a higher discount rate

@@ -1687,6 +1687,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2305,6 +2316,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2454,6 +2476,24 @@ workbook.</p>
 </tr>
 </tbody>
 </table>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p><code>LAMBDA</code> doesn't introduce a new evaluation model — it lets you name and
+reuse a <em>sub-tree</em> of the same formula parse tree the engine has always
+used, which is precisely why it eliminates the redundant-recalculation
+problem nested formulas have: without <code>LAMBDA</code> (or <code>LET</code>), an expression
+repeated three times inside one formula is genuinely recalculated three
+separate times per recalculation pass, because the engine has no way to
+know two identical-looking sub-expressions are the same computation; <code>LET</code>
+names an intermediate result once and every reference to that name reuses
+the <em>already-computed</em> value within that formula's single evaluation,
+turning an O(n) repeated cost into O(1). A named <code>LAMBDA</code> saved via Name
+Manager works the same way but at the workbook level: calling it inserts a
+reference to the stored expression tree, parameterized by your arguments,
+and it participates in the ordinary dependency graph exactly like a
+built-in function — the difference is Excel evaluates it by substituting
+your arguments into the stored formula tree and running the <em>same</em>
+recalculation engine on the result, rather than calling out to compiled
+native code the way <code>SUM</code> or <code>VLOOKUP</code> do internally.</p>
 <h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
 <p>Define a named LAMBDA <code>RoundedMargin</code> that wraps <code>Margin</code> from Section
 6 and rounds the result to 1 decimal place as a percentage:

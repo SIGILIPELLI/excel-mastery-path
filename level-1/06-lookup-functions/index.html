@@ -924,6 +924,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2283,6 +2294,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2542,6 +2564,26 @@ commission schedule.</p>
 </tr>
 </tbody>
 </table>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p><code>VLOOKUP</code> and <code>HLOOKUP</code> in their default (approximate-match) mode do not
+scan a column top to bottom — they run a <strong>binary search</strong>, which is why
+Excel's own documentation insists the lookup column be sorted ascending:
+an unsorted column breaks binary search's core assumption and produces a
+wrong match without any error, because the algorithm still terminates and
+returns <em>something</em>, just not the nearest correct value. Exact-match mode
+(<code>FALSE</code> as the 4th argument) instead falls back to a <strong>linear scan</strong> from
+the top of the range, stopping at the first exact hit — this is why exact
+<code>VLOOKUP</code> gets measurably slower on very large tables, while approximate
+<code>VLOOKUP</code> stays fast regardless of table size. <code>INDEX-MATCH</code> splits the same
+two-phase search into separate primitives: <code>MATCH</code> performs the search
+(binary for approximate match, linear for exact) and returns a <em>position</em>
+(an integer offset), and <code>INDEX</code> then does an O(1) direct address lookup
+into the array at that position — no re-scanning. This decoupling is also
+why <code>INDEX-MATCH</code> can look leftward (matching in one column, returning from
+a column to its left) while <code>VLOOKUP</code> structurally cannot: <code>VLOOKUP</code>'s
+search and return are hard-wired to the same left-to-right column scan
+direction, whereas <code>MATCH</code> and <code>INDEX</code> operate on entirely independent
+ranges.</p>
 <h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
 <p>Build the <code>CategoryInfo</code> lookup table and pull <code>Type</code> into the <code>Budget</code>
 sheet with <code>VLOOKUP</code>, then pull <code>Priority</code> with both <code>XLOOKUP</code> (if

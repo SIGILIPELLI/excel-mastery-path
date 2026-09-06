@@ -1564,6 +1564,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2283,6 +2294,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2478,6 +2500,27 @@ two queries — instead of only clicking Ribbon buttons.</p>
 </tr>
 </tbody>
 </table>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>M, the language behind every Power Query step, is a <strong>pure, lazily-evaluated
+functional language</strong> — every step is actually a function call that takes
+the previous step's table as its argument and returns a new table, and the
+query as a whole is just one composed function (<code>let ... in ...</code>)
+referencing each step by name. Because M is lazy, the engine doesn't
+necessarily compute step 3's entire result before running step 4 — it can
+analyze the whole chain and, wherever the source supports it, use <strong>query
+folding</strong>: translating your point-and-click steps back into the source
+system's native query language (a SQL <code>WHERE</code>/<code>SELECT</code> for a database
+connection, for instance) so filtering and column selection happen at the
+source rather than after pulling every row into Excel. This is why step
+order matters for performance even though it doesn't change the <em>result</em>:
+a <code>Filter</code> step placed before a custom column that can't be folded (like
+one calling a non-foldable M function) still gets pushed to the source,
+but a <code>Filter</code> placed <em>after</em> that unfoldable step forces all rows to be
+pulled locally first, breaking the folding chain for every step after it.
+<code>Table.Buffer</code> exists specifically to force <em>eager</em> evaluation at a chosen
+point, deliberately trading folding/laziness for a predictable, single
+materialization when a step is expensive and would otherwise be
+re-evaluated multiple times downstream.</p>
 <h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
 <p>Add a custom column <code>AmountWithTax</code> using M:
 <code>each [Amount] * 1.08</code>. Manually verify row 1: <code>500*1.08=540</code>, row 3:

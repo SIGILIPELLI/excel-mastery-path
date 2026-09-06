@@ -896,6 +896,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2283,6 +2294,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2463,6 +2485,22 @@ formatting options you'll reach for constantly.</p>
 </tr>
 </tbody>
 </table>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>A chart is not a picture of your data — it's an object holding a live
+reference to one or more ranges (a <strong>SERIES formula</strong>, visible in the
+Formula Bar when you click a chart series, e.g.
+<code>=SERIES(Budget!$C$1,Budget!$A$2:$A$6,Budget!$C$2:$C$6,1)</code>) plus a rendering
+description. Because the chart stores references rather than a copied
+snapshot of values, it is entirely driven by the same dependency graph as
+formulas: whenever a recalculation updates any cell inside a SERIES range,
+Excel marks the chart's series data as dirty and repaints it in the same
+pass, which is why edited numbers visibly move bars and lines with no user
+action beyond the edit. Chart <em>type</em> and <em>axis scaling</em>, in contrast, are
+stored as chart-object properties, not derived from the data, which is why
+Excel occasionally auto-picks a poor axis minimum/maximum (it defaults to
+"nice round numbers around the data's min/max" using a fixed rounding
+algorithm) and why manually fixing an axis bound stops it from
+re-adjusting even as the underlying data changes.</p>
 <h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
 <p>From the Budget Table, build a clustered column chart comparing Budgeted
 vs. Actual across all categories, with a title and data labels turned on.

@@ -868,6 +868,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2283,6 +2294,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2442,6 +2464,22 @@ budget range into a real Table.</p>
 </tr>
 </tbody>
 </table>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>Converting a range to a Table (Ctrl+T) does something structurally
+significant: it wraps that range in a named <code>ListObject</code> with its own
+metadata — column names, a defined data body range, and a <strong>structured
+reference</strong> scheme (<code>Table1[Category]</code> instead of <code>A2:A6</code>) — that Excel
+keeps in sync automatically. A structured reference doesn't point at fixed
+coordinates; it resolves relative to the Table's identity, so when a new
+row is added the Table's boundary expands, every column formula
+auto-fills into the new row (because the Table stores "this column's
+formula" once and stamps it into new rows on insert), and any chart,
+PivotTable, or formula built on <code>Table1[Actual]</code> automatically includes the
+new data with no reference editing at all. This is the same underlying
+mechanism that makes Tables resize correctly when you paste new rows below
+them but not when you type past a completely blank gap row — the boundary
+tracking watches for contiguous insertion at the Table's own edge, not for
+data appearing anywhere near it.</p>
 <h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
 <p>Convert the budget range in <code>budget-tracker.xlsx</code> into a Table named
 <code>Budget</code>. Add <code>=SUM(Budget[Actual])</code> and <code>=SUM(Budget[Budgeted])</code> formulas

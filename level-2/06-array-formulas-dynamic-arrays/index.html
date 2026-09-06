@@ -1300,6 +1300,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2283,6 +2294,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2458,6 +2480,27 @@ no <code>Ctrl+Shift+Enter</code> required, unlike legacy array formulas.</p>
 </tr>
 </tbody>
 </table>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>Modern dynamic array functions like <code>FILTER</code>, <code>SORT</code>, and <code>UNIQUE</code>
+introduced a genuinely new engine behavior called <strong>spilling</strong>: a formula
+entered in one cell can return an array of results, and Excel automatically
+claims the neighboring empty cells below/right to display it, without those
+cells containing any formula of their own — they hold a special internal
+marker pointing back to the origin cell's formula, visible as grayed-out
+"ghost" values in the Formula Bar if you click one. This is why spill
+results disappear entirely if you type anything into a cell the spill needs
+— Excel detects the obstruction before evaluating the array formula and
+throws <code>#SPILL!</code> rather than partially overwriting your data, because
+letting a formula silently clobber unrelated cell content would break the
+dependency graph's guarantee that only formulas write to cells they
+reference. The dependency graph itself had to be extended to support this:
+a downstream formula referencing <code>A1#</code> (the spill range operator) depends
+on the <em>entire dynamic array</em>, not a fixed range, so if the array's size
+changes on recalculation (say, <code>FILTER</code> now returns 8 rows instead of 5),
+every dependent recalculates against the new shape automatically — legacy
+array formulas (entered with Ctrl+Shift+Enter, <code>{=...}</code>) predate this and
+instead require the array's exact output size to be pre-selected by hand,
+which is why they truncate or fill with <code>#N/A</code> if the guessed size is wrong.</p>
 <h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
 <p>Using the <code>Team</code> table, write one formula that lists unique names
 sorted alphabetically (<code>=SORT(UNIQUE(A2:A9))</code> — expect Alan, Nina,

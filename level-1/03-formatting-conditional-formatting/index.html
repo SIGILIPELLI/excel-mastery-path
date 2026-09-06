@@ -829,6 +829,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2261,6 +2272,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2430,6 +2452,23 @@ underlying data changes.</p>
 </tr>
 </tbody>
 </table>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>Formatting — including conditional formatting — never touches the value
+stored in a cell; it's a completely separate layer applied at render time.
+Internally, each cell stores an index into a shared <strong>style table</strong>
+(<code>xl/styles.xml</code>), and conditional formatting rules are stored separately
+again, as ordered rule objects attached to a range, each holding a
+Boolean-producing formula and a style to apply if it evaluates to true.
+Every time the sheet recalculates, Excel re-evaluates every conditional
+formatting rule against every cell in its range, in rule priority order, and
+paints the <em>first</em> rule that matches (unless "stop if true" is unset and a
+later rule also applies extra formatting) — which is why reordering rules
+in the Conditional Formatting Rules Manager can change what a cell looks
+like without changing any data. Because the underlying value is untouched,
+a cell showing red because it's below budget still sums, filters, and
+sorts by its real number — only <code>=CELL("color", ...)</code>-style tricks or VBA
+can read the conditional formatting result itself, because it doesn't exist
+as data, only as a rendering decision recomputed on the fly.</p>
 <h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
 <p>In <code>budget-tracker.xlsx</code>, format <code>B2:C6</code> as Currency, bold and fill the
 header row, and add borders around the whole table (<code>A1:D6</code>). On the

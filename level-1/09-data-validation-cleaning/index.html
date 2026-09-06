@@ -997,6 +997,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2261,6 +2272,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2450,6 +2472,24 @@ what can be typed into a cell) and <strong>cleaning</strong> existing messy data
 </tr>
 </tbody>
 </table>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>Data Validation is enforced at the point of <em>entry</em>, not stored as a
+property of the value — Excel evaluates the validation rule's formula
+against whatever is being typed, before the keystroke commits to the cell,
+and rejects the entry (or warns) if it evaluates to false. Crucially, this
+check only runs for interactive typing through the UI: pasting data,
+filling with the fill handle, or writing values via VBA/Power Query can all
+bypass validation entirely and leave "invalid" values sitting in a
+validated cell, because validation is a UI-layer gate, not a stored
+constraint the engine re-checks on every recalculation. This is also why
+<code>Data &gt; Data Validation &gt; Circle Invalid Data</code> exists as a separate,
+manually-triggered feature — it's the one tool that actually scans existing
+cell values against their validation rules after the fact, since the
+engine itself never does that automatically. A validation dropdown list
+sourced from a range (rather than a typed comma list) works by Excel
+re-evaluating that range's current values live each time you open the
+dropdown — so it always reflects the source range's latest values with no
+extra refresh step, unlike a PivotTable's cache.</p>
 <h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
 <p>Build the <code>Messy</code> sheet exactly as shown, clean it with a single
 <code>=PROPER(TRIM(A2))</code> formula copied down, confirm the result matches

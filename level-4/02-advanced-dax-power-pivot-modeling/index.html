@@ -1951,6 +1951,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2305,6 +2316,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2504,6 +2526,26 @@ against itself.</p>
 </tr>
 </tbody>
 </table>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>Advanced DAX patterns — time intelligence functions, <code>CALCULATE</code> with
+multiple filter modifiers, iterator functions like <code>SUMX</code> — all resolve
+down to how VertiPaq scans compressed columns under a given filter context.
+Time-intelligence functions like <code>DATEADD</code> or <code>SAMEPERIODLASTYEAR</code> don't
+contain special date logic of their own; they generate a modified filter on
+the model's Date table and hand off to the same <code>CALCULATE</code> filter-context
+mechanism as any other measure — which is exactly why they require a proper,
+contiguous, marked Date table: the functions are pattern-matching against
+that table's structure, not doing calendar arithmetic on values directly.
+Iterator functions (<code>SUMX</code>, <code>AVERAGEX</code>, <code>FILTER</code>) work fundamentally
+differently from aggregators like <code>SUM</code>: an iterator materializes a
+row-context — walking the table (or a virtual table VertiPaq builds
+in-memory for the expression) row by row, evaluating its expression once
+per row before aggregating — which is measurably more expensive than a
+plain columnar <code>SUM</code>, since <code>SUM</code> can use VertiPaq's compressed columnar
+scan directly without ever constructing per-row context. This is the real
+reason <code>SUMX(Table, [Measure])</code> performs worse than pushing the same logic
+into a plain measure where possible: the iterator forces row-by-row
+evaluation instead of the columnar engine's native aggregation path.</p>
 <h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
 <p>Add a <code>South PY</code> and <code>South YoY %</code> pair of measures mirroring Section
 3. South's 2026 total is <code>800+900+950=2650</code>; its 2027 total is

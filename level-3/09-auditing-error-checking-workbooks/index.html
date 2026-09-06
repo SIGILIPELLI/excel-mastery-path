@@ -1771,6 +1771,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2305,6 +2316,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2482,6 +2504,24 @@ range bug.</p>
 </tr>
 </tbody>
 </table>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>Trace Precedents and Trace Dependents aren't computing anything new when
+you click them — they're literally rendering the edges of the same
+dependency graph the calculation engine already maintains internally,
+which is why they respond instantly even on a huge workbook: the graph
+already exists, the tool just draws arrows along existing edges rather than
+walking cell references from scratch. Error values like <code>#REF!</code>, <code>#N/A</code>,
+and <code>#DIV/0!</code> are not exceptions that halt evaluation — they are ordinary
+values that propagate through the dependency graph exactly like numbers do:
+a formula that references a cell containing <code>#REF!</code> receives <code>#REF!</code> as an
+input and, unless wrapped in <code>IFERROR</code>/<code>IFNA</code>, produces <code>#REF!</code> itself,
+which is why one broken cell can cascade an error across dozens of
+downstream formulas in a single recalculation pass — the graph doesn't stop
+at the first error, it just carries the error value forward like any other.
+The Watch Window works by registering a cell as a small standing
+"dependent" that displays its value after every recalculation without
+needing to be visible on screen, using the same recalculation notification
+mechanism that redraws visible cells and charts.</p>
 <h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
 <p>The <code>Audit</code> sheet's <code>D6</code> total is <code>74</code>. Add a <code>Discount</code> row (<code>Qty=0</code>,
 <code>Cost=-5</code>, meaning a flat $5 discount) and extend all three ranges

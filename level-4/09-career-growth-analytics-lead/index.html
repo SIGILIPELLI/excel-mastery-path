@@ -2136,6 +2136,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2276,6 +2287,17 @@
     <span class="md-ellipsis">
       
         Cheat sheet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
       
     </span>
   </a>
@@ -2436,6 +2458,23 @@ material as-is:</p>
 </tr>
 </tbody>
 </table>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>A useful lens for evaluating your own technical depth as you grow into an
+analytics-lead role is whether you can explain <em>why</em> a given tool choice is
+faster or more correct at the engine level, not just that it works — the
+distinctions this course has built toward (dependency-graph recalculation
+order, VertiPaq's columnar compression versus row-by-row iteration,
+volatile functions defeating dirty-cell optimization, query folding versus
+local materialization in Power Query) are exactly the vocabulary senior
+analytics conversations use to justify architecture decisions: choosing a
+Data Model over linked workbooks, flagging a slow model's volatile
+functions before it ships, or explaining to a stakeholder why a report
+takes 40 seconds to refresh. Being able to trace a specific slow workbook
+back to its actual mechanism (a whole-column <code>SUMPRODUCT</code>, an <code>INDIRECT</code>
+forcing volatility, an unfoldable Power Query step breaking source-side
+filtering) rather than offering generic "the file is too big" diagnoses is
+precisely the difference between an advanced spreadsheet user and someone
+who can lead the analytics function's tooling decisions credibly.</p>
 <h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
 <p>Using Section 2's method, quantify the time/value impact of one tool
 you built earlier in this path (e.g. the Level 3 dashboard or the

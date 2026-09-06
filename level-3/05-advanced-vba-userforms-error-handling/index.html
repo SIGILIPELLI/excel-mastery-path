@@ -1637,6 +1637,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2261,6 +2272,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2440,6 +2462,26 @@ fails gracefully instead of crashing with a raw VBA error.</p>
 </tr>
 </tbody>
 </table>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>VBA's error handling is built around a single per-procedure error state,
+not exceptions in the try/catch sense — <code>On Error Goto Label</code> doesn't wrap
+a block of code the way a try/catch does; it sets a standing instruction
+telling the VBA runtime "if any statement in this procedure from this
+point forward raises a runtime error, jump execution to this label," which
+stays active until explicitly cleared (<code>On Error Goto 0</code>) or the procedure
+ends. This is why a single <code>On Error Resume Next</code> at the top of a long
+routine is dangerous: it doesn't just guard the next risky line, it
+silently swallows <em>every</em> subsequent runtime error for the rest of that
+procedure until something resets it, which is why disciplined VBA wraps
+just the risky lines and immediately restores normal error propagation
+afterward. UserForms are a separate COM subsystem again — each control
+(TextBox, ComboBox) is its own object firing its own events (<code>Change</code>,
+<code>Click</code>) on the VBA message loop, and a form is <strong>modal</strong> by default,
+meaning it takes over the application's event loop entirely and no other
+Excel code runs until it's closed — which is exactly why a modal form left
+open by a bug can look like Excel has frozen: the rest of the application
+genuinely is blocked, waiting for that one form's message loop to release
+control.</p>
 <h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
 <p>Add a <code>Cancel</code> CommandButton to the UserForm from Section 2 whose
 <code>Click</code> event runs <code>Unload Me</code>. Manually confirm: opening the form,

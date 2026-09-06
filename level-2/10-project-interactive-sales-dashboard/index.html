@@ -1412,6 +1412,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2283,6 +2294,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2504,6 +2526,24 @@ to an Excel Table named <code>tblSales</code> (Insert → Table):</p>
 </tr>
 </tbody>
 </table>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>An interactive dashboard is really three separate engines (worksheet
+formulas, chart SERIES objects, and PivotTable caches) plus slicers,
+choreographed to feel like one coherent tool. Clicking a slicer button
+writes a filter selection that Excel propagates to every PivotTable
+connected to it via Report Connections; each of those PivotTables
+independently re-aggregates from its own PivotCache using that filter —
+they don't share computed results with each other, only the filter
+criteria, which is why two differently-shaped PivotTables can respond to
+the same slicer click. Any chart built directly on a PivotTable (a
+PivotChart) automatically redraws because its SERIES formula points at the
+PivotTable's <em>output range</em>, which the cache re-aggregation just overwrote;
+a chart built on plain formula cells redraws because those cells sit in the
+ordinary dependency graph and recalculate before the chart's next repaint.
+The reason dashboards can feel sluggish with many slicers and PivotTables
+is now visible from the mechanism: every slicer click can trigger several
+independent cache re-aggregations plus a graph recalculation plus multiple
+chart repaints, all chained together, rather than one single update step.</p>
 <h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
 <p>Add a second KPI tile below <code>B2</code>: average deal size for the selected
 region, <code>=AVERAGEIFS(tblSales[Amount],tblSales[Region],B1)</code>. With

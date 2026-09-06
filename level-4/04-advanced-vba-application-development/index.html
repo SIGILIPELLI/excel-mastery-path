@@ -2007,6 +2007,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2305,6 +2316,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2462,6 +2484,25 @@ of an unhandled runtime error dialog.</p>
 </tr>
 </tbody>
 </table>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>A full VBA application built with class modules is really building custom
+COM-like objects inside the workbook's VBA project, giving you your own
+object model layered on top of Excel's — a class module compiles to a
+private COM-style interface with properties (backed by <code>Property Get/Let/
+Set</code> procedures) and methods, and instantiating it with <code>New</code> creates a
+genuinely separate object instance with its own private state, exactly like
+Excel's own <code>Range</code> or <code>Worksheet</code> objects, just implemented in your VBA
+rather than Excel's native code. Events work through a <strong>callback
+registration</strong> mechanism: declaring <code>WithEvents</code> on an object variable
+registers your procedure with Excel's event-dispatch table for that
+object, and Excel's application loop calls back into your code whenever the
+matching event fires (a <code>Worksheet_Change</code>, a custom class's own raised
+event) — this is fundamentally different from procedural VBA calls, because
+your code doesn't call these procedures directly; Excel's own runtime does,
+asynchronously relative to your other code, which is why event-handling
+code must be defensively written against re-entrancy (an event handler that
+itself edits a cell can retrigger the same event before the first call
+finishes, unless explicitly guarded).</p>
 <h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
 <p>Add a <code>RemoveExpense(index As Integer)</code> procedure using
 <code>allExpenses.Remove(index)</code>, then confirm that after removing item 1

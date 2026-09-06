@@ -1799,6 +1799,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2305,6 +2316,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2501,6 +2523,26 @@ rule is what turns a model into a usable recommendation.</p>
 </tr>
 </tbody>
 </table>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>Scenario Manager and Data Tables both implement "what if I changed this
+input" by temporarily hijacking specific cells and forcing the dependency
+graph through a full recalculation for each scenario, then restoring the
+original values — Excel keeps no persistent parallel state for unselected
+scenarios; only the currently active scenario's values actually live in the
+cells at any moment, with the others stored separately as named lists of
+cell/value pairs that get swapped in on demand. This matters for your
+model's integrity: any formula depending on scenario inputs must sit
+correctly in the topological order relative to those inputs, or Scenario
+Manager's cell swap won't propagate the way you expect. Circular structures
+in a scenario/sensitivity model (a plug figure that depends on a total that
+depends on the plug) again require iterative calculation mode, where the
+engine deliberately abandons its normal no-cycles guarantee and instead
+loops the circular region a bounded number of times per recalculation,
+converging toward a stable value rather than computing one in a single
+deterministic pass — which is also why enabling iterative calculation on a
+model with a genuine (not intentional) circular reference bug can hide the
+bug by "successfully" converging to a wrong number instead of throwing the
+circular-reference warning that would have caught it.</p>
 <h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
 <p>Add a two-variable Data Table testing NPV (<code>B9</code>) across combinations of
 Growth Rate (<code>0.05</code> to <code>0.25</code>, rows) and Discount Rate (<code>0.08</code> to

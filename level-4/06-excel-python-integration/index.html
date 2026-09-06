@@ -2063,6 +2063,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2305,6 +2316,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2491,6 +2513,25 @@ Section 3) over <code>pandas.to_excel</code>'s full-sheet rewrite (Section 4).</
 </tr>
 </tbody>
 </table>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>Python in Excel doesn't run inside the same process as Excel's calculation
+engine at all — it executes in a sandboxed, isolated container (Microsoft's
+cloud-hosted runtime), sending your Python code and the referenced cell
+data across that boundary, running it remotely, and returning the result
+back into the workbook as a special <code>PY</code> cell object. This is a
+fundamentally different execution model from a <code>SUM</code> or even a <code>LAMBDA</code>:
+Excel's normal formulas are evaluated in-process by the same dependency
+graph you've used all course, while a Python cell's result is treated by
+that graph as an opaque value dependent on its declared input cells —
+Excel knows <em>that</em> the Python cell depends on certain ranges (so it
+recalculates when they change) but the actual computation happens outside
+the recalculation engine entirely, in a separate Python interpreter
+process with pandas/NumPy/matplotlib available. This explains two
+practical behaviors directly: Python cells require network connectivity to
+the cloud runtime (there's no local fallback), and they're intentionally
+sandboxed with no direct file-system or internet access from inside the
+Python code itself, because the code is running in an environment Microsoft
+isolates for security, not directly inside your machine's Excel process.</p>
 <h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
 <p>Write an <code>openpyxl</code> script that opens <code>Data.xlsx</code>, computes the average
 units (<code>525/5=105</code>), writes it to <code>B10</code> labeled "Average" in <code>A10</code>, and

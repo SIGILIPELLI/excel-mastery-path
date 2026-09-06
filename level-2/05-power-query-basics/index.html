@@ -1272,6 +1272,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2283,6 +2294,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2460,6 +2482,26 @@ is realistic messy source data.</p>
 </tr>
 </tbody>
 </table>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>Power Query is architecturally separate from the worksheet calculation
+engine — it runs on its own engine (Microsoft's <strong>Mashup Engine</strong>, using the
+<strong>M language</strong> under the hood) that executes a recorded sequence of
+transformation steps against source data <em>before</em> anything reaches a
+worksheet cell. Every action you take in the Power Query editor (remove a
+column, filter rows, change a type) is appended as one more step in an
+ordered list, each step consuming the output table of the step before it —
+this is why steps can be reordered, edited, or deleted independently, and
+why the editor can always show you the exact intermediate table at any step
+by simply not executing steps after it. Crucially, Power Query uses <strong>lazy
+evaluation</strong>: opening the editor and clicking through steps doesn't
+necessarily re-pull all the source data each time — the engine builds a
+query plan and can push filtering and column selection back to the source
+(a database, for example) when possible, only materializing the final
+result when you click Close &amp; Load. That load step is also where Power
+Query hands off to the worksheet: it writes a static result table (or a
+Table connected to the query for future refreshes) — clicking Refresh
+re-runs the entire M step sequence from the original source, not an
+incremental update.</p>
 <h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
 <p>Add a <code>discount</code> column to <code>RawData</code> with values <code>0.1, 0.05, 0, 0.1,
 0.05, 0</code> for rows 2–7, load it through Power Query, add a custom

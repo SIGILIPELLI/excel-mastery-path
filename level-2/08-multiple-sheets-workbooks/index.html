@@ -1356,6 +1356,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2283,6 +2294,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-it-actually-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Actually Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2442,6 +2464,24 @@ layout <code>A1:B4</code>:</p>
 </tr>
 </tbody>
 </table>
+<h2 id="how-it-actually-works">How It Actually Works<a class="headerlink" href="#how-it-actually-works" title="Permanent link">&para;</a></h2>
+<p>Cross-sheet and cross-workbook references extend the same dependency graph
+across sheet and file boundaries, but the engine treats each boundary
+differently. A reference to another sheet in the <em>same</em> workbook
+(<code>Budget!B2</code>) is a normal graph edge — the engine tracks it exactly like an
+in-sheet reference and recalculates it in the same dependency-ordered pass.
+A reference to an <em>external</em> workbook (<code>[Other.xlsx]Sheet1!B2</code>) is
+fundamentally different: Excel caches the last-known value of that external
+cell inside the formula itself, so the formula can still display a result
+even when the source workbook is closed — opening the referencing workbook
+shows stale cached values until you choose to update links, at which point
+Excel actually opens (invisibly) or reads the external file to refresh the
+cache. This is also why moving or renaming a linked external file breaks
+the link (the path is stored literally) while renaming a sheet <em>inside</em> the
+same workbook automatically updates every formula that referenced it — the
+in-workbook graph stores references by an internal sheet ID, not by the
+display name, and Excel rewrites the display text for you; there's no
+equivalent internal ID it can use to track a file across the filesystem.</p>
 <h2 id="exercise">Exercise<a class="headerlink" href="#exercise" title="Permanent link">&para;</a></h2>
 <p>Add a <code>Summary!B5</code> total-of-totals: <code>=SUM(B2:B4)</code> and confirm it
 equals <code>1650+1050+600=3300</code>, then cross-check that same figure with a
