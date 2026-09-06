@@ -90,6 +90,28 @@ against itself.
 | `RANKX(table, expr)` | Rank a value against a set of candidates |
 | `DIVIDE(num, denom)` | Division that safely returns blank/0 instead of `#DIV/0!` |
 
+## How It Actually Works
+
+Advanced DAX patterns — time intelligence functions, `CALCULATE` with
+multiple filter modifiers, iterator functions like `SUMX` — all resolve
+down to how VertiPaq scans compressed columns under a given filter context.
+Time-intelligence functions like `DATEADD` or `SAMEPERIODLASTYEAR` don't
+contain special date logic of their own; they generate a modified filter on
+the model's Date table and hand off to the same `CALCULATE` filter-context
+mechanism as any other measure — which is exactly why they require a proper,
+contiguous, marked Date table: the functions are pattern-matching against
+that table's structure, not doing calendar arithmetic on values directly.
+Iterator functions (`SUMX`, `AVERAGEX`, `FILTER`) work fundamentally
+differently from aggregators like `SUM`: an iterator materializes a
+row-context — walking the table (or a virtual table VertiPaq builds
+in-memory for the expression) row by row, evaluating its expression once
+per row before aggregating — which is measurably more expensive than a
+plain columnar `SUM`, since `SUM` can use VertiPaq's compressed columnar
+scan directly without ever constructing per-row context. This is the real
+reason `SUMX(Table, [Measure])` performs worse than pushing the same logic
+into a plain measure where possible: the iterator forces row-by-row
+evaluation instead of the columnar engine's native aggregation path.
+
 ## Exercise
 
 Add a `South PY` and `South YoY %` pair of measures mirroring Section

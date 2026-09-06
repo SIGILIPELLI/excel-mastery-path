@@ -91,6 +91,29 @@ Two tables, both converted to Excel Tables.
 | `Table.TransformColumns(table,{{col,fn,type}})` | Apply a function to a column |
 | `let ... in ...` | Every query's structure: named steps, final returned step |
 
+## How It Actually Works
+
+M, the language behind every Power Query step, is a **pure, lazily-evaluated
+functional language** — every step is actually a function call that takes
+the previous step's table as its argument and returns a new table, and the
+query as a whole is just one composed function (`let ... in ...`)
+referencing each step by name. Because M is lazy, the engine doesn't
+necessarily compute step 3's entire result before running step 4 — it can
+analyze the whole chain and, wherever the source supports it, use **query
+folding**: translating your point-and-click steps back into the source
+system's native query language (a SQL `WHERE`/`SELECT` for a database
+connection, for instance) so filtering and column selection happen at the
+source rather than after pulling every row into Excel. This is why step
+order matters for performance even though it doesn't change the *result*:
+a `Filter` step placed before a custom column that can't be folded (like
+one calling a non-foldable M function) still gets pushed to the source,
+but a `Filter` placed *after* that unfoldable step forces all rows to be
+pulled locally first, breaking the folding chain for every step after it.
+`Table.Buffer` exists specifically to force *eager* evaluation at a chosen
+point, deliberately trading folding/laziness for a predictable, single
+materialization when a step is expensive and would otherwise be
+re-evaluated multiple times downstream.
+
 ## Exercise
 
 Add a custom column `AmountWithTax` using M:

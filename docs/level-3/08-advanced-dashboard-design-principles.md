@@ -97,6 +97,28 @@ comparison a dashboard is supposed to make effortless.
 | Slicer | Point-and-click filter for Tables/PivotTables |
 | SUMIFS-based KPI cells | Feed both text titles and conditional formats |
 
+## How It Actually Works
+
+Two dashboards showing identical numbers can perform very differently
+because of how their formulas interact with the recalculation engine, not
+because of their visual design. Every open, visible cell — even ones not
+currently on screen in a scrolled view — participates in recalculation if
+it's marked dirty, so a "hidden" tab full of heavy helper formulas still
+costs real recalculation time on every edit; hiding a sheet changes
+visibility, not calculation membership. Volatile functions (`NOW()`,
+`TODAY()`, `RAND()`, `OFFSET()`, `INDIRECT()`) are the single biggest
+hidden performance tax in dashboard design: the engine can't determine in
+advance what these functions depend on (a `TODAY()` depends on the system
+clock, not any cell; `OFFSET`/`INDIRECT` depend on values it would have to
+evaluate first to even know), so it conservatively re-evaluates every
+volatile cell — and everything downstream of it — on *every single*
+recalculation, regardless of whether anything relevant actually changed.
+This is precisely why replacing `OFFSET`-based dynamic ranges with
+structured Table references or `INDEX`-based ranges (which the engine can
+place into the ordinary non-volatile dependency graph) is one of the most
+effective single changes for making a large interactive dashboard feel
+responsive.
+
 ## Exercise
 
 Add a `Q1 Target` value of `30000` per region in a new column, then

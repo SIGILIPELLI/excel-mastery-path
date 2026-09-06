@@ -127,6 +127,26 @@ stay familiar as the functions get more advanced. Build it now:
 | Confirm entry, move right | Tab |
 | Cancel entry | Esc |
 
+## How It Actually Works
+
+Every cell in a worksheet is a node in an in-memory **dependency graph**, not
+just a spot in a grid. When you type a plain value like `1200` into `B2`,
+Excel stores it in a sparse internal table keyed by (sheet, row, column) —
+empty cells cost effectively nothing, which is why a workbook with data only
+in the top-left corner of a million-row sheet stays small on disk. The
+`.xlsx` format itself is a zip archive of XML parts: unzip one and you'll
+find `xl/worksheets/sheet1.xml` (cell values and formulas), `xl/styles.xml`
+(formatting), and `xl/sharedStrings.xml` — Excel deduplicates every text
+string across the whole workbook into one shared table and each cell just
+stores an integer index into it, which is why files with lots of repeated
+text compress far better than files with lots of unique numbers. The Name
+Box and Formula Bar are two views onto the same underlying cell object: the
+Formula Bar always renders the cell's *raw content* (literal or formula
+string), while the grid renders its *cached display value* run through the
+cell's number format — this split is exactly why `01/15/2026` typed into a
+cell is stored internally as the serial number `46037` (days since
+1899-12-30) with a date format mask applied on top, not as text.
+
 ## Exercise
 
 Create a new workbook. Build the 5-category budget table from Section 4

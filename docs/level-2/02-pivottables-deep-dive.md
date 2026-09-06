@@ -76,6 +76,26 @@ West = `800+1100+1300+950+1000 = 5150`. Grand total = `10050`.
 | Interactive filter widget | PivotTable Analyze > Insert Slicer |
 | Change Sum→Average/Count | Right-click value > Value Field Settings |
 
+## How It Actually Works
+
+Calculated Fields and Calculated Items don't operate on your source data at
+all — they're formulas stored *inside the PivotCache's field definitions*
+and evaluated after the cache has already aggregated the raw rows, which is
+why a Calculated Field computing "Actual minus Budgeted" as a ratio of
+already-summed totals gives a different (and usually more correct) answer
+than summing a per-row ratio column would: it operates on the aggregate,
+not row-by-row before aggregation. Grouping (by date into months, or
+numbers into bins) works by having Excel build an additional hidden field
+in the cache that maps each cached row to its group label, computed once
+when the grouping is applied — this is why grouping large date ranges into
+months can be slow the first time (building that mapping) but fast on
+every subsequent filter or layout change (just re-aggregating over an
+existing mapped field). Show Values As options like "% of Column Total"
+are a third, separate pass: the cache produces raw aggregated numbers first,
+and the "Show Values As" transform is applied to the *displayed* grid
+afterward, which is why the underlying value copied via GETPIVOTDATA is
+always the raw aggregate, never the percentage you see on screen.
+
 ## Exercise
 
 Build the PivotTable above with Region and Month nested rows, three value

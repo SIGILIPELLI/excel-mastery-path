@@ -99,6 +99,28 @@ Build this table on a sheet named `Sales`, `A1:D11`:
 | `IFERROR` | `=IFERROR(formula,value_if_error)` |
 | `AND`/`OR` | `=IF(AND(c1,c2),t,f)` / `=IF(OR(c1,c2),t,f)` |
 
+## How It Actually Works
+
+Functions like `SUMIFS`, `INDEX/MATCH` with multiple criteria, and array
+constants push more work onto Excel's calculation engine per cell, and the
+engine optimizes differently depending on the shape of the work. `SUMIFS`
+and `COUNTIFS` build an internal bitmap-like filter for each criteria range
+— rather than looping through rows once per criterion, Excel evaluates each
+criteria range once, combines the resulting match sets, and only then sums
+the matching values — which is why `SUMIFS` scales better with more
+criteria than an equivalent nested `SUMPRODUCT` of manually multiplied
+Boolean arrays, even though both can express the same logic. `SUMPRODUCT`,
+by contrast, has no such optimization: it performs genuine full-array
+arithmetic, multiplying entire ranges element-by-element in memory before
+summing, which is powerful (no need for the criteria structure `SUMIFS`
+requires) but means its cost grows directly with the size of the ranges
+involved every single recalculation, with no early exit. Nesting functions
+also affects *evaluation order*, not just readability — Excel evaluates a
+formula's parse tree bottom-up, so the innermost function calls resolve
+first, and a deeply nested formula recalculates every inner call on every
+recalculation pass rather than caching intermediate results, which is
+exactly the inefficiency `LET` (covered in Level 3) was introduced to fix.
+
 ## Exercise
 
 Using the `Sales` table above, compute: (1) total Amount for West + Feb

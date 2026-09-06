@@ -88,6 +88,26 @@ Build this on a sheet named `Data`, `A1:C5`:
 | Run a macro | Developer → Macros → Run, or assigned shortcut/button |
 | Attach to a button | Insert Form Control Button → Assign Macro |
 
+## How It Actually Works
+
+The macro recorder doesn't watch your intentions — it watches the literal
+sequence of Excel Object Model calls your UI actions trigger, and writes out
+VBA statements that reproduce those exact calls. This is why recorded
+macros are usually far more brittle and verbose than hand-written VBA:
+clicking a cell during recording generates a `.Select` followed by an
+operation on `Selection`, faithfully mirroring the two-step "select then
+act" nature of mouse interaction, whereas a human writing VBA directly
+would just act on the range object (`Range("A1").Value = ...`) without ever
+selecting it — selecting a cell has real UI cost (repainting, scrolling)
+that a program doesn't need to pay. It's also why recorded macros often
+hard-code absolute references and specific sheet names: the recorder logs
+the concrete objects your clicks resolved to at record time, with no
+awareness of which parts of that were incidental (which cell happened to be
+active) versus load-bearing (which range you meant). Macros are stored as
+VBA source code inside a hidden project structure within the workbook file
+(which is exactly why saving one requires the `.xlsm` format — plain
+`.xlsx` has no container for that VBA project at all).
+
 ## Exercise
 
 Record a macro `FormatTotals` that selects `D2:D4` (after building the

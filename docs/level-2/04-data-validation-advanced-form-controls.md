@@ -83,6 +83,26 @@ Build this table on a sheet named `Catalog`, `A1:B7`:
 | Combo Box (Form Control) | Input range + Cell link (returns position number) |
 | Position → text | `=INDEX(range,cell_link)` |
 
+## How It Actually Works
+
+Dependent dropdowns (where a second list's options change based on a first
+selection) and form controls both work by exploiting the same
+recalculation-and-lookup machinery you already know, wired together rather
+than by any special "cascading dropdown" feature. A dependent dropdown's
+validation formula typically uses `INDIRECT` or a dynamic named range built
+from the first cell's value — `INDIRECT` takes a *text string* and resolves
+it to an actual range reference at calculation time, which is powerful (the
+same formula can point at completely different ranges depending on other
+cell values) but comes at a real cost: `INDIRECT` results are opaque to
+Excel's dependency graph, since the engine can't know in advance which
+range a piece of text will resolve to, so cells using it are treated as
+**volatile** and get re-evaluated on every recalculation cycle regardless
+of whether their actual inputs changed. Form controls like Option Buttons
+and Combo Boxes (from the Developer tab) are different again — they aren't
+formulas at all but embedded ActiveX/Form objects that write a value
+directly into a linked cell on user interaction, which is what then feeds
+your dependency-graph formulas downstream.
+
 ## Exercise
 
 Build the cascading dropdown in Section 2, then set `G1` to `Fruit`

@@ -107,6 +107,25 @@ underlying data changes.
 | Manage/edit existing rules | Conditional Formatting > Manage Rules |
 | Clear conditional formatting | Conditional Formatting > Clear Rules |
 
+## How It Actually Works
+
+Formatting — including conditional formatting — never touches the value
+stored in a cell; it's a completely separate layer applied at render time.
+Internally, each cell stores an index into a shared **style table**
+(`xl/styles.xml`), and conditional formatting rules are stored separately
+again, as ordered rule objects attached to a range, each holding a
+Boolean-producing formula and a style to apply if it evaluates to true.
+Every time the sheet recalculates, Excel re-evaluates every conditional
+formatting rule against every cell in its range, in rule priority order, and
+paints the *first* rule that matches (unless "stop if true" is unset and a
+later rule also applies extra formatting) — which is why reordering rules
+in the Conditional Formatting Rules Manager can change what a cell looks
+like without changing any data. Because the underlying value is untouched,
+a cell showing red because it's below budget still sums, filters, and
+sorts by its real number — only `=CELL("color", ...)`-style tricks or VBA
+can read the conditional formatting result itself, because it doesn't exist
+as data, only as a rendering decision recomputed on the fly.
+
 ## Exercise
 
 In `budget-tracker.xlsx`, format `B2:C6` as Currency, bold and fill the

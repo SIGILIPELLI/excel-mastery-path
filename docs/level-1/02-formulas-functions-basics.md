@@ -92,6 +92,26 @@ locked (**absolute**). We'll keep using the budget table from Module 1.
 | `$A1` / `A$1` | Mixed reference — column or row locked | |
 | F4 | Cycle reference type in Formula Bar | |
 
+## How It Actually Works
+
+When you press Enter after typing a formula, Excel doesn't just compute a
+value once — it parses the formula text into a small tree of operations and
+cell references, and registers that cell as a **dependent** of every cell it
+references inside its internal dependency graph. This graph is what makes
+recalculation fast: changing `B2` doesn't force Excel to re-evaluate every
+formula in the workbook, only the ones reachable by walking outward from
+`B2` through the dependency edges, in an order that guarantees each cell is
+recalculated only after everything it depends on already has its final
+value (a **topological sort** of the graph). Relative references like `B2`
+are stored not as a fixed address but as an *offset* from the formula's own
+cell — copying a formula down a column re-applies that offset from each new
+position, which is why the row number shifts. An absolute reference (`$B$2`)
+stores a fixed coordinate instead of an offset, so copying it never
+changes it. If the graph ever contains a cycle — a formula that depends,
+directly or through a chain, on itself — Excel can't produce a valid
+evaluation order and flags it as a circular reference rather than looping
+forever.
+
 ## Exercise
 
 In `budget-tracker.xlsx`, add a `Difference` column (`=C2-B2`, copied down),

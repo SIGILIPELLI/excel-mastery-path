@@ -105,6 +105,27 @@ Build this on a sheet named `Sheet1`, `A1:B6`:
 | Last used row | `Cells(Rows.Count, col).End(xlUp).Row` |
 | Prompt the user | `InputBox("prompt text")` |
 
+## How It Actually Works
+
+VBA doesn't operate through the same dependency-graph engine that
+worksheet formulas use — it drives Excel through the **Component Object
+Model (COM)**, calling methods and setting properties on real in-process
+objects (`Application`, `Workbook`, `Worksheet`, `Range`) that represent
+live pieces of the running Excel instance. When VBA writes
+`Range("A1").Value = 5`, that call goes through the COM interface into the
+same internal cell store formulas use, which is why it *does* trigger the
+normal dependency-graph recalculation of anything depending on `A1` — but
+each such call also carries real COM marshalling overhead, which is why
+looping cell-by-cell through a large range from VBA is dramatically slower
+than reading the whole range into a VBA array in one call, operating on the
+in-memory array, and writing it back in one call: that reduces thousands of
+COM round-trips to two. `Application.ScreenUpdating = False` and
+`Application.Calculation = xlCalculationManual` exist because VBA, by
+default, triggers Excel's normal screen repaint and recalculation after
+*every single* property change — disabling them tells the COM layer to
+defer both until you explicitly turn them back on, which is the single
+biggest lever for speeding up a macro that touches many cells.
+
 ## Exercise
 
 Write `Sub AverageQty()` that loops `B2:B6`, sums the values, divides

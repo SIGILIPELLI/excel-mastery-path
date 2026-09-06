@@ -82,6 +82,28 @@ is realistic messy source data.
 | Send result back to a sheet | Home → Close & Load |
 | Re-run after source changes | Data → Refresh All |
 
+## How It Actually Works
+
+Power Query is architecturally separate from the worksheet calculation
+engine — it runs on its own engine (Microsoft's **Mashup Engine**, using the
+**M language** under the hood) that executes a recorded sequence of
+transformation steps against source data *before* anything reaches a
+worksheet cell. Every action you take in the Power Query editor (remove a
+column, filter rows, change a type) is appended as one more step in an
+ordered list, each step consuming the output table of the step before it —
+this is why steps can be reordered, edited, or deleted independently, and
+why the editor can always show you the exact intermediate table at any step
+by simply not executing steps after it. Crucially, Power Query uses **lazy
+evaluation**: opening the editor and clicking through steps doesn't
+necessarily re-pull all the source data each time — the engine builds a
+query plan and can push filtering and column selection back to the source
+(a database, for example) when possible, only materializing the final
+result when you click Close & Load. That load step is also where Power
+Query hands off to the worksheet: it writes a static result table (or a
+Table connected to the query for future refreshes) — clicking Refresh
+re-runs the entire M step sequence from the original source, not an
+incremental update.
+
 ## Exercise
 
 Add a `discount` column to `RawData` with values `0.1, 0.05, 0, 0.1,

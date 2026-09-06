@@ -72,6 +72,29 @@ Build this table on a sheet named `Team`, `A1:C9`:
 | `SEQUENCE(rows,[cols],[start],[step])` | Generate a number sequence |
 | `range#` | Spill range operator — refers to a dynamic array's full output |
 
+## How It Actually Works
+
+Modern dynamic array functions like `FILTER`, `SORT`, and `UNIQUE`
+introduced a genuinely new engine behavior called **spilling**: a formula
+entered in one cell can return an array of results, and Excel automatically
+claims the neighboring empty cells below/right to display it, without those
+cells containing any formula of their own — they hold a special internal
+marker pointing back to the origin cell's formula, visible as grayed-out
+"ghost" values in the Formula Bar if you click one. This is why spill
+results disappear entirely if you type anything into a cell the spill needs
+— Excel detects the obstruction before evaluating the array formula and
+throws `#SPILL!` rather than partially overwriting your data, because
+letting a formula silently clobber unrelated cell content would break the
+dependency graph's guarantee that only formulas write to cells they
+reference. The dependency graph itself had to be extended to support this:
+a downstream formula referencing `A1#` (the spill range operator) depends
+on the *entire dynamic array*, not a fixed range, so if the array's size
+changes on recalculation (say, `FILTER` now returns 8 rows instead of 5),
+every dependent recalculates against the new shape automatically — legacy
+array formulas (entered with Ctrl+Shift+Enter, `{=...}`) predate this and
+instead require the array's exact output size to be pre-selected by hand,
+which is why they truncate or fill with `#N/A` if the guessed size is wrong.
+
 ## Exercise
 
 Using the `Team` table, write one formula that lists unique names

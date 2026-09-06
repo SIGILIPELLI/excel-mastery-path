@@ -92,6 +92,25 @@ the budget's `Difference` and `CategoryInfo` data from Modules 2 and 6.
 | `AND` | `=AND(c1,c2,…)` | TRUE only if all conditions are TRUE |
 | `OR` | `=OR(c1,c2,…)` | TRUE if any condition is TRUE |
 
+## How It Actually Works
+
+`IF`, `AND`, `OR`, and their relatives are all built on Excel's Boolean
+type, which internally is stored as a 1 or 0 but displays as `TRUE`/`FALSE`
+— that's why `=TRUE+TRUE` evaluates to `2` and why `SUM` of a range
+containing logical values (via `--` or arithmetic coercion) can be used to
+count matches. Nested `IF` statements are evaluated with **short-circuit
+lazy evaluation**: Excel only computes the branch it actually needs. Given
+`=IF(A1>0, expensive_formula_1, expensive_formula_2)`, only one of the two
+branches is ever calculated for that cell — this is why wrapping a
+division in `IF(B2=0, "", A2/B2)` safely avoids a `#DIV/0!` error rather
+than computing the division first and discarding it: the division branch is
+never entered when the condition is false. `AND` and `OR`, by contrast, are
+*not* short-circuited in the traditional programming sense — they take an
+array of arguments and Excel generally evaluates all of them before
+combining the results, which is why an `AND(A1<>0, B1/A1>2)` can still throw
+`#DIV/0!` even though the first condition would have prevented an unsafe
+divide in a short-circuiting language.
+
 ## Exercise
 
 Add a `Status` column to the `Budget` sheet using the three-way nested

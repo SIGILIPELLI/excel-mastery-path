@@ -69,6 +69,26 @@ Build this on a sheet named `Prices`, `A1:C5`:
 | Recursive LAMBDA | Reference the function's own Defined Name inside its formula |
 | LET inside LAMBDA | `LAMBDA(x,LET(name,expr,...,result))` |
 
+## How It Actually Works
+
+`LAMBDA` doesn't introduce a new evaluation model — it lets you name and
+reuse a *sub-tree* of the same formula parse tree the engine has always
+used, which is precisely why it eliminates the redundant-recalculation
+problem nested formulas have: without `LAMBDA` (or `LET`), an expression
+repeated three times inside one formula is genuinely recalculated three
+separate times per recalculation pass, because the engine has no way to
+know two identical-looking sub-expressions are the same computation; `LET`
+names an intermediate result once and every reference to that name reuses
+the *already-computed* value within that formula's single evaluation,
+turning an O(n) repeated cost into O(1). A named `LAMBDA` saved via Name
+Manager works the same way but at the workbook level: calling it inserts a
+reference to the stored expression tree, parameterized by your arguments,
+and it participates in the ordinary dependency graph exactly like a
+built-in function — the difference is Excel evaluates it by substituting
+your arguments into the stored formula tree and running the *same*
+recalculation engine on the result, rather than calling out to compiled
+native code the way `SUM` or `VLOOKUP` do internally.
+
 ## Exercise
 
 Define a named LAMBDA `RoundedMargin` that wraps `Margin` from Section

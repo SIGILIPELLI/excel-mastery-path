@@ -100,6 +100,26 @@ pre-summarized table like the `Budget` sheet from earlier modules.
 | Reformat all values at once | Right-click a value > Number Format |
 | Pull in changed source data | Right-click > Refresh |
 
+## How It Actually Works
+
+A PivotTable never reads its source range live, cell by cell, the way a
+formula does — when you build one, Excel copies the source data once into a
+separate, compressed, columnar in-memory structure called the **PivotCache**
+, and every field list drag, filter, or layout change re-aggregates from
+that cache, not from the worksheet. This is why editing the source data
+does *not* update the PivotTable until you explicitly Refresh (Alt+F5):
+the cache is a frozen snapshot, and Refresh is the operation that re-reads
+the source range and rebuilds the cache. It's also why a workbook with
+several PivotTables built from the same source can bloat dramatically in
+file size unless they're told to share one cache (Excel does this
+automatically when tables are built from literally the same source range in
+one operation, but not when built separately). Internally the cache stores
+each source column's distinct values once (like the shared-string table for
+worksheets) and represents each row as indexes into those value lists — a
+compression trick that makes aggregating millions of source rows into a
+compact pivot fast, because grouping and summing operate on small integer
+indexes rather than repeatedly re-parsing text or dates.
+
 ## Exercise
 
 Build the `Transactions` Table and create a PivotTable summarizing Amount

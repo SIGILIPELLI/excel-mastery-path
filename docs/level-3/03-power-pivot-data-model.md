@@ -77,6 +77,27 @@ columns.
 | Pull a value across a relationship | `RELATED(Table[Column])` (many→one direction) |
 | PivotTable from multiple tables | Insert PivotTable → Use this workbook's Data Model |
 
+## How It Actually Works
+
+Power Pivot's Data Model doesn't store tables the way a worksheet does — it
+uses the **VertiPaq** in-memory columnar engine (the same engine underneath
+Power BI), which stores each column separately and compresses it using
+dictionary encoding: every distinct value in a column is stored once in a
+lookup dictionary, and the column itself becomes a compact array of integer
+indexes into that dictionary. This is why VertiPaq compresses low-cardinality
+columns (a status flag with 3 possible values) far more aggressively than
+high-cardinality ones (a unique transaction ID per row), and why sorting or
+restructuring source data to group repeated values together can measurably
+shrink model size even before any aggregation happens. Relationships between
+tables in the Data Model are stored as explicit graph edges (much like the
+worksheet dependency graph, but between tables rather than cells) and are
+used at query time to perform fast indexed joins — critically, VertiPaq
+relationships are almost always one-to-many and singly-directional by
+default, which is precisely why a "many-to-many"-looking relationship
+between two fact tables usually needs an intermediate dimension table: the
+storage engine's join algorithm is built around that one-to-many shape and
+isn't a general-purpose relational join engine.
+
 ## Exercise
 
 Add a calculated column `HighValue = IF(Sales[Revenue] >= 200,

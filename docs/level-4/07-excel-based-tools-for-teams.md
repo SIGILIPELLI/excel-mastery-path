@@ -85,6 +85,27 @@ threshold.
 | `.xlam` Add-in | Ship one shared custom function to every team member's Excel |
 | OneDrive/SharePoint + Tables | Reliable simultaneous co-authoring |
 
+## How It Actually Works
+
+Shared, co-authored Excel files (via OneDrive/SharePoint) work through
+**operational transformation-style conflict resolution**, not a single
+shared in-memory dependency graph — each collaborator's Excel client
+maintains its own local copy of the workbook and its own local dependency
+graph, and co-authoring syncs a stream of individual *cell-level edit
+operations* between clients rather than syncing the whole file or a shared
+live calculation session. This is why two people editing genuinely
+different cells merge seamlessly (their edit operations simply both apply,
+each recalculating locally) while two people editing the *same* cell
+resolve as a last-write-wins conflict with no true merge — there's no
+concept of merging two conflicting formula edits the way version control
+merges text lines, because a formula is treated as one atomic value, not
+composable text. Version History (also OneDrive/SharePoint-backed) works
+by the storage layer keeping full snapshots of the file at each save point,
+not by tracking incremental cell diffs — restoring an old version replaces
+the entire workbook wholesale, including its calculation chain, which is
+why restoring from history is safe (any half-finished edit is discarded
+completely) but coarse (there's no way to restore just one changed range).
+
 ## Exercise
 
 Change the Add-in's `ApprovalStatus` threshold from `5000` to `7500`,

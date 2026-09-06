@@ -78,6 +78,28 @@ matches the closed-form annuity payment formula
 | Data Table (1 or 2 variable) | You want the output across a range of one or two inputs |
 | Scenario Manager | You want to save and compare a handful of named input sets |
 
+## How It Actually Works
+
+Goal Seek and Data Tables both work by repeatedly re-running the same
+dependency-graph recalculation you already rely on for ordinary formulas —
+they just automate feeding different input values into it. Goal Seek
+performs a numerical root-finding search (effectively a form of iterative
+approximation similar to bisection/secant methods): it plugs a guessed
+input value into your changing cell, recalculates the full dependent chain
+down to your target cell, compares the result to your goal, adjusts the
+guess, and repeats — usually converging within its default iteration limit,
+but it can fail to converge (and report so) on formulas that aren't
+smoothly monotonic with respect to the input. Data Tables are more
+mechanical: a one-variable Data Table temporarily substitutes each value in
+its input column into the single referenced cell, forces a full
+recalculation of the target formula for each substitution, records the
+result, and restores the original cell value — this brute-force
+re-substitution is exactly why large Data Tables are one of the few things
+that can make automatic recalculation genuinely slow, and why Excel offers
+an "Automatic Except for Data Tables" calculation mode: Data Tables are
+expensive enough that you often want to trigger them manually (F9) rather
+than on every keystroke.
+
 ## Exercise
 
 Using the `Loan` model, build a two-variable Data Table with Rate

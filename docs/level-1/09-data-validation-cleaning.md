@@ -112,6 +112,26 @@ what can be typed into a cell) and **cleaning** existing messy data with
 | Remove Duplicates | Delete exact-match duplicate rows |
 | Circle Invalid Data | Flag existing cells that violate a validation rule |
 
+## How It Actually Works
+
+Data Validation is enforced at the point of *entry*, not stored as a
+property of the value — Excel evaluates the validation rule's formula
+against whatever is being typed, before the keystroke commits to the cell,
+and rejects the entry (or warns) if it evaluates to false. Crucially, this
+check only runs for interactive typing through the UI: pasting data,
+filling with the fill handle, or writing values via VBA/Power Query can all
+bypass validation entirely and leave "invalid" values sitting in a
+validated cell, because validation is a UI-layer gate, not a stored
+constraint the engine re-checks on every recalculation. This is also why
+`Data > Data Validation > Circle Invalid Data` exists as a separate,
+manually-triggered feature — it's the one tool that actually scans existing
+cell values against their validation rules after the fact, since the
+engine itself never does that automatically. A validation dropdown list
+sourced from a range (rather than a typed comma list) works by Excel
+re-evaluating that range's current values live each time you open the
+dropdown — so it always reflects the source range's latest values with no
+extra refresh step, unlike a PivotTable's cache.
+
 ## Exercise
 
 Build the `Messy` sheet exactly as shown, clean it with a single

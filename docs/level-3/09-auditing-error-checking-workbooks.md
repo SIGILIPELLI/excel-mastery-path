@@ -85,6 +85,26 @@ range bug.
 | Evaluate Formula | Step through a nested formula's evaluation order |
 | Data Validation | Prevent bad input at the source |
 
+## How It Actually Works
+
+Trace Precedents and Trace Dependents aren't computing anything new when
+you click them — they're literally rendering the edges of the same
+dependency graph the calculation engine already maintains internally,
+which is why they respond instantly even on a huge workbook: the graph
+already exists, the tool just draws arrows along existing edges rather than
+walking cell references from scratch. Error values like `#REF!`, `#N/A`,
+and `#DIV/0!` are not exceptions that halt evaluation — they are ordinary
+values that propagate through the dependency graph exactly like numbers do:
+a formula that references a cell containing `#REF!` receives `#REF!` as an
+input and, unless wrapped in `IFERROR`/`IFNA`, produces `#REF!` itself,
+which is why one broken cell can cascade an error across dozens of
+downstream formulas in a single recalculation pass — the graph doesn't stop
+at the first error, it just carries the error value forward like any other.
+The Watch Window works by registering a cell as a small standing
+"dependent" that displays its value after every recalculation without
+needing to be visible on screen, using the same recalculation notification
+mechanism that redraws visible cells and charts.
+
 ## Exercise
 
 The `Audit` sheet's `D6` total is `74`. Add a `Discount` row (`Qty=0`,

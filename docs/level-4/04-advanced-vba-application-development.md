@@ -133,6 +133,27 @@ of an unhandled runtime error dialog.
 | `For Each ... In collection` | Iterate every object in the collection |
 | UserForm calling standard-module procedures | Separate input/validation from business logic |
 
+## How It Actually Works
+
+A full VBA application built with class modules is really building custom
+COM-like objects inside the workbook's VBA project, giving you your own
+object model layered on top of Excel's — a class module compiles to a
+private COM-style interface with properties (backed by `Property Get/Let/
+Set` procedures) and methods, and instantiating it with `New` creates a
+genuinely separate object instance with its own private state, exactly like
+Excel's own `Range` or `Worksheet` objects, just implemented in your VBA
+rather than Excel's native code. Events work through a **callback
+registration** mechanism: declaring `WithEvents` on an object variable
+registers your procedure with Excel's event-dispatch table for that
+object, and Excel's application loop calls back into your code whenever the
+matching event fires (a `Worksheet_Change`, a custom class's own raised
+event) — this is fundamentally different from procedural VBA calls, because
+your code doesn't call these procedures directly; Excel's own runtime does,
+asynchronously relative to your other code, which is why event-handling
+code must be defensively written against re-entrancy (an event handler that
+itself edits a cell can retrigger the same event before the first call
+finishes, unless explicitly guarded).
+
 ## Exercise
 
 Add a `RemoveExpense(index As Integer)` procedure using

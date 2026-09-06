@@ -101,6 +101,24 @@ formatting options you'll reach for constantly.
 | Change an existing chart's type | Chart Design > Change Chart Type |
 | Move chart to its own sheet | Chart Design > Move Chart |
 
+## How It Actually Works
+
+A chart is not a picture of your data — it's an object holding a live
+reference to one or more ranges (a **SERIES formula**, visible in the
+Formula Bar when you click a chart series, e.g.
+`=SERIES(Budget!$C$1,Budget!$A$2:$A$6,Budget!$C$2:$C$6,1)`) plus a rendering
+description. Because the chart stores references rather than a copied
+snapshot of values, it is entirely driven by the same dependency graph as
+formulas: whenever a recalculation updates any cell inside a SERIES range,
+Excel marks the chart's series data as dirty and repaints it in the same
+pass, which is why edited numbers visibly move bars and lines with no user
+action beyond the edit. Chart *type* and *axis scaling*, in contrast, are
+stored as chart-object properties, not derived from the data, which is why
+Excel occasionally auto-picks a poor axis minimum/maximum (it defaults to
+"nice round numbers around the data's min/max" using a fixed rounding
+algorithm) and why manually fixing an axis bound stops it from
+re-adjusting even as the underlying data changes.
+
 ## Exercise
 
 From the Budget Table, build a clustered column chart comparing Budgeted

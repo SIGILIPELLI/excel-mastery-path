@@ -83,6 +83,26 @@ Add a fourth sheet `Summary`.
 | Cross-workbook (closed) | `='C:\path\[File.xlsx]Sheet'!B2` | Full path required |
 | Fix broken links | Data → Edit Links → Change Source | Repoints after a file move/rename |
 
+## How It Actually Works
+
+Cross-sheet and cross-workbook references extend the same dependency graph
+across sheet and file boundaries, but the engine treats each boundary
+differently. A reference to another sheet in the *same* workbook
+(`Budget!B2`) is a normal graph edge — the engine tracks it exactly like an
+in-sheet reference and recalculates it in the same dependency-ordered pass.
+A reference to an *external* workbook (`[Other.xlsx]Sheet1!B2`) is
+fundamentally different: Excel caches the last-known value of that external
+cell inside the formula itself, so the formula can still display a result
+even when the source workbook is closed — opening the referencing workbook
+shows stale cached values until you choose to update links, at which point
+Excel actually opens (invisibly) or reads the external file to refresh the
+cache. This is also why moving or renaming a linked external file breaks
+the link (the path is stored literally) while renaming a sheet *inside* the
+same workbook automatically updates every formula that referenced it — the
+in-workbook graph stores references by an internal sheet ID, not by the
+display name, and Excel rewrites the display text for you; there's no
+equivalent internal ID it can use to track a file across the filesystem.
+
 ## Exercise
 
 Add a `Summary!B5` total-of-totals: `=SUM(B2:B4)` and confirm it

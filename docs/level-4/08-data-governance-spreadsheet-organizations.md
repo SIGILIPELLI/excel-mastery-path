@@ -98,6 +98,27 @@ relying on a sheet-protection password alone.
 | Audit trail | Version History, or a `_ChangeLog` sheet via `Worksheet_Change` |
 | Recoverability | OneDrive/SharePoint Version History |
 
+## How It Actually Works
+
+Data governance at the spreadsheet-fleet level runs directly into a
+structural fact about how Excel formulas work: a formula's dependency
+graph edges are private to its own workbook (and, per Level 4 Module 1,
+even cross-workbook links are cache-based rather than a shared live graph),
+so there is no built-in, organization-wide way to know which of hundreds of
+workbooks depend on a given shared source file without literally opening
+each one and inspecting its external link table (`Data > Edit Links`) — this
+is precisely the gap tools like Power BI datasets, a proper database, or a
+model-lifecycle catalog are built to close: they centralize the
+"who-depends-on-what" answer that individual workbooks' isolated dependency
+graphs cannot provide collectively. Protecting sheets/cells (`Review >
+Protect Sheet`, cell Locked property) works at a layer *below* formulas
+entirely — the Locked property is a per-cell attribute checked by the UI
+edit-entry path before a keystroke is allowed to reach the cell store, the
+same interception point Data Validation uses, which is why protection (like
+validation) can be bypassed by any code path that writes to cells without
+going through that UI gate, including VBA running with appropriate
+permissions or an unprotected linked workbook feeding values in.
+
 ## Exercise
 
 Using the "many copies" scenario in Section 1, write the Power Query

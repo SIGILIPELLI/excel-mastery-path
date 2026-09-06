@@ -77,6 +77,25 @@ Typical evaluation areas, and where in this path each is covered:
 | Build a portfolio | Package each level's capstone with a business-question framing |
 | Level up beyond Excel | Add SQL, a second BI tool, and statistics fundamentals |
 
+## How It Actually Works
+
+A useful lens for evaluating your own technical depth as you grow into an
+analytics-lead role is whether you can explain *why* a given tool choice is
+faster or more correct at the engine level, not just that it works — the
+distinctions this course has built toward (dependency-graph recalculation
+order, VertiPaq's columnar compression versus row-by-row iteration,
+volatile functions defeating dirty-cell optimization, query folding versus
+local materialization in Power Query) are exactly the vocabulary senior
+analytics conversations use to justify architecture decisions: choosing a
+Data Model over linked workbooks, flagging a slow model's volatile
+functions before it ships, or explaining to a stakeholder why a report
+takes 40 seconds to refresh. Being able to trace a specific slow workbook
+back to its actual mechanism (a whole-column `SUMPRODUCT`, an `INDIRECT`
+forcing volatility, an unfoldable Power Query step breaking source-side
+filtering) rather than offering generic "the file is too big" diagnoses is
+precisely the difference between an advanced spreadsheet user and someone
+who can lead the analytics function's tooling decisions credibly.
+
 ## Exercise
 
 Using Section 2's method, quantify the time/value impact of one tool

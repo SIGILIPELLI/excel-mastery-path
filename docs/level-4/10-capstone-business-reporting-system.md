@@ -101,6 +101,27 @@ as `RawSales` grows well beyond 12 rows.
 | Protected structure, change log | 07/08 · Team Tools + Data Governance |
 | Slicers, formula-driven titles | Level 3 · 08 Advanced Dashboard Design |
 
+## How It Actually Works
+
+A capstone reporting system exercises every layer of the engine stack this
+course has covered, now working together end to end: Power Query's M
+engine (with query folding wherever the source allows it) ingests and
+reshapes raw data outside the worksheet entirely; that output loads into a
+VertiPaq Data Model, where relationships form table-level dependency edges
+used by DAX's `CALCULATE`-driven filter-context evaluation; PivotTables and
+charts built on that model read from the model's own query engine rather
+than a worksheet dependency graph, while any plain worksheet formulas you
+layer on top still participate in the classic cell-level dependency graph
+recalculated in topological order. The performance and correctness bugs
+most likely to surface at this scale are the ones this course has named
+explicitly at each layer: an unfoldable Power Query step silently pulling
+the entire source table locally, a `SUMX` iterator used where a plain
+measure would let VertiPaq's columnar scan do the work, a volatile
+worksheet function force-invalidating far more of the sheet than intended,
+or a cross-file link relying on a stale cache — recognizing which layer a
+symptom actually lives in, rather than treating "make it faster" as one
+undifferentiated problem, is the core skill this project is meant to prove.
+
 ## Exercise
 
 Append a `Jul` row for both regions (North `28000`, South `23500`),

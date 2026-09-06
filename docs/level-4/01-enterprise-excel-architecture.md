@@ -80,6 +80,29 @@ Total headcount in `A2`:
 | Power Pivot relationship | Replace VLOOKUP chains with a queryable Data Model |
 | `_`-prefixed hidden sheets | Separate internal calc sheets from the user-facing view |
 
+## How It Actually Works
+
+At enterprise scale, the single-workbook dependency graph model starts
+hitting real architectural limits that shape how large organizations
+actually structure spreadsheets. Excel's recalculation engine is
+fundamentally single-workbook-scoped: cross-workbook references (covered in
+Level 2) rely on cached last-known values precisely because there is no
+unified cross-file dependency graph — each open workbook maintains its own
+graph independently, and "chains" of linked workbooks are really just
+sequential cache refreshes triggered in whatever order you open or update
+links, not a single coherent recalculation. This is the direct architectural
+reason enterprises push toward centralizing shared data in Power Pivot's
+Data Model, a database, or Power BI datasets rather than linked `.xlsx`
+files: a columnar store like VertiPaq is built for exactly the concurrent,
+large-scale, single-source-of-truth access pattern that file-based
+cross-workbook links handle poorly (no real concurrency control, no atomic
+multi-file consistency, and linear cache-refresh chains that get slower and
+more fragile as more files are chained together). Multithreaded
+recalculation (Excel calculates independent branches of the dependency
+graph in parallel across CPU cores) also only helps within a single
+workbook's graph, which is another reason enterprise architecture favors
+consolidating data rather than fanning it across many linked files.
+
 ## Exercise
 
 Using the `Department`/`Budget` relationship above, write a DAX measure

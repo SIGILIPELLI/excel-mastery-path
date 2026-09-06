@@ -76,6 +76,27 @@ Relationship: `Sales[ProductID]` → `Products[ProductID]`.
 | `ALL(Table)` | Remove filters — useful for grand-total denominators |
 | `DIVIDE(num, denom)` | Division that returns blank instead of erroring on 0 |
 
+## How It Actually Works
+
+DAX measures are not evaluated the way worksheet formulas are — every
+measure carries an implicit **filter context** (the set of rows currently
+"visible" given active slicers, PivotTable rows/columns, and row filters)
+and DAX's core job is to evaluate an expression against whatever rows
+survive that context, using VertiPaq's columnar scan rather than a
+cell-by-cell dependency graph. `CALCULATE`, the most important DAX
+function, works by taking the current filter context and *modifying* it —
+adding, removing, or replacing filters — before evaluating its expression
+inside that new context; this is the mechanism behind seemingly-magical
+patterns like year-over-year comparisons, which are really just
+`CALCULATE` swapping the date filter to a different period and
+re-evaluating the same base measure against it. Calculated Columns and
+Measures use the engine completely differently despite both being "DAX":
+a Calculated Column is computed once per row at data-refresh time and
+physically stored in the columnar model (costing compression and memory
+like any other column), while a Measure has no stored value at all — it is
+re-evaluated fresh, from scratch, every time it appears in a visual or
+PivotTable cell, against that cell's specific filter context.
+
 ## Exercise
 
 Build `Priya % of Total := DIVIDE(CALCULATE([Total Revenue],

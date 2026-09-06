@@ -94,6 +94,26 @@ module):
 | PivotTables | Rows/Columns/Values/Filters, Refresh |
 | Cleaning | `TRIM`, `PROPER`, `UPPER`/`LOWER`, Remove Duplicates, Data Validation |
 
+## How It Actually Works
+
+This project ties together several independent engine behaviors you've
+learned across the level, so it's worth being precise about how they
+interact in one workbook. Your `SUM`/`IF`/lookup formulas sit in the
+dependency graph, recalculated in topological order every time a budget
+number changes; your conditional formatting rules re-evaluate independently
+on the same trigger, reading the *results* of those formulas without
+altering them; and if you built a chart or PivotTable on this data, that
+object holds its own separate reference — a live SERIES formula for a
+chart, or a frozen PivotCache snapshot for a PivotTable, meaning the chart
+updates immediately on recalculation while a PivotTable needs an explicit
+Refresh. A common bug at this stage is a chart or summary formula that
+silently stops updating because it references a fixed range (`A1:C6`)
+rather than a Table or dynamic named range — when you add a 7th budget
+category, the dependency graph has no edge connecting the new row to
+anything downstream, because no formula was ever told to depend on it. That
+is a structural property of how references work, not a bug in the
+recalculation engine.
+
 ## Exercise
 
 Finish (or rebuild from scratch) `budget-tracker.xlsx` against the full

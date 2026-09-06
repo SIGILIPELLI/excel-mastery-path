@@ -99,6 +99,24 @@ budget range into a real Table.
 | Sort by column | Header filter-arrow > Sort Largest/Smallest |
 | Filter to specific values | Header filter-arrow > uncheck values |
 
+## How It Actually Works
+
+Converting a range to a Table (Ctrl+T) does something structurally
+significant: it wraps that range in a named `ListObject` with its own
+metadata — column names, a defined data body range, and a **structured
+reference** scheme (`Table1[Category]` instead of `A2:A6`) — that Excel
+keeps in sync automatically. A structured reference doesn't point at fixed
+coordinates; it resolves relative to the Table's identity, so when a new
+row is added the Table's boundary expands, every column formula
+auto-fills into the new row (because the Table stores "this column's
+formula" once and stamps it into new rows on insert), and any chart,
+PivotTable, or formula built on `Table1[Actual]` automatically includes the
+new data with no reference editing at all. This is the same underlying
+mechanism that makes Tables resize correctly when you paste new rows below
+them but not when you type past a completely blank gap row — the boundary
+tracking watches for contiguous insertion at the Table's own edge, not for
+data appearing anywhere near it.
+
 ## Exercise
 
 Convert the budget range in `budget-tracker.xlsx` into a Table named

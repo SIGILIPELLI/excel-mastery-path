@@ -107,6 +107,28 @@ Build this on `Sheet1`, `A1:B4`:
 | `On Error Resume Next` | Skip the failing line (use sparingly) |
 | `On Error GoTo 0` | Disable the active error handler from this point on |
 
+## How It Actually Works
+
+VBA's error handling is built around a single per-procedure error state,
+not exceptions in the try/catch sense — `On Error Goto Label` doesn't wrap
+a block of code the way a try/catch does; it sets a standing instruction
+telling the VBA runtime "if any statement in this procedure from this
+point forward raises a runtime error, jump execution to this label," which
+stays active until explicitly cleared (`On Error Goto 0`) or the procedure
+ends. This is why a single `On Error Resume Next` at the top of a long
+routine is dangerous: it doesn't just guard the next risky line, it
+silently swallows *every* subsequent runtime error for the rest of that
+procedure until something resets it, which is why disciplined VBA wraps
+just the risky lines and immediately restores normal error propagation
+afterward. UserForms are a separate COM subsystem again — each control
+(TextBox, ComboBox) is its own object firing its own events (`Change`,
+`Click`) on the VBA message loop, and a form is **modal** by default,
+meaning it takes over the application's event loop entirely and no other
+Excel code runs until it's closed — which is exactly why a modal form left
+open by a bug can look like Excel has frozen: the rest of the application
+genuinely is blocked, waiting for that one form's message loop to release
+control.
+
 ## Exercise
 
 Add a `Cancel` CommandButton to the UserForm from Section 2 whose

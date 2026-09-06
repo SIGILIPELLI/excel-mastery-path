@@ -87,6 +87,26 @@ to an Excel Table named `tblSales` (Insert → Table):
 | Trend visualization | PivotChart or combo chart off the Pivot |
 | User control | Data Validation dropdown +/or Slicer |
 
+## How It Actually Works
+
+An interactive dashboard is really three separate engines (worksheet
+formulas, chart SERIES objects, and PivotTable caches) plus slicers,
+choreographed to feel like one coherent tool. Clicking a slicer button
+writes a filter selection that Excel propagates to every PivotTable
+connected to it via Report Connections; each of those PivotTables
+independently re-aggregates from its own PivotCache using that filter —
+they don't share computed results with each other, only the filter
+criteria, which is why two differently-shaped PivotTables can respond to
+the same slicer click. Any chart built directly on a PivotTable (a
+PivotChart) automatically redraws because its SERIES formula points at the
+PivotTable's *output range*, which the cache re-aggregation just overwrote;
+a chart built on plain formula cells redraws because those cells sit in the
+ordinary dependency graph and recalculate before the chart's next repaint.
+The reason dashboards can feel sluggish with many slicers and PivotTables
+is now visible from the mechanism: every slicer click can trigger several
+independent cache re-aggregations plus a graph recalculation plus multiple
+chart repaints, all chained together, rather than one single update step.
+
 ## Exercise
 
 Add a second KPI tile below `B2`: average deal size for the selected

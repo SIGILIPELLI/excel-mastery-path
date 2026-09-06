@@ -99,6 +99,27 @@ Section 3) over `pandas.to_excel`'s full-sheet rewrite (Section 4).
 | `openpyxl` | Standalone Python | Precise cell writes, preserving formatting |
 | `pandas` | Standalone Python | Heavy tabular transforms, at the cost of formatting fidelity |
 
+## How It Actually Works
+
+Python in Excel doesn't run inside the same process as Excel's calculation
+engine at all — it executes in a sandboxed, isolated container (Microsoft's
+cloud-hosted runtime), sending your Python code and the referenced cell
+data across that boundary, running it remotely, and returning the result
+back into the workbook as a special `PY` cell object. This is a
+fundamentally different execution model from a `SUM` or even a `LAMBDA`:
+Excel's normal formulas are evaluated in-process by the same dependency
+graph you've used all course, while a Python cell's result is treated by
+that graph as an opaque value dependent on its declared input cells —
+Excel knows *that* the Python cell depends on certain ranges (so it
+recalculates when they change) but the actual computation happens outside
+the recalculation engine entirely, in a separate Python interpreter
+process with pandas/NumPy/matplotlib available. This explains two
+practical behaviors directly: Python cells require network connectivity to
+the cloud runtime (there's no local fallback), and they're intentionally
+sandboxed with no direct file-system or internet access from inside the
+Python code itself, because the code is running in an environment Microsoft
+isolates for security, not directly inside your machine's Excel process.
+
 ## Exercise
 
 Write an `openpyxl` script that opens `Data.xlsx`, computes the average

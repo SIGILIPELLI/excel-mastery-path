@@ -85,6 +85,27 @@ Build this table on a sheet named `Perf`, `A1:D7`:
 | Sparkline | Insert → Sparklines → Line/Column/Win-Loss → set Data Range |
 | Linked chart title | Click title → type `=Sheet!$Cell` in formula bar |
 
+## How It Actually Works
+
+Combo charts, secondary axes, and dynamic chart titles all lean on the same
+SERIES-formula mechanism from Level 1, layered with extra rendering rules.
+A secondary axis doesn't create a second, independent coordinate system in
+the data sense — it tells the rendering engine to map one series' values
+against a separately-scaled vertical axis while keeping the same horizontal
+category axis, which is purely a drawing-time transform with no effect on
+the underlying SERIES data. A chart title or data label linked to a cell
+(`=Sheet1!$A$1`) is stored as a formula reference exactly like a cell
+formula, participating in the same dependency graph — editing that cell
+marks the chart title as dirty and it's redrawn in the same recalculation
+pass, with zero extra wiring needed. Dashboards built from slicers
+connected to multiple PivotTables rely on a shared filter mechanism: a
+slicer stores a list of selected items and, when connected to several
+PivotTables via "Report Connections," pushes that same selection into each
+PivotTable's cache filter simultaneously — each PivotTable then
+independently re-aggregates its own cache using the shared filter, which is
+why slicer clicks feel instantaneous even across several tables: each
+cache re-aggregation is cheap compared to re-reading the source data.
+
 ## Exercise
 
 Using the `Perf` table, build a combo chart with Revenue as columns

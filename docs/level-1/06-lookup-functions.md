@@ -125,6 +125,28 @@ commission schedule.
 | `INDEX` | `=INDEX(array,row_num)` | Returns the value at a position |
 | `INDEX`+`MATCH` | `=INDEX(return_range,MATCH(value,lookup_range,0))` | Works in every Excel version |
 
+## How It Actually Works
+
+`VLOOKUP` and `HLOOKUP` in their default (approximate-match) mode do not
+scan a column top to bottom — they run a **binary search**, which is why
+Excel's own documentation insists the lookup column be sorted ascending:
+an unsorted column breaks binary search's core assumption and produces a
+wrong match without any error, because the algorithm still terminates and
+returns *something*, just not the nearest correct value. Exact-match mode
+(`FALSE` as the 4th argument) instead falls back to a **linear scan** from
+the top of the range, stopping at the first exact hit — this is why exact
+`VLOOKUP` gets measurably slower on very large tables, while approximate
+`VLOOKUP` stays fast regardless of table size. `INDEX-MATCH` splits the same
+two-phase search into separate primitives: `MATCH` performs the search
+(binary for approximate match, linear for exact) and returns a *position*
+(an integer offset), and `INDEX` then does an O(1) direct address lookup
+into the array at that position — no re-scanning. This decoupling is also
+why `INDEX-MATCH` can look leftward (matching in one column, returning from
+a column to its left) while `VLOOKUP` structurally cannot: `VLOOKUP`'s
+search and return are hard-wired to the same left-to-right column scan
+direction, whereas `MATCH` and `INDEX` operate on entirely independent
+ranges.
+
 ## Exercise
 
 Build the `CategoryInfo` lookup table and pull `Type` into the `Budget`

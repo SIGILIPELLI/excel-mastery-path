@@ -103,6 +103,29 @@ every cell write.
 | Manual calculation during bulk edits | Avoids recalculating after every keystroke |
 | `ScreenUpdating=False` + `Calculation=Manual` in VBA loops | Major speedup for bulk VBA writes |
 
+## How It Actually Works
+
+Large workbook performance problems trace back almost entirely to how much
+of the dependency graph gets marked dirty and walked on each recalculation,
+and how much CPU parallelism the engine can extract from that graph.
+Modern Excel recalculates using a **multithreaded scheduler**: it analyzes
+the dependency graph, identifies branches with no interdependency, and
+distributes them across available CPU cores — which is why a workbook full
+of thousands of *independent* formulas (each row computing from only its
+own row's inputs) scales well with more cores, while a workbook with long
+serial dependency chains (each cell depending on the one before it) can't
+be parallelized no matter how many cores are available, because the graph
+itself forces sequential evaluation. Volatile functions again matter
+enormously here: since the engine can't statically determine their
+dependencies, it must conservatively re-walk every volatile cell (and
+everything transitively downstream of it) on every single recalculation,
+which defeats both the dirty-cell-only optimization and the multithreaded
+scheduler's ability to skip unaffected branches. Array formulas and helper
+columns that reference entire columns (`A:A` instead of `A1:A10000`) force
+the engine to consider the full column's row capacity as part of the
+dependency range even when only a fraction is populated, which is why
+whole-column references are a well-known performance trap in large models.
+
 ## Exercise
 
 Rewrite Section 5's macro to also avoid recalculating on every

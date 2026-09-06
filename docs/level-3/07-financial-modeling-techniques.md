@@ -86,6 +86,29 @@ Simplify with concrete formulas instead, `E1:H6`:
 | `PMT(rate,nper,pv)` | Fixed periodic payment for a loan/annuity |
 | Amortization | Interest = balance × rate; Principal = Payment − Interest |
 
+## How It Actually Works
+
+Functions like `NPV`, `IRR`, and `XIRR` aren't simple aggregations — they
+implement genuine numerical algorithms under a friendly one-line interface.
+`NPV` performs a straightforward geometric-series discount calculation, but
+`IRR` has no closed-form algebraic solution for cash flows beyond two
+periods, so Excel solves it the same way Goal Seek solves any equation:
+iteratively, starting from an initial guess (0.1 by default) and refining
+it via a numerical method (Excel uses an iterative approach similar to
+Newton's method) until successive estimates converge within a tolerance or
+a maximum iteration count is hit — which is exactly why `IRR` can return
+`#NUM!` on cash flow patterns with multiple sign changes: those can have
+more than one mathematically valid rate of return, and the iteration can
+converge to a different one than expected, or fail to converge at all,
+depending on the guess. This is also why circular financial models
+(interest expense depending on a debt balance that depends on cumulative
+cash flow that depends on interest expense) require Excel's **iterative
+calculation** mode: the dependency graph's normal requirement — that
+evaluation order be a strict topological sort with no cycles — is
+deliberately relaxed, and the engine instead repeatedly re-evaluates the
+circular cells for a fixed number of iterations or until values stop
+changing beyond a set tolerance.
+
 ## Exercise
 
 Recompute NPV at a discount rate of `15%` instead of `10%` and confirm
