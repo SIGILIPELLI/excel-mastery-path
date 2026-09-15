@@ -133,6 +133,11 @@ open by a bug can look like Excel has frozen: the rest of the application
 genuinely is blocked, waiting for that one form's message loop to release
 control.
 
+## 🔀 Related lessons on other tracks
+
+- [Embedded Python — Error Handling & On-Device Logging](https://sigilipelli.github.io/embedded-python-mastery-path/level-2/09-error-handling-logging/)
+- [REST API — 08 · Error Handling Conventions](https://sigilipelli.github.io/rest-api-mastery-path/level-1/08-error-handling-conventions/)
+
 ## Exercise
 
 Add a `Cancel` CommandButton to the UserForm from Section 2 whose

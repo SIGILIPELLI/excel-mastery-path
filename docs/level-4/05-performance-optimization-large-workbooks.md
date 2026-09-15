@@ -130,6 +130,12 @@ the engine to consider the full column's row capacity as part of the
 dependency range even when only a fraction is populated, which is why
 whole-column references are a well-known performance trap in large models.
 
+## 🔀 Related lessons on other tracks
+
+- [Embedded Python — Performance Profiling & Optimization](https://sigilipelli.github.io/embedded-python-mastery-path/level-3/02-performance-profiling/)
+- [ETL & Data Lake — 04 · Cost & Performance Optimization for Lake Storage](https://sigilipelli.github.io/etl-datalake-mastery-path/level-3/04-cost-performance-optimization/)
+- [GitHub & Git — 04 · Large Repo Performance (sparse checkout, partial clone)](https://sigilipelli.github.io/github-mastery-path/level-4/04-large-repo-performance/)
+
 ## Exercise
 
 Rewrite Section 5's macro to also avoid recalculating on every

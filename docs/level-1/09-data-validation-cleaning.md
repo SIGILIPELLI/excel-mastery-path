@@ -136,6 +136,12 @@ re-evaluating that range's current values live each time you open the
 dropdown — so it always reflects the source range's latest values with no
 extra refresh step, unlike a PivotTable's cache.
 
+## 🔀 Related lessons on other tracks
+
+- [Data Engineering — 09 · Data Quality & Validation](https://sigilipelli.github.io/data-engineering-mastery-path/level-1/09-data-quality-validation/)
+- [ETL & Data Lake — 02 · Data Quality Checks & Validation](https://sigilipelli.github.io/etl-datalake-mastery-path/level-2/02-data-quality-validation/)
+- [Data Science — 03 · Data Cleaning & Wrangling](https://sigilipelli.github.io/data-science-mastery-path/level-1/03-data-cleaning-wrangling/)
+
 ## Exercise
 
 Build the `Messy` sheet exactly as shown, clean it with a single

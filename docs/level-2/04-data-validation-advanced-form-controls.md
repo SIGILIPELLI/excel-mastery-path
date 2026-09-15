@@ -107,6 +107,11 @@ formulas at all but embedded ActiveX/Form objects that write a value
 directly into a linked cell on user interaction, which is what then feeds
 your dependency-graph formulas downstream.
 
+## 🔀 Related lessons on other tracks
+
+- [Data Engineering — 09 · Data Quality & Validation](https://sigilipelli.github.io/data-engineering-mastery-path/level-1/09-data-quality-validation/)
+- [ETL & Data Lake — 02 · Data Quality Checks & Validation](https://sigilipelli.github.io/etl-datalake-mastery-path/level-2/02-data-quality-validation/)
+
 ## Exercise
 
 Build the cascading dropdown in Section 2, then set `G1` to `Fruit`

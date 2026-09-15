@@ -123,6 +123,10 @@ place into the ordinary non-volatile dependency graph) is one of the most
 effective single changes for making a large interactive dashboard feel
 responsive.
 
+## 🔀 Related lessons on other tracks
+
+- [Tableau — 02 · Advanced Dashboard Design & Interactivity](https://sigilipelli.github.io/tableau-mastery-path/level-2/02-advanced-dashboard-design/)
+
 ## Exercise
 
 Add a `Q1 Target` value of `30000` per region in a new column, then

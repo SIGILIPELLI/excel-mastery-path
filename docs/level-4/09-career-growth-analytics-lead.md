@@ -100,6 +100,12 @@ filtering) rather than offering generic "the file is too big" diagnoses is
 precisely the difference between an advanced spreadsheet user and someone
 who can lead the analytics function's tooling decisions credibly.
 
+## 🔀 Related lessons on other tracks
+
+- [Agile — 09 · Career Growth: Scrum Master to Agile Coach/Director](https://sigilipelli.github.io/agile-mastery-path/level-4/09-career-growth-scrum-master-to-coach/)
+- [AI Manager — 09 · Career Growth: AI Manager to Chief AI Officer](https://sigilipelli.github.io/ai-manager-mastery-path/level-4/09-career-growth-ai-manager-to-caio/)
+- [AI Tools — 09 · Career Growth: AI Tools Strategist/Consultant](https://sigilipelli.github.io/ai-tools-mastery-path/level-4/09-career-growth-ai-tools-strategist/)
+
 ## Exercise
 
 Using Section 2's method, quantify the time/value impact of one tool

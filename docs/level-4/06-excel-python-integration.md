@@ -124,6 +124,10 @@ sandboxed with no direct file-system or internet access from inside the
 Python code itself, because the code is running in an environment Microsoft
 isolates for security, not directly inside your machine's Excel process.
 
+## 🔀 Related lessons on other tracks
+
+- [Tableau — 03 · Tableau + Advanced Analytics Integration (R/Python via Tableau)](https://sigilipelli.github.io/tableau-mastery-path/level-4/04-advanced-analytics-integration/)
+
 ## Exercise
 
 Write an `openpyxl` script that opens `Data.xlsx`, computes the average

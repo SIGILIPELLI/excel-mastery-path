@@ -107,6 +107,10 @@ in-workbook graph stores references by an internal sheet ID, not by the
 display name, and Excel rewrites the display text for you; there's no
 equivalent internal ID it can use to track a file across the filesystem.
 
+## 🔀 Related lessons on other tracks
+
+- [Tableau — 07 · Working with Multiple Data Sources](https://sigilipelli.github.io/tableau-mastery-path/level-2/07-multiple-data-sources/)
+
 ## Exercise
 
 Add a `Summary!B5` total-of-totals: `=SUM(B2:B4)` and confirm it

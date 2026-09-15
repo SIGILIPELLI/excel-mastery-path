@@ -123,6 +123,12 @@ validation) can be bypassed by any code path that writes to cells without
 going through that UI gate, including VBA running with appropriate
 permissions or an unprotected linked workbook feeding values in.
 
+## 🔀 Related lessons on other tracks
+
+- [AI Manager — 04 · Data Governance Basics](https://sigilipelli.github.io/ai-manager-mastery-path/level-2/04-data-governance-basics/)
+- [AI Tools — 07 · Data Governance for AI Tool Usage](https://sigilipelli.github.io/ai-tools-mastery-path/level-3/07-data-governance/)
+- [Data Engineering — 05 · Data Governance & Cataloging](https://sigilipelli.github.io/data-engineering-mastery-path/level-3/05-data-governance-cataloging/)
+
 ## Exercise
 
 Using the "many copies" scenario in Section 1, write the Power Query
