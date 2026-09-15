@@ -1,3 +1,7 @@
+---
+description: "Advanced VBA (UserForms, Error Handling) — This module builds a UserForm — a custom dialog box with labeled input fields and buttons — and adds structured…"
+---
+
 # 05 · Advanced VBA (UserForms, Error Handling)
 
 This module builds a UserForm — a custom dialog box with labeled input

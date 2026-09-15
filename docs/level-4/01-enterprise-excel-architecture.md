@@ -1,3 +1,7 @@
+---
+description: "Enterprise Excel Architecture — This module covers how to structure Excel work so it survives contact with an organization: multi-workbook systems, linked…"
+---
+
 # 01 · Enterprise Excel Architecture
 
 This module covers how to structure Excel work so it survives contact

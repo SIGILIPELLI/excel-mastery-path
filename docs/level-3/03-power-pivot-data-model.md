@@ -1,3 +1,7 @@
+---
+description: "Power Pivot & the Data Model — Power Pivot lets multiple tables live in one workbook's Data Model, related to each other like a small database, so a…"
+---
+
 # 03 · Power Pivot & the Data Model
 
 Power Pivot lets multiple tables live in one workbook's **Data Model**,

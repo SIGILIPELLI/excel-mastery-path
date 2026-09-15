@@ -1,3 +1,7 @@
+---
+description: "Array Formulas & Dynamic Arrays — Modern Excel (365 / 2021+) treats arrays as first-class values. Functions like FILTER, SORT, UNIQUE, and SEQUENCE return…"
+---
+
 # 06 · Array Formulas & Dynamic Arrays
 
 Modern Excel (365 / 2021+) treats arrays as first-class values.

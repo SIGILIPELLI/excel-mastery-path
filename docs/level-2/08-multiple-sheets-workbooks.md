@@ -1,3 +1,7 @@
+---
+description: "Working with Multiple Sheets & Workbooks — Real workbooks split data across sheets (one per month, region, or department) and sometimes across separate…"
+---
+
 # 08 · Working with Multiple Sheets & Workbooks
 
 Real workbooks split data across sheets (one per month, region, or

@@ -1,3 +1,7 @@
+---
+description: "Career Growth: Excel Power User to Analytics Lead — This module is a career-track guide rather than a formula lesson: how the skills built across this…"
+---
+
 # 09 · Career Growth: Excel Power User to Analytics Lead
 
 This module is a career-track guide rather than a formula lesson: how

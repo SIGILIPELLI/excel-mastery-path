@@ -1,3 +1,7 @@
+---
+description: "Building Excel-Based Tools for Teams — This module covers packaging a workbook so a team can use it safely and consistently: protected structure, an…"
+---
+
 # 07 · Building Excel-Based Tools for Teams
 
 This module covers packaging a workbook so a team can use it safely and

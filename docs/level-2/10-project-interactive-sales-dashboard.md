@@ -1,3 +1,7 @@
+---
+description: "Project — Interactive Sales Dashboard — This capstone combines every Level 2 skill — SUMIFS, PivotTables, combo charts, data validation dropdowns, and a…"
+---
+
 # 10 · Project — Interactive Sales Dashboard
 
 This capstone combines every Level 2 skill — SUMIFS, PivotTables,

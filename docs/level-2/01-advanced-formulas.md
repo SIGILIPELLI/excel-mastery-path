@@ -1,3 +1,7 @@
+---
+description: "Advanced Formulas (SUMIFS/COUNTIFS/AVERAGEIFS) — Level 1's SUMIF/COUNTIF/AVERAGEIF filter on a single condition. Real reports almost always need more than…"
+---
+
 # 01 · Advanced Formulas (SUMIFS/COUNTIFS/AVERAGEIFS)
 
 Level 1's `SUMIF`/`COUNTIF`/`AVERAGEIF` filter on a single condition. Real

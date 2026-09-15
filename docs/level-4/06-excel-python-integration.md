@@ -1,3 +1,7 @@
+---
+description: "Excel + Python Integration (Overview) — This module covers the two current ways to combine Excel and Python: the built-in =PY() formula (Python in Excel)…"
+---
+
 # 06 · Excel + Python Integration (Overview)
 
 This module covers the two current ways to combine Excel and Python:

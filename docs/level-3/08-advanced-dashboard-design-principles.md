@@ -1,3 +1,7 @@
+---
+description: "Advanced Dashboard Design Principles — This module covers turning raw calculations into a decision-ready dashboard: layout, chart choice, dynamic titles…"
+---
+
 # 08 · Advanced Dashboard Design Principles
 
 This module covers turning raw calculations into a decision-ready

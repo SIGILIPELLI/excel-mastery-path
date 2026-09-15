@@ -1,3 +1,7 @@
+---
+description: "Integrating Excel with Power BI — This module covers moving a Power Pivot model built in Excel into Power BI, and the reverse flow — analyzing a Power BI…"
+---
+
 # 03 · Integrating Excel with Power BI
 
 This module covers moving a Power Pivot model built in Excel into

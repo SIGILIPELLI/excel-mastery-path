@@ -1,3 +1,7 @@
+---
+description: "Working with Tables — A plain range of cells with headers looks like a table, but Excel's Table feature (Insert > Table) turns it into an actual…"
+---
+
 # 04 · Working with Tables
 
 A plain range of cells with headers *looks* like a table, but Excel's

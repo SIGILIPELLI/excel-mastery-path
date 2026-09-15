@@ -1,3 +1,7 @@
+---
+description: "PivotTables Basics — A PivotTable summarizes a long, row-by-row dataset — every transaction, one row each — into a compact cross-tab: totals by category…"
+---
+
 # 08 · PivotTables Basics
 
 A PivotTable summarizes a long, row-by-row dataset — every transaction, one

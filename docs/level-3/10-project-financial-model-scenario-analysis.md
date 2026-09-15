@@ -1,3 +1,7 @@
+---
+description: "Project — Financial Model with Scenario Analysis — This capstone project combines Level 3's modeling skills (Module 07) with what-if tooling — Data Tables…"
+---
+
 # 10 · Project — Financial Model with Scenario Analysis
 
 This capstone project combines Level 3's modeling skills (Module 07)

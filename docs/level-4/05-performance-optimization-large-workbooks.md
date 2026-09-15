@@ -1,3 +1,7 @@
+---
+description: "Performance Optimization for Large Workbooks — This module covers why a workbook slows down as it grows, and the concrete fixes: calculation settings…"
+---
+
 # 05 · Performance Optimization for Large Workbooks
 
 This module covers why a workbook slows down as it grows, and the

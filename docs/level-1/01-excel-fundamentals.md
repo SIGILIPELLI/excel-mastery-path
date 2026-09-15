@@ -1,3 +1,7 @@
+---
+description: "Excel Fundamentals — Excel organizes everything around three nested containers: a workbook (the file) holds one or more worksheets (tabs), and each…"
+---
+
 # 01 · Excel Fundamentals
 
 Excel organizes everything around three nested containers: a **workbook**

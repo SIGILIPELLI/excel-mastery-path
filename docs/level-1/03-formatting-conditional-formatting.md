@@ -1,3 +1,7 @@
+---
+description: "Formatting & Conditional Formatting — Formatting changes how a value displays without changing the value itself — 1200 formatted as currency still equals…"
+---
+
 # 03 · Formatting & Conditional Formatting
 
 Formatting changes how a value **displays** without changing the value

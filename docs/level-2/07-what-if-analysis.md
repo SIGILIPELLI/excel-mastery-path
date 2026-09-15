@@ -1,3 +1,7 @@
+---
+description: "What-If Analysis — What-If Analysis tools (Goal Seek, Data Tables, Scenario Manager) let you ask 'what input produces this output?' or 'how does the…"
+---
+
 # 07 · What-If Analysis
 
 What-If Analysis tools (Goal Seek, Data Tables, Scenario Manager) let

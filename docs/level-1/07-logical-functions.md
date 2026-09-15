@@ -1,3 +1,7 @@
+---
+description: "Logical Functions — Logical functions turn a formula from 'compute a number' into 'make a decision.' This module covers IF, nested IFs, IFS (a cleaner…"
+---
+
 # 07 · Logical Functions
 
 Logical functions turn a formula from "compute a number" into "make a

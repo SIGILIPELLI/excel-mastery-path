@@ -1,3 +1,7 @@
+---
+description: "DAX Basics for Power Pivot — DAX (Data Analysis Expressions) is Power Pivot's formula language. Unlike a calculated column (evaluated row by row), a DAX…"
+---
+
 # 04 · DAX Basics for Power Pivot
 
 DAX (Data Analysis Expressions) is Power Pivot's formula language.

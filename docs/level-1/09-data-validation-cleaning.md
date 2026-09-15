@@ -1,3 +1,7 @@
+---
+description: "Data Validation & Cleaning — Real-world data is messy: inconsistent capitalization, stray spaces, accidental duplicate rows, and free-typed entries that…"
+---
+
 # 09 · Data Validation & Cleaning
 
 Real-world data is messy: inconsistent capitalization, stray spaces,

@@ -1,3 +1,7 @@
+---
+description: "Charts & Basic Visualization — A chart turns a table of numbers into a shape the eye can compare instantly. This module builds a column chart and a pie…"
+---
+
 # 05 · Charts & Basic Visualization
 
 A chart turns a table of numbers into a shape the eye can compare

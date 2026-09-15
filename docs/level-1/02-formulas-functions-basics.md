@@ -1,3 +1,7 @@
+---
+description: "Formulas & Functions Basics — Every formula starts with =. This module covers writing your own arithmetic formulas, using built-in functions like SUM and…"
+---
+
 # 02 · Formulas & Functions Basics
 
 Every formula starts with `=`. This module covers writing your own

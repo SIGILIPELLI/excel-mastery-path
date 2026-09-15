@@ -1,3 +1,7 @@
+---
+description: "Advanced Charting & Dashboards — Level 1 covered basic column/line/pie charts. This module covers combination charts, secondary axes, sparklines, and the…"
+---
+
 # 03 · Advanced Charting & Dashboards
 
 Level 1 covered basic column/line/pie charts. This module covers

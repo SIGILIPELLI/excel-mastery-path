@@ -1,3 +1,7 @@
+---
+description: "Power Query Basics — Power Query (Data → Get & Transform) is Excel's tool for importing, cleaning, and reshaping data through a recorded, repeatable set…"
+---
+
 # 05 · Power Query Basics
 
 Power Query (Data → Get & Transform) is Excel's tool for importing,

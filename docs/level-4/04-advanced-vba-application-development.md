@@ -1,3 +1,7 @@
+---
+description: "Advanced VBA Application Development — This module goes past Level 3's UserForms and error handling (Module 05) into building a small multi-procedure VBA…"
+---
+
 # 04 · Advanced VBA Application Development
 
 This module goes past Level 3's UserForms and error handling (Module

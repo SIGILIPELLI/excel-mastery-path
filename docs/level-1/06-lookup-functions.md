@@ -1,3 +1,7 @@
+---
+description: "Lookup Functions — Lookup functions find a value in one table based on a match in another — the core operation behind connecting a budget's categories to…"
+---
+
 # 06 · Lookup Functions
 
 Lookup functions find a value in one table based on a match in another —

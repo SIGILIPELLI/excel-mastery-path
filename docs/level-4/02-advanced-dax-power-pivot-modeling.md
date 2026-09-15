@@ -1,3 +1,7 @@
+---
+description: "Advanced DAX & Power Pivot Modeling — This module goes beyond Level 3's DAX basics (Module 04) into time intelligence, iterator functions, and…"
+---
+
 # 02 · Advanced DAX & Power Pivot Modeling
 
 This module goes beyond Level 3's DAX basics (Module 04) into time

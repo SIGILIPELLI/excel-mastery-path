@@ -1,3 +1,7 @@
+---
+description: "Project — Personal Budget Tracker — This capstone combines every Level 1 module into one finished workbook: budget-tracker.xlsx, built incrementally since…"
+---
+
 # 10 · Project — Personal Budget Tracker
 
 This capstone combines every Level 1 module into one finished workbook:

@@ -1,3 +1,7 @@
+---
+description: "Auditing & Error-Checking Large Workbooks — This module covers the built-in tools for tracing formula logic, finding inconsistencies, and catching errors…"
+---
+
 # 09 · Auditing & Error-Checking Large Workbooks
 
 This module covers the built-in tools for tracing formula logic,

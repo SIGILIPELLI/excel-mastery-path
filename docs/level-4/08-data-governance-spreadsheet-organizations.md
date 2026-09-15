@@ -1,3 +1,7 @@
+---
+description: "Data Governance in Spreadsheet-Heavy Organizations — This module covers the governance layer that keeps spreadsheet-based reporting trustworthy at scale…"
+---
+
 # 08 · Data Governance in Spreadsheet-Heavy Organizations
 
 This module covers the governance layer that keeps spreadsheet-based

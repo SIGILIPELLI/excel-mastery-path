@@ -1,3 +1,7 @@
+---
+description: "Financial Modeling Techniques — This module covers the core building blocks of a financial model: NPV, IRR, amortization schedules, and structuring a…"
+---
+
 # 07 · Financial Modeling Techniques
 
 This module covers the core building blocks of a financial model: NPV,

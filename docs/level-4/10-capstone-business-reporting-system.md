@@ -1,3 +1,7 @@
+---
+description: "Capstone — Full Business Reporting System in Excel — This capstone combines the path's Level 4 modules — architecture, DAX, VBA, performance, integration…"
+---
+
 # 10 · Capstone — Full Business Reporting System in Excel
 
 This capstone combines the path's Level 4 modules — architecture,

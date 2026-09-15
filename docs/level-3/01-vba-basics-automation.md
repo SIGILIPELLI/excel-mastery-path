@@ -1,3 +1,7 @@
+---
+description: "VBA Basics for Automation — VBA (Visual Basic for Applications) is the programming language behind Excel. This module writes hand-typed VBA — variables…"
+---
+
 # 01 · VBA Basics for Automation
 
 VBA (Visual Basic for Applications) is the programming language behind

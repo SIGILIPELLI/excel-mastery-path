@@ -1,3 +1,7 @@
+---
+description: "PivotTables Deep Dive — Level 1 built a basic PivotTable (drag a field to Rows, one to Values). This module goes deeper: calculated fields, grouping…"
+---
+
 # 02 · PivotTables Deep Dive
 
 Level 1 built a basic PivotTable (drag a field to Rows, one to Values).

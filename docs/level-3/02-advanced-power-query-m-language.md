@@ -1,3 +1,7 @@
+---
+description: "Advanced Power Query (M Language Basics) — Every Power Query transformation is really generating code in the M language, visible via the Advanced Editor.…"
+---
+
 # 02 · Advanced Power Query (M Language Basics)
 
 Every Power Query transformation is really generating code in the **M**

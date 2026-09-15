@@ -1,3 +1,7 @@
+---
+description: "Intro to Recording Macros — A macro is a recorded sequence of actions that Excel can replay on demand. The Macro Recorder writes real VBA code behind the…"
+---
+
 # 09 · Intro to Recording Macros
 
 A macro is a recorded sequence of actions that Excel can replay on

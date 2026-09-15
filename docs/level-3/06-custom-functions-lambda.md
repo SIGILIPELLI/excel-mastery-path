@@ -1,3 +1,7 @@
+---
+description: "Building Custom Functions with LAMBDA — LAMBDA lets you define a reusable custom function entirely in worksheet formulas — no VBA required — and give it a…"
+---
+
 # 06 · Building Custom Functions with LAMBDA
 
 `LAMBDA` lets you define a reusable custom function entirely in
