@@ -109,8 +109,8 @@ your dependency-graph formulas downstream.
 
 ## 🔀 Related lessons on other tracks
 
-- [Data Engineering — 09 · Data Quality & Validation](https://sigilipelli.github.io/data-engineering-mastery-path/level-1/09-data-quality-validation/)
-- [ETL & Data Lake — 02 · Data Quality Checks & Validation](https://sigilipelli.github.io/etl-datalake-mastery-path/level-2/02-data-quality-validation/)
+- [Data Engineering — 09 · Data Quality & Validation](https://learnmasterypath.com/data-engineering-mastery-path/level-1/09-data-quality-validation/)
+- [ETL & Data Lake — 02 · Data Quality Checks & Validation](https://learnmasterypath.com/etl-datalake-mastery-path/level-2/02-data-quality-validation/)
 
 ## Exercise
 

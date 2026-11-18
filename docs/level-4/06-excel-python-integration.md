@@ -126,7 +126,7 @@ isolates for security, not directly inside your machine's Excel process.
 
 ## 🔀 Related lessons on other tracks
 
-- [Tableau — 03 · Tableau + Advanced Analytics Integration (R/Python via Tableau)](https://sigilipelli.github.io/tableau-mastery-path/level-4/04-advanced-analytics-integration/)
+- [Tableau — 03 · Tableau + Advanced Analytics Integration (R/Python via Tableau)](https://learnmasterypath.com/tableau-mastery-path/level-4/04-advanced-analytics-integration/)
 
 ## Exercise
 

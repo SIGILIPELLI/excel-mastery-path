@@ -109,9 +109,9 @@ consolidating data rather than fanning it across many linked files.
 
 ## 🔀 Related lessons on other tracks
 
-- [Data Engineering — 01 · Enterprise Data Platform Architecture](https://sigilipelli.github.io/data-engineering-mastery-path/level-4/01-enterprise-platform-architecture/)
-- [ETL & Data Lake — 10 · Capstone — Governed Enterprise Data Lake Architecture](https://sigilipelli.github.io/etl-datalake-mastery-path/level-4/10-capstone-enterprise-lake-architecture/)
-- [RAG — 01 · Enterprise RAG Architecture Patterns](https://sigilipelli.github.io/rag-mastery-path/level-4/01-enterprise-architecture/)
+- [Data Engineering — 01 · Enterprise Data Platform Architecture](https://learnmasterypath.com/data-engineering-mastery-path/level-4/01-enterprise-platform-architecture/)
+- [ETL & Data Lake — 10 · Capstone — Governed Enterprise Data Lake Architecture](https://learnmasterypath.com/etl-datalake-mastery-path/level-4/10-capstone-enterprise-lake-architecture/)
+- [RAG — 01 · Enterprise RAG Architecture Patterns](https://learnmasterypath.com/rag-mastery-path/level-4/01-enterprise-architecture/)
 
 ## Exercise
 

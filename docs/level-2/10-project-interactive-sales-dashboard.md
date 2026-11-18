@@ -113,8 +113,8 @@ chart repaints, all chained together, rather than one single update step.
 
 ## 🔀 Related lessons on other tracks
 
-- [Data Science — 10 · Project — Interactive Data Dashboard](https://sigilipelli.github.io/data-science-mastery-path/level-3/10-project-interactive-dashboard/)
-- [Tableau — 10 · Project — Build a Sales Performance Dashboard](https://sigilipelli.github.io/tableau-mastery-path/level-1/10-project-sales-performance-dashboard/)
+- [Data Science — 10 · Project — Interactive Data Dashboard](https://learnmasterypath.com/data-science-mastery-path/level-3/10-project-interactive-dashboard/)
+- [Tableau — 10 · Project — Build a Sales Performance Dashboard](https://learnmasterypath.com/tableau-mastery-path/level-1/10-project-sales-performance-dashboard/)
 
 ## Exercise
 

@@ -109,7 +109,7 @@ equivalent internal ID it can use to track a file across the filesystem.
 
 ## 🔀 Related lessons on other tracks
 
-- [Tableau — 07 · Working with Multiple Data Sources](https://sigilipelli.github.io/tableau-mastery-path/level-2/07-multiple-data-sources/)
+- [Tableau — 07 · Working with Multiple Data Sources](https://learnmasterypath.com/tableau-mastery-path/level-2/07-multiple-data-sources/)
 
 ## Exercise
 

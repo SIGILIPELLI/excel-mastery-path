@@ -138,9 +138,9 @@ extra refresh step, unlike a PivotTable's cache.
 
 ## 🔀 Related lessons on other tracks
 
-- [Data Engineering — 09 · Data Quality & Validation](https://sigilipelli.github.io/data-engineering-mastery-path/level-1/09-data-quality-validation/)
-- [ETL & Data Lake — 02 · Data Quality Checks & Validation](https://sigilipelli.github.io/etl-datalake-mastery-path/level-2/02-data-quality-validation/)
-- [Data Science — 03 · Data Cleaning & Wrangling](https://sigilipelli.github.io/data-science-mastery-path/level-1/03-data-cleaning-wrangling/)
+- [Data Engineering — 09 · Data Quality & Validation](https://learnmasterypath.com/data-engineering-mastery-path/level-1/09-data-quality-validation/)
+- [ETL & Data Lake — 02 · Data Quality Checks & Validation](https://learnmasterypath.com/etl-datalake-mastery-path/level-2/02-data-quality-validation/)
+- [Data Science — 03 · Data Cleaning & Wrangling](https://learnmasterypath.com/data-science-mastery-path/level-1/03-data-cleaning-wrangling/)
 
 ## Exercise
 

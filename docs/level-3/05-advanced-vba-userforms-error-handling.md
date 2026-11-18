@@ -135,8 +135,8 @@ control.
 
 ## 🔀 Related lessons on other tracks
 
-- [Embedded Python — Error Handling & On-Device Logging](https://sigilipelli.github.io/embedded-python-mastery-path/level-2/09-error-handling-logging/)
-- [REST API — 08 · Error Handling Conventions](https://sigilipelli.github.io/rest-api-mastery-path/level-1/08-error-handling-conventions/)
+- [Embedded Python — Error Handling & On-Device Logging](https://learnmasterypath.com/embedded-python-mastery-path/level-2/09-error-handling-logging/)
+- [REST API — 08 · Error Handling Conventions](https://learnmasterypath.com/rest-api-mastery-path/level-1/08-error-handling-conventions/)
 
 ## Exercise
 

@@ -6,7 +6,7 @@ cheat sheets, and a hands-on exercise in every module. Focused on real
 analyst skills: formulas, PivotTables, Power Query, Power Pivot, DAX, VBA,
 and financial modeling.
 
-**Live site:** https://sigilipelli.github.io/excel-mastery-path/
+**Live site:** https://learnmasterypath.com/excel-mastery-path/
 
 ## Contents
 
@@ -25,7 +25,7 @@ python3 -m venv .venv
 
 ## Related
 
-- [Adobe Creative Cloud Mastery Path](https://sigilipelli.github.io/adobe-mastery-path/)
-- [SQL Mastery Path](https://sigilipelli.github.io/sql-mastery-path/)
-- [Data Science Mastery Path](https://sigilipelli.github.io/data-science-mastery-path/)
-- [Tableau Mastery Path](https://sigilipelli.github.io/tableau-mastery-path/)
+- [Adobe Creative Cloud Mastery Path](https://learnmasterypath.com/adobe-mastery-path/)
+- [SQL Mastery Path](https://learnmasterypath.com/sql-mastery-path/)
+- [Data Science Mastery Path](https://learnmasterypath.com/data-science-mastery-path/)
+- [Tableau Mastery Path](https://learnmasterypath.com/tableau-mastery-path/)

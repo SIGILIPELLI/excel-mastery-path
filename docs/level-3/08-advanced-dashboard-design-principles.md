@@ -125,7 +125,7 @@ responsive.
 
 ## 🔀 Related lessons on other tracks
 
-- [Tableau — 02 · Advanced Dashboard Design & Interactivity](https://sigilipelli.github.io/tableau-mastery-path/level-2/02-advanced-dashboard-design/)
+- [Tableau — 02 · Advanced Dashboard Design & Interactivity](https://learnmasterypath.com/tableau-mastery-path/level-2/02-advanced-dashboard-design/)
 
 ## Exercise
 
