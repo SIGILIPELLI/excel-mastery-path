@@ -65,7 +65,7 @@ Windows or Mac. Some Level 2+ features — dynamic arrays (`FILTER`, `SORT`),
 perpetual version; the lessons note it where a feature isn't available in
 older versions.
 
-🎥 **Prefer video?** Watch the [Mastery Path video series](https://youtube.com/@sigilipelli) on YouTube — Shorts and full walkthroughs of these lessons.
+🎥 **Prefer video?** Watch the [Mastery Path video series](https://youtube.com/@learnmasterypath) on YouTube — Shorts and full walkthroughs of these lessons.
 
 ## More from the Mastery Path series
 
