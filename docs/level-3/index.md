@@ -1,3 +1,7 @@
+---
+description: "Level 3 (Advanced) of the free Excel Mastery Path: VBA Basics for Automation, Advanced Power Query (M Language Basics), Power Pivot & the Data Model, DAX…"
+---
+
 # Level 3 · Advanced
 
 ## Modules

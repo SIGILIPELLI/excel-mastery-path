@@ -1,3 +1,7 @@
+---
+description: "Level 4 (Master) of the free Excel Mastery Path: Enterprise Excel Architecture, Advanced DAX & Power Pivot Modeling, Integrating Excel with Power BI…"
+---
+
 # Level 4 · Master
 
 ## Modules

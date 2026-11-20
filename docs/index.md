@@ -1,6 +1,6 @@
 ---
 title: "Learn Excel Free: Beginner to Master Course"
-description: "Free Microsoft Excel course covering formulas, PivotTables, Power Query, VBA, and financial modeling, beginner to advanced. Part of a 40-course free learning library."
+description: "Free Microsoft Excel course covering formulas, PivotTables, Power Query, VBA, and financial modeling, beginner to advanced. Part of a 100+ course free learning library."
 ---
 
 # Excel Mastery Path

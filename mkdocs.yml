@@ -6,6 +6,7 @@ repo_name: excel-mastery-path
 
 theme:
   name: material
+  font: false
   favicon: assets/favicon.svg
   custom_dir: docs/overrides
   palette:
@@ -24,6 +25,7 @@ theme:
         icon: material/brightness-4
         name: Switch to light mode
   features:
+    - navigation.path
     - navigation.tabs
     - navigation.sections
     - navigation.expand
@@ -54,6 +56,22 @@ extra_css:
 
 extra_javascript:
   - javascripts/progress-tracker.js
+
+
+
+
+extra:
+  related:
+    - name: "Tally Prime & GST"
+      url: https://learnmasterypath.com/tally-gst-mastery-path/
+    - name: "Power BI"
+      url: https://learnmasterypath.com/power-bi-mastery-path/
+    - name: "SQL"
+      url: https://learnmasterypath.com/sql-mastery-path/
+    - name: "Data Engineering"
+      url: https://learnmasterypath.com/data-engineering-mastery-path/
+    - name: "Data Science"
+      url: https://learnmasterypath.com/data-science-mastery-path/
 
 nav:
   - Home: index.md

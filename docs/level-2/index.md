@@ -1,3 +1,7 @@
+---
+description: "Level 2 (Intermediate) of the free Excel Mastery Path: Advanced Formulas (SUMIFS/COUNTIFS/AVERAGEIFS), PivotTables Deep Dive, Advanced Charting &…"
+---
+
 # Level 2 · Intermediate
 
 ## Modules

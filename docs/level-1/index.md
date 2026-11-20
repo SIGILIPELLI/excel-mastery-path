@@ -1,3 +1,7 @@
+---
+description: "Level 1 (Entry) of the free Excel Mastery Path. Get comfortable navigating Excel, write real formulas, format and visualize data, look values up across…"
+---
+
 # Level 1 · Entry <span class="level-badge">Foundations</span>
 
 Goal: get comfortable navigating Excel, write real formulas, format and
