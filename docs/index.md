@@ -30,8 +30,7 @@ dashboard design, as real analyst workflows.
   and exact formulas spelled out — follow along inside a real workbook.
 - Each topic ends with a cheat-sheet table of the key functions or shortcuts
   covered, plus an **Exercise** to practice the workflow on your own data.
-- Each level ends with a project that combines everything learned in that
-  level.
+- Levels 1–3 each end with a project that combines everything learned in that level, and Level 4 ends with the course capstone.
 - Use the search bar (top of the page) to jump straight to a topic.
 
 Start here → [Level 1 · Entry](level-1/index.md)
